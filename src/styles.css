@@ -1,0 +1,130 @@
+/* Visited hyperlinks: #a22e2e */
+/* Non-visited hyperlinks: #6385a9 */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+@media only screen and (min-width: 1000px) {
+  .mainInfo {
+    right: -170px;
+    z-index: 2;
+  }
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    color: #dcd6ce
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 55px;
+}
+
+a {
+  color: #6385a9
+}
+
+/* a:visited {
+  color: #a22e2e
+} */
+
+a:hover {
+  color: #2279d6
+}
+
+.icon {
+  font-size: 33px;
+  padding: 0 4px;
+  height: 100%;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.iconWrapper2 {
+    background-color: #2a2a2a;
+    height: 100%;
+    border-radius: 5px;
+    padding: 0 5px 0 0;
+}
+
+.iconWrapper2 a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  }
+
+.navbar {
+  background-color: inherit!important;
+  margin: 0 20px;
+  border-bottom: 2px solid #777067;
+  /* background-color: #262216!important */
+}
+
+.nav-item {
+    padding-right: 25px;
+}
+
+.page {
+  padding-top: 60px;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color:  #0f0f0f
+}
+
+.fader {
+  position: relative;
+  height: 100%;
+  width: 60%;
+  border-left: 2px solid linear-gradient(left, black, white);
+  background-repeat: no-repeat;
+}
+
+.fadingElement {
+  width: 300px;
+  position: absolute;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f0f0f+0,000000+100&1+13,1+13,0.84+51,0.03+98 */
+  background: -moz-linear-gradient(left, rgba(15,15,15,1) 0%, rgba(13,13,13,1) 13%, rgba(7,7,7,0.84) 51%, rgba(0,0,0,0.03) 98%, rgba(0,0,0,0.03) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0f0f', endColorstr='#08000000',GradientType=1 ); /* IE6-9 */
+}
+
+.mainInfo {
+    top: 12px;
+    position: relative;
+    min-width: 400px;
+    padding: 20px;
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .padder {
+  width: 10%;
+} */
+
+.mainInfo p {
+  max-width: 350px;
+  margin-top: 10px;
+}
+
+.mainInfo h1 {
+  font-weight: bold;
+}
+
+
+.centred {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
