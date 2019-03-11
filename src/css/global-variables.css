@@ -1,0 +1,21 @@
+/* 
+Defines global variables
+e.g. colour schemes and fonts
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+
+/* Visited hyperlinks: #a22e2e */
+/* Non-visited hyperlinks: #6385a9 */
+:root {
+  --pageBackgroundColor: #0f0f0f;  
+  --textColor: #dcd6ce;
+  
+  /* Headers */
+  --h1FontFamily: 'Roboto', sans-serif; 
+
+  /* Paragraphs */
+  --pFontFamily: 'Roboto Slab', serif;
+}

@@ -1,0 +1,10 @@
+/* Styles for the navbar */
+
+.navbar a {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+a:hover {
+    color: #6385a9!important
+  }

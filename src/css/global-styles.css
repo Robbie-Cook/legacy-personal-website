@@ -1,7 +1,9 @@
-/* Visited hyperlinks: #a22e2e */
-/* Non-visited hyperlinks: #6385a9 */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+/*
+ Global styles 
+ */
+
+/* Global variables (colour schemes, fonts, etc.) */
+@import 'global-variables.css';
 
 @media only screen and (min-width: 1000px) {
   .mainInfo {
@@ -11,22 +13,19 @@
 }
 
 body {
-    font-family: 'Roboto Slab', serif;
-    color: #dcd6ce
+    font-family: var(--pFontFamily);
+    color: var(--textColor);
+    background-color: var(--pageBackgroundColor);
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--h1FontFamily);
   font-size: 55px;
 }
 
 a {
   color: #6385a9
 }
-
-/* a:visited {
-  color: #a22e2e
-} */
 
 a:hover {
   color: #2279d6
@@ -73,7 +72,8 @@ a:hover {
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background-color:  #0f0f0f
+  /* background-color:  #0f0f0f */
+  background-color: color.white;
 }
 
 .fader {
