@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Wrapper from './Wrapper';
 
 /* Imports */
 /* Stylesheets etc. */
@@ -7,21 +8,25 @@ import '../fontawesome/css/all.css'
 
 /* Media */
 import me from '../photos/me_irl3_cropped.jpg'
-import Wrapper from './Wrapper';
 
 // Main Page component
 class HomePage extends Component {
   render() {
     return (
-        <Wrapper>
             <div class="page">
               <div class="padder">
               </div>
               <div class="mainInfo">
                 <h1>Robbie Cook</h1>
                 <p>
-                  Hello! I'm a developer &amp; creator living in Auckland, New Zealand.
-                  I love swimming, running, Spanish, and coding.
+                  Hello! I'm a developer living in Auckland, New Zealand.
+                  I love swimming, Netflix, and coding.
+                              
+                  <br /><br />
+
+                  My current focus is .NET software, React, and Windows services.
+                  I also focus on Python, Machine Learning, LaTeX, and Linux services. 
+                  I have a Honours degree in Computer Science from Otago University.
                 </p>
                 <div class="iconWrapper">
                   <a href="https://github.com/Robbie-Cook"><i class="icon fab fa-github-square"></i></a>
@@ -41,7 +46,6 @@ class HomePage extends Component {
                 <img src={me} style={{height:'100%'}}/>
               </div>
             </div>
-        </Wrapper>
     );
   }
 }

@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class Wrapper extends Component {
   render() {
     return (
-
         <body>
           {/* Begin page content */}
           <main role="main">

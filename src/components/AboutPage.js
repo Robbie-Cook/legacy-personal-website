@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 
+/* Imports */
+/* Stylesheets etc. */
+
 // Main Page component
-class CVPage extends Component {
+class AboutPage extends Component {
   render() {
     return (
         ""
@@ -10,4 +13,4 @@ class CVPage extends Component {
   }
 }
 
-export default CVPage;
+export default AboutPage;
