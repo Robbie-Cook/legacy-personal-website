@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Wrapper from './Wrapper';
+import Page from './Page'
 
 /* Imports */
 /* Stylesheets etc. */
 // TODO: Change bootstrap to react-bootstrap
 import '../fontawesome/css/all.css'
-
+import {Link} from "react-router-dom"
 /* Media */
 import me from '../photos/me_irl3_cropped.jpg'
 
@@ -13,7 +13,7 @@ import me from '../photos/me_irl3_cropped.jpg'
 class HomePage extends Component {
   render() {
     return (
-            <div class="page">
+            <Page>
               <div class="padder">
               </div>
               <div class="mainInfo">
@@ -21,12 +21,9 @@ class HomePage extends Component {
                 <p>
                   Hello! I'm a developer living in Auckland, New Zealand.
                   I love swimming, Netflix, and coding.
-                              
-                  <br /><br />
-
-                  My current focus is .NET software, React, and Windows services.
-                  I also focus on Python, Machine Learning, LaTeX, and Linux services. 
-                  I have a Honours degree in Computer Science from Otago University.
+               </p>
+               <p>
+                Check out my <Link to="/about">About</Link> page to find out more :)
                 </p>
                 <div class="iconWrapper">
                   <a href="https://github.com/Robbie-Cook"><i class="icon fab fa-github-square"></i></a>
@@ -45,7 +42,7 @@ class HomePage extends Component {
                 </div>
                 <img src={me} style={{height:'100%'}}/>
               </div>
-            </div>
+            </Page>
     );
   }
 }

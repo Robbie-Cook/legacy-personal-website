@@ -18,4 +18,9 @@ e.g. colour schemes and fonts
 
   /* Paragraphs */
   --pFontFamily: 'Roboto Slab', serif;
+
+  /* Navbar */
+  --navbarFontFamily: 'Roboto', Helvetica, sans-serif;
+  --navbarFontWeight: 100;
+  --navbarBackgroundColor: var(--pageBackgroundColor);
 }

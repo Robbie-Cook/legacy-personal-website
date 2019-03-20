@@ -56,17 +56,6 @@ a:hover {
   flex-direction: row;
   }
 
-.navbar {
-  background-color: inherit!important;
-  margin: 0 20px;
-  border-bottom: 2px solid #777067;
-  /* background-color: #262216!important */
-}
-
-.nav-item {
-    padding-right: 25px;
-}
-
 .page {
   padding-top: 60px;
   display: flex;
