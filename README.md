@@ -4,6 +4,7 @@ This is my personal website built with React (create-react-app), and deployed wi
 It's a very simple website with a few pages, and it should be updated regularly.
 Features to come soon include:
 
+* Aligning navbar items better
 * A contact form
 * Better styling for Music and About pages
 * Mobile support
