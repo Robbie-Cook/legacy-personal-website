@@ -9,3 +9,5 @@ Features to come soon include:
 * Mobile support
 * Smoother transitions on photos and embedded content
 * Awesome videos of me playing music
+* ssh with auto certificate renewal
+* 'Project* contribution page for contributed work on open source projects
