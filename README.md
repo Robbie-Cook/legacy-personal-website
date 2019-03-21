@@ -1,4 +1,4 @@
-Personal Website
+# Personal Website
 
 This is my personal website built with React (create-react-app), and deployed with serve.
 It's a very simple website with a few pages, and it should be updated regularly.
