@@ -4,18 +4,27 @@ import React, { Component } from 'react';
 /* Stylesheets etc. */
 import { Container, Row, Col } from 'react-bootstrap'
 import Page from './Page'
+import Spacer from './Spacer'
+
+/* Media */
+import me from '../photos/aboutImage.jpg'
 
 // Main Page component
 class AboutPage extends Component {
   render() {
     return (
+
         <Page>
+
           <Container>
+          <Spacer/>
             <Row>
+
               <Col>
-                <h1 styles="font-size: 10px!important">
+                <h2>
                   About me
-                </h1>
+                </h2>
+                <Spacer height="20" />
                 <p>
                   Hi! I'm a 22-year-old developer currently living in Auckland.
                   I work in .NET for an Auckland software company.
@@ -33,6 +42,9 @@ class AboutPage extends Component {
                   <p>
                   In my spare time, I like to swim, gym, and play guitar and piano. 
                   </p>
+              </Col>
+              <Col>
+                <img src={me}/>
               </Col>
             </Row>
           </Container>

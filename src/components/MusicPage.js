@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 /* Stylesheets etc. */
 import { Container, Row, Col } from 'react-bootstrap'
 import Page from './Page'
+import Spacer from './Spacer'
 
 // Main Page component
 class MusicPage extends Component {
@@ -11,9 +12,10 @@ class MusicPage extends Component {
     return (
       <div>
         <Page>
-
           <Container>
-            <h1>My tracks</h1>
+          <Spacer/>
+            <h2>Music</h2>
+            <Spacer height="10" />
             <Row>
               <Col class="subpage">
                 <iframe width="100%" height="450" scrolling="yes" frameborder="no" allow="autoplay"

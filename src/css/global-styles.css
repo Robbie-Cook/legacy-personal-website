@@ -23,6 +23,11 @@ h1 {
   font-size: 55px;
 }
 
+h2 {
+  font-family: var(--h1FontFamily);
+  font-size: 40px;
+}
+
 a {
   color: #6385a9
 }
@@ -62,7 +67,6 @@ a:hover {
   height: 100vh;
   overflow: hidden;
   /* background-color:  #0f0f0f */
-  background-color: color.white;
 }
 
 .fader {
@@ -106,14 +110,3 @@ a:hover {
   margin-top: 10px;
 }
 
-.mainInfo h1 {
-  font-weight: bold;
-}
-
-
-.centred {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}

@@ -18,7 +18,7 @@ function generateNavItems(pages) {
 
         pagesJSX.push(
           <li class={linkDetails}>
-            <Link class="nav-link" to={p.path}>{p.name}</Link>
+            <Link class="nav-link" style={{marginRight: 30}} to={p.path}>{p.name}</Link>
           </li>
         )
   });

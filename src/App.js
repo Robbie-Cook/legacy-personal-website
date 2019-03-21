@@ -22,7 +22,6 @@ function AppRouter() {
     new MyLink("Home", "/", () => <HomePage />, true),
     new MyLink("Music", "/music",() =>  <MusicPage />),
     new MyLink("About", "/about", () => <AboutPage />),
-    new MyLink("CV", "/cv", () => <CVPage />)
   ]
   let navigationRoutes = []
 
