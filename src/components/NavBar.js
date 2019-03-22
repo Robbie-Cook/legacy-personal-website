@@ -5,6 +5,7 @@ Navigation Bar
 */
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import Spacer from './Spacer.js'
 
 function generateNavItems(pages) {
     let pagesJSX = []
@@ -36,10 +37,12 @@ class Navbar extends Component {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
+              <Spacer width="60"/>
               {
                 /* 
                 Generate the nav items (e.g. Home, etc.)
                 */
+
                generateNavItems(this.props.pages)
               }
                 {/* <li class="nav-item active">
