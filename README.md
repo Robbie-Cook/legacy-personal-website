@@ -2,11 +2,13 @@
 
 This is my personal website built with React (create-react-app), and deployed with http-server.
 It's a very simple website with a few pages, and it should be updated regularly.
-Features to come soon (in order of priority) include:
+
+## Features to come
 
 * Mobile support
-  * Fix navigation bar for mobile
+  * Fix navigation bar for mobile (bug)
   
+* Fix overflow on home page (bug)  
   
 * Check email client forwarding properly to personal email
 
@@ -22,3 +24,4 @@ Features to come soon (in order of priority) include:
 
 * Migrate site to Gatsby to hook up a CMS
   * Make a tutorial site with Gatsby to get a feel
+
