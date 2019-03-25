@@ -6,3 +6,17 @@
 .carouselColumn {
     max-width: 600px;
 }
+
+
+/* Make carousel icons bigger */
+.carouselColumn button.control-arrow::before {
+    border-top: 20px solid transparent!important;
+    border-bottom: 20px solid transparent!important;
+
+}
+.carouselColumn button.control-next::before {
+    border-left: 20px solid #fff!important;
+}
+.carouselColumn button.control-prev::before {
+    border-right: 20px solid #fff!important;
+}
