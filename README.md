@@ -19,4 +19,5 @@ Features to come soon (in order of priority) include:
 
 * 'Project' contribution page for contributed work on open source projects
 
-* CMS
+* Migrate site to Gatsby to hook up a CMS
+  * Make a tutorial site with Gatsby to get a feel
