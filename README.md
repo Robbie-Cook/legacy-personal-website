@@ -6,6 +6,9 @@ Features to come soon (in order of priority) include:
 
 * Mobile support
   * Fix navigation bar for mobile
+  
+  
+* Check email client forwarding properly to personal email
 
 * Animations:
    * Smoother transitions on photos, embedded content
@@ -14,8 +17,6 @@ Features to come soon (in order of priority) include:
 * Awesome videos of me playing music
 
 * ssh with auto certificate renewal
-
-* A contact form
 
 * 'Project' contribution page for contributed work on open source projects
 
