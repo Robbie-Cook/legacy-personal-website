@@ -5,6 +5,7 @@ It's a very simple website with a few pages, and it should be updated regularly.
 Features to come soon (in order of priority) include:
 
 * Mobile support
+  * Fix navigation bar for mobile
 
 * Animations:
    * Smoother transitions on photos, embedded content
