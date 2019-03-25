@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "18d2347ab2a9f40ca2247cdb03303d84",
-    "url": "/static/media/fa-solid-900.18d2347a.woff2"
+    "revision": "f319eac1c755f9929fd856720ce1695e",
+    "url": "/static/media/fa-brands-400.f319eac1.woff2"
   },
   {
-    "revision": "d16ec6bd5805b6303199",
-    "url": "/static/css/main.93d685ab.chunk.css"
+    "revision": "a13a8bd2eccb723067d9",
+    "url": "/static/css/main.d8824ee8.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.c5541365.js"
   },
   {
-    "revision": "ca9b2dc828c99e31dd9d",
-    "url": "/static/js/2.46368f18.chunk.js"
+    "revision": "68d98f5a7335a71eea4d66275a66cfab",
+    "url": "/static/media/fa-brands-400.68d98f5a.svg"
+  },
+  {
+    "revision": "8f6b28ba262fb482c728",
+    "url": "/static/js/2.c4db97bb.chunk.js"
   },
   {
     "revision": "2ead195c53da554dc8c7a4c16becc956",
@@ -22,6 +26,10 @@ self.__precacheManifest = [
   {
     "revision": "47dfa1977670979ba5063ad3439525b2",
     "url": "/static/media/aboutImage.47dfa197.jpg"
+  },
+  {
+    "revision": "46cef6af0531f4fbb05c404739be338c",
+    "url": "/static/media/aboutImage2.46cef6af.jpg"
   },
   {
     "revision": "a3715c6fe264a51f1d9260b447ff46bc",
@@ -40,12 +48,12 @@ self.__precacheManifest = [
     "url": "/static/media/fa-regular-400.6534c603.ttf"
   },
   {
-    "revision": "f319eac1c755f9929fd856720ce1695e",
-    "url": "/static/media/fa-brands-400.f319eac1.woff2"
+    "revision": "a13a8bd2eccb723067d9",
+    "url": "/static/js/main.7afced97.chunk.js"
   },
   {
-    "revision": "d16ec6bd5805b6303199",
-    "url": "/static/js/main.b419d1a8.chunk.js"
+    "revision": "18d2347ab2a9f40ca2247cdb03303d84",
+    "url": "/static/media/fa-solid-900.18d2347a.woff2"
   },
   {
     "revision": "d034c1b2ee84dd981ef2e637754a0b4f",
@@ -80,11 +88,11 @@ self.__precacheManifest = [
     "url": "/static/media/fa-solid-900.d55c4d9d.svg"
   },
   {
-    "revision": "68d98f5a7335a71eea4d66275a66cfab",
-    "url": "/static/media/fa-brands-400.68d98f5a.svg"
+    "revision": "8f6b28ba262fb482c728",
+    "url": "/static/css/2.a387f941.chunk.css"
   },
   {
-    "revision": "172011fadd75e58530543f41d6214298",
+    "revision": "9e4c6941f345d423e2d1cf44505831d4",
     "url": "/index.html"
   }
 ];
