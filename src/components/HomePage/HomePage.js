@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import Page from './Page'
 
 /* Imports */
+
+/* Components */
+import Heading from '../Heading.js'
+import Page from '../Page/Page'
+
 /* Stylesheets etc. */
-// TODO: Change bootstrap to react-bootstrap
-import '../fontawesome/css/all.css'
+import '../../fontawesome/css/all.css'
 import {Link} from "react-router-dom"
+
 /* Media */
-import me from '../photos/me_irl3_cropped.jpg'
+import me from '../../photos/me_irl3_cropped.jpg'
 
 // Main Page component
 class HomePage extends Component {
@@ -17,7 +21,7 @@ class HomePage extends Component {
               <div class="padder">
               </div>
               <div class="mainInfo">
-                <h1>Robbie Cook</h1>
+                <Heading>Robbie Cook</Heading>
                 <p>
                   Hello! I'm a developer living in Auckland, New Zealand.
                   I love swimming, Netflix, and coding.

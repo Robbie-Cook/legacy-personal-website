@@ -5,7 +5,7 @@ Navigation Bar
 */
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-import Spacer from './Spacer.js'
+import Spacer from '../Spacer.js'
 
 function generateNavItems(pages) {
     let pagesJSX = []

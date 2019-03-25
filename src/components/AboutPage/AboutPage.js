@@ -1,13 +1,52 @@
 import React, { Component } from 'react';
 
 /* Imports */
-/* Stylesheets etc. */
 import { Container, Row, Col } from 'react-bootstrap'
-import Page from './Page'
-import Spacer from './Spacer'
+import Page from '../Page/Page'
+import Spacer from '../Spacer'
+import Heading from '../Heading'
+
+/* Stylesheets etc. */
+import './index.css'
+
+/* Carousel */
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {Carousel} from 'react-responsive-carousel';
 
 /* Media */
-import me from '../photos/aboutImage.jpg'
+import photo1 from '../../photos/aboutImage.jpg'
+import photo2 from '../../photos/aboutImage2.jpg'
+
+/* Represents a photo */
+class Photo {
+  constructor(image, altText, legend = altText) {
+    this.image = image;
+    this.altText = altText;
+    this.legend = legend;
+  }
+}
+
+// Photo array
+let photos = [
+  new Photo(photo1, "Me in Christchurch"),
+  new Photo(photo2, "My library desk in Dunedin")
+]
+
+// Generate a single carousel element for a photo
+function getCarouselPhotos() {
+    let photoJsxArray = []
+    for(let item of photos) {
+     photoJsxArray.push(<div>
+        <img src={item.image} alt={item.altText} className="carouselImage"/>
+        <p className="legend">{item.legend}</p>
+    </div>)
+    }
+    return photoJsxArray
+}
+
+let carouselStyles = {
+  height: 200,
+}
 
 // Main Page component
 class AboutPage extends Component {
@@ -15,16 +54,13 @@ class AboutPage extends Component {
     return (
 
         <Page>
-
           <Container>
           <Spacer/>
             <Row>
-
               <Col>
-                <h2>
+                <Heading type="h2">
                   About me
-                </h2>
-                <Spacer height="20" />
+                </Heading>
                 <p>
                   Hi! I'm a 22-year-old developer currently living in Auckland.
                   I work in .NET for an Auckland software company.
@@ -44,7 +80,11 @@ class AboutPage extends Component {
                   </p>
               </Col>
               <Col>
-                <img src={me}/>
+                <div className="carouselColumn">
+                  <Carousel style={carouselStyles} showThumbs={false}>
+                    {getCarouselPhotos()}
+                  </Carousel>
+                </div>
               </Col>
             </Row>
           </Container>

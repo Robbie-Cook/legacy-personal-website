@@ -12,9 +12,7 @@ e.g. colour schemes and fonts
 :root {
   --pageBackgroundColor: #0f0f0f;  
   --textColor: #dcd6ce;
-  
-  /* Headers */
-  --h1FontFamily: 'Roboto', sans-serif; 
+
 
   /* Paragraphs */
   --pFontFamily: 'Roboto Slab', serif;

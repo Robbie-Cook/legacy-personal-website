@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import HomePage from "./components/HomePage"
-import MusicPage from "./components/MusicPage"
-import CVPage from "./components/CVPage"
-import NavBar from "./components/NavBar"
-import AboutPage from "./components/AboutPage"
+import HomePage from "./components/HomePage/HomePage"
+import MusicPage from "./components/MusicPage/MusicPage"
+import CVPage from "./components/CVPage/CVPage"
+import NavBar from "./components/NavBar/NavBar.js"
+import AboutPage from "./components/AboutPage/AboutPage"
 
 import MyLink from './MyLink.js'
  
@@ -33,7 +33,6 @@ function AppRouter() {
     navigationRoutes.push(route)
   }
 
-  
   return (
     <div>
     <Router>

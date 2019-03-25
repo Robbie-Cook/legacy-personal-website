@@ -1,0 +1,8 @@
+.carouselImage {
+    max-height: 400px;
+    width: auto!important;
+}
+
+.carouselColumn {
+    max-width: 600px;
+}
