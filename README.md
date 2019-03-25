@@ -17,3 +17,5 @@ Features to come soon (in order of priority) include:
 * A contact form
 
 * 'Project' contribution page for contributed work on open source projects
+
+* CMS
