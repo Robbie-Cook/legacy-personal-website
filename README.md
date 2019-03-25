@@ -1,6 +1,6 @@
 # Personal Website
 
-This is my personal website built with React (create-react-app), and deployed with a static server.
+This is a repository of my personal website [http://robbie.pw](http://robbie.pw) built with React (create-react-app), and deployed with a static server.
 It's a very simple website with a few pages, and it should be updated regularly.
 
 I'm hoping to start with introducing more simple features, then move into making the website smooter
