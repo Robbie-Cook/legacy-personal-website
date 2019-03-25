@@ -20,8 +20,8 @@ function AppRouter() {
   /* Setup navigation links here as objects*/
   let navigationLinks = [
     new MyLink("Home", "/", () => <HomePage />, true),
-    new MyLink("Music", "/music",() =>  <MusicPage />),
     new MyLink("About", "/about", () => <AboutPage />),
+    new MyLink("Music", "/music",() =>  <MusicPage />),
   ]
   let navigationRoutes = []
 
