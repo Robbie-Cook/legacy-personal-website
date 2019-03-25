@@ -8,6 +8,7 @@ It's a very simple website with a few pages, and it should be updated regularly.
 * Mobile support
   * Fix navigation bar for mobile (bug)
   * Fix music page on mobile (bug)
+  * Make basic components responsive
   
 * Fix overflow on home page (bug)  
   
