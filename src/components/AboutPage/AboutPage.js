@@ -64,6 +64,9 @@ class AboutPage extends Component {
                 <p>
                   Hi! I'm a 22-year-old developer currently living in Auckland.
                   I work in .NET for an Auckland software company.
+
+                  </p>
+                  <p>
                   I studied at Otago University in Dunedin; where I got an Honours degree
                   in Computer Science and worked as a lab demonstrator for Python and Java students.
                   I also did some Disabilities tutoring for the University as well in my final year.
