@@ -4,13 +4,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage"
 import MusicPage from "./components/MusicPage/MusicPage"
 import CVPage from "./components/CVPage/CVPage"
-import NavBar from "./components/NavBar/NavBar.js"
+import NavBar from "./components/NavigationBar/NavigationBar"
 import AboutPage from "./components/AboutPage/AboutPage"
 
 import MyLink from './MyLink.js'
  
-import './bootstrap/css/bootstrap.min.css' // TODO: Change this to react-bootstrap
-
 import './css/global-styles.css'
 
 // Generate routing JSX for page components

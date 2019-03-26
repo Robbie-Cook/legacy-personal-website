@@ -51,13 +51,7 @@ a:hover {
   flex-direction: row;
   }
 
-.page {
-  padding-top: 60px;
-  display: flex;
-  height: 100vh;
-  /* overflow: hidden; */
-  /* background-color:  #0f0f0f */
-}
+
 
 .fader {
   position: relative;
