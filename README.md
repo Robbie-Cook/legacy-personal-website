@@ -19,8 +19,7 @@ having to modify the code.
 ## Features to come
 
 * Mobile support
-  * Fix navigation bar for mobile (bug)
-  * Make homepage mobile-viewable (feature)
+  * Make pages mobile-viewable (feature)
     * Make basic components responsive
   
 * Check email client forwarding properly to personal email
