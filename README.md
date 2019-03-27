@@ -14,6 +14,7 @@ having to modify the code.
 
 * Mobile support
   * Fix navigation bar for mobile (bug)
+  * Make homepage mobile-viewable (feature)
   * Fix music page on mobile (bug)
   * Make basic components responsive
   
