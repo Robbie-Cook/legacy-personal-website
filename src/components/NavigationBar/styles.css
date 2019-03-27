@@ -1,0 +1,19 @@
+/* Traditional/Legacy styles */
+
+.navbar {
+    padding: 0px
+}
+
+.nav-icons-wrapper {
+    height:20px!important;
+    width: 20px!important;
+    margin: auto;
+}
+.nav-icons-wrapper div {
+    position: relative;
+    top: 1px;
+    height: 1px;
+    width: 17px;
+    margin: 5px auto 0 auto;
+    background-color: #dcd6ce;
+}

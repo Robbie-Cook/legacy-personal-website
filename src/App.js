@@ -8,7 +8,7 @@ import NavBar from "./components/NavigationBar/NavigationBar"
 import AboutPage from "./components/AboutPage/AboutPage"
 
 import MyLink from './MyLink.js'
- 
+
 import './css/global-styles.css'
 
 // Generate routing JSX for page components
@@ -19,11 +19,11 @@ function AppRouter() {
   let navigationLinks = [
     new MyLink("Home", "/", () => <HomePage />, true),
     new MyLink("About", "/about", () => <AboutPage />),
-    new MyLink("Music", "/music",() =>  <MusicPage />),
+    new MyLink("Music", "/music", () => <MusicPage />),
   ]
   let navigationRoutes = []
 
-  for(let item of navigationLinks) {
+  for (let item of navigationLinks) {
     let route = <Route path={item.path} component={item.component} />;
     if (item.exact) {
       route = <Route exact path={item.path} component={item.component} />
@@ -33,12 +33,14 @@ function AppRouter() {
 
   return (
     <div>
-    <Router>
-      <div>
-        <NavBar pages={navigationLinks}/>
-        {navigationRoutes}
-      </div>
-    </Router>
+      <Router>
+        <div>
+          <NavBar pages={navigationLinks} />
+          <div>
+            {navigationRoutes}
+          </div>
+        </div>
+      </Router>
     </div>
   );
 }
