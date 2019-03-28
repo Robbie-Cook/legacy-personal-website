@@ -1,44 +1,48 @@
 // Container that takes a whole page
 
 import React, { Component } from 'react';
+import styled from 'styled-components'
+import Theme from '../../Theme.js'
+import Spacer from '../Spacer.js'
 
 /* Imports */
 /* Stylesheets etc. */
 
-// Styles for component
-let pageStyles = {
-  display: 'flex',
-  height: '100vh',
-}
+// Get theme
+const theme = Theme.getTheme()
 
-// Creates an inner div with overflow hidden if requireds
-class InnerDiv extends Component {
-  render() {
-    if( this.props.overflowHidden === 'true' ) {
-      return (
-        <div style={{display: 'flex', overflow: 'hidden', width: '100%'}}>
-            {this.props.children}
-        </div>
-      );
-    } else {
-      return (
-        <div style={{display: 'flex', width: '100%'}}>
-          {this.props.children}
-        </div>  
-      )
-    }
+// Styles for component
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: ${theme.pagePadding}
+
+  // Mobile styles
+  @media (max-width: ${theme.mobileSizeCutoff}) {
+    flex-direction: column;
+  }
+`
+// Spaces the content if required
+function getSpacer(spacer) {
+  // Add a spacer by default
+  if( spacer === true || spacer === undefined) {
+    return <Spacer />
+  } else {
+    return
   }
 }
+
 // Main Page component
 class Page extends Component {
   render() {
     return (
-        <div class="page" style={pageStyles}>
-          
-          <InnerDiv overflowHidden={this.props.overflowHidden}>
+      <div>
+        {getSpacer(this.props.spacer)}
+        <StyledPage>
             {this.props.children}
-          </InnerDiv>
-        </div>
+        </StyledPage>
+      </div>
     );
   }
 }

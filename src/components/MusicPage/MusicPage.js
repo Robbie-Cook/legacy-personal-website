@@ -14,7 +14,6 @@ class MusicPage extends Component {
       <div>
         <Page>
           <Container>
-          <Spacer/>
             <Heading type="h2">Music</Heading>
             <Row>
               <Col class="subpage">

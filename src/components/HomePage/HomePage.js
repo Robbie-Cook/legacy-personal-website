@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-
 /* Imports */
+import React, { Component } from 'react';
+import styled from 'styled-components'
+
 
 /* Components */
 import Heading from '../Heading.js'
@@ -13,19 +14,33 @@ import { Link } from "react-router-dom"
 /* Media */
 import me from '../../photos/me_irl3_cropped.jpg'
 
+/* Theme */
+import Theme from '../../Theme.js'
+
+let theme = Theme.getTheme()
+
+const MainInfo = styled.div`
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
 // Main Page component
 class HomePage extends Component {
-  render() {
+  render() {    
     return (
-      <Page overflowHidden='true'>
+      <Page spacer={false}>
         <div class="padder">
         </div>
-        <div class="mainInfo">
+        <MainInfo>
           <Heading>Robbie Cook</Heading>
           <p>
             Hello! I'm a developer living in Auckland, New Zealand.
             I love swimming, Netflix, and coding.
-                </p>
+          </p>
           <p>
             Check out my <Link to="/about">About</Link> page to find out more :)
                   </p>
@@ -40,7 +55,7 @@ class HomePage extends Component {
             </div>
 
           </div>
-        </div>
+        </MainInfo>
         <div class="fader">
           <div class="fadingElement">
           </div>

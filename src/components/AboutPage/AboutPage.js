@@ -55,7 +55,6 @@ class AboutPage extends Component {
 
         <Page>
           <Container>
-          <Spacer/>
             <Row>
               <Col>
                 <Heading type="h2">

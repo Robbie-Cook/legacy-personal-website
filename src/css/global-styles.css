@@ -50,9 +50,7 @@ a:hover {
   justify-content: center;
   flex-direction: row;
   }
-
-
-
+  
 .fader {
   position: relative;
   height: 100%;
@@ -72,22 +70,6 @@ a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0f0f', endColorstr='#08000000',GradientType=1 ); /* IE6-9 */
 }
 
-.mainInfo {
-    top: 12px;
-    position: relative;
-    min-width: 400px;
-    padding: 20px;
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* .padder {
-  width: 10%;
-} */
 
 .mainInfo p {
   max-width: 350px;

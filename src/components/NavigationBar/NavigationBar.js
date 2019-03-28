@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { Nav } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import styled from 'styled-components'
+import Theme from '../../Theme.js'
 
 import '../../css/bootstrap.min.css'
 import './styles.css'
@@ -36,43 +37,23 @@ function generateNavItems(pages) {
   return pagesJSX;
 }
 
-/*
- Temporary theme styles
- TODO: Move to context for whole site
-*/
-class Theme {
-  constructor() {
-    this.textColor = '#dcd6ce'
-
-    // Navbar styles
-    this.navbar = {
-      height: '56px',
-      textColor: this.textColor,
-      textColorHighlight: '#6385a9',
-      font: '\'Roboto Slab\', sans-serif',
-      padding: '10px 0 0 30px'
-    }
-    this.mobileSizeCutoff = '992px' // Has to be the same as bootstrap's breakpoint
-  }
-}
-let theme = new Theme()
+// Get theme
+const theme = Theme.getTheme() 
 
 /*
 Styles for NavigationBar
 */
 const NavWrapper = styled.div`
 
-  // Media queries 
+  // Mobile view 
   @media (max-width: ${theme.mobileSizeCutoff}) {
       height: auto!important;
+      padding: 10px;
+      border-bottom: 2px solid ${theme.navbar.borderColor}
   }
-
+  
   height: ${theme.navbar.height}
   padding: ${theme.navbar.padding}
-  & a {
-    color: ${theme.navbar.textColor}!important;
-    font-family: ${theme.navbar.font};
-  }
 
   & a:hover {
     color: ${theme.navbar.textColorHighlight}!important;
@@ -92,15 +73,27 @@ const NavWrapper = styled.div`
 // Code for responsive navbar
 const NavItemsWrapper = styled.div`
 
+    // Code for mobile styling
     @media (max-width: ${theme.mobileSizeCutoff}) {
       flex-direction: column;
+      margin-left: 0;
     }
 
     display: flex;
     flex-direction: row;
 
+    margin-left: ${theme.navbar.padding};
+
     & .nav-link {
-      margin-right: 10px!important
+      margin: 0;
+      padding: 0;
+      color: ${theme.navbar.textColor}!important;
+      font-family: ${theme.navbar.font};
+    }
+
+    // Space between each navbar item
+    & .nav-item {
+      margin: 20px 0px 0 20px;
     }
 `;
 
