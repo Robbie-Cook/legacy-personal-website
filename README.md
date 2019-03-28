@@ -10,11 +10,15 @@ on this website.
 Then I want to hook it up to a CMS system for GUI updates, so I can make changes without
 having to modify the code.
 
-## Bugfixes
-
+## Bugs
 * Fix overflow on pages due to navbar changes (including home pages) (bug)  
-* Fix issue where when navbar played with in mobile view and then opened again, navbar item's padding is gone
+
 * Fix browsing directly to /about or /music via url not working 
+
+### Known issues on the backburner
+ * Issue where when navbar played with in mobile view and then opened again, navbar item's are misaligned
+       * I blame bootstrap, so need to pull out bootstrap and replace it (see below) before this bug can be fixed
+       
 
 ## Features to come
 
@@ -29,6 +33,30 @@ having to modify the code.
 * 'Project' contribution page for contributed work on open source projects
 
 ### Polishing 
+
+* Replace bootstrap in navbar for the following reasons:
+  * The svg graphic for the navbar is hard to color with hex, so a bad workaround was made.
+  * Bug where you collapse navbar in mobile view and then expand page and nav items are misaligned hard to fix
+  * There are fixed values for the media queries -- I want to get these values from a theme variable
+  
+  Bootstrap can either be replaced with:
+   * My own component
+      * Pros:
+         * Highly configurable
+         * Can be compatible with central theme context to be implemented
+         * Small size and loading time
+      * Cons
+         * Not feature rich
+         * Sub standard animations
+         
+   * Another CSS framework
+       * Pros:
+         * Feature rich
+         * Nice animations
+         * Can learn new framework to save development and testing time
+      * Cons
+         * May not be configurable to a theme i.e. same problem as bootstrap -- need to look at rendering to be sure
+         
 
 * Centralised theme file like what exists in navbar
 
