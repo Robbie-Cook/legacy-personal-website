@@ -11,12 +11,14 @@ Then I want to hook it up to a CMS system for GUI updates, so I can make changes
 having to modify the code.
 
 ## Bugs
+
 * Fix overflow on pages due to navbar changes (including home pages) (bug)  
 
 * Fix browsing directly to /about or /music via url not working 
 
 ### Known issues on the backburner
  * Issue where when navbar played with in mobile view and then opened again, navbar item's are misaligned
+ 
        * I blame bootstrap, so need to pull out bootstrap and replace it (see below) before this bug can be fixed
        
 
@@ -59,8 +61,10 @@ having to modify the code.
          
 
 * Centralised theme file like what exists in navbar
+      * Pass in theme as context
 
 * Animations:
+   * Elastic ends of pages for mobile
    * Smoother transitions on photos, embedded content
    * Loading animation on pages
 
