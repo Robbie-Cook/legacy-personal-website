@@ -20,16 +20,17 @@ import Theme from '../../Theme.js'
 let theme = Theme.getTheme()
 
 const MainInfo = styled.div`
-  margin: 100px 0 100px 60px;
+  margin: 100px 0 100px 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 300px;
+  min-width: 600px;
 
   @media (max-width: ${theme.mobile.cutOff}) {
     justify-content: center;
     text-align: center;
     margin: 50px 20px 70px 20px;
+    min-width: auto;
   }
 
   & .iconWrapper {
@@ -43,13 +44,14 @@ const MainInfo = styled.div`
 const MainImage = styled.div`
 
   position: relative;
-  right: -${theme.page.padding.right}
-
+  left: -200px;
+  z-index: -1;
   // Code for mobile displays
 
   @media (max-width: ${theme.mobile.cutOff}) {
     width: 100%;
-    right: 0
+    right: 0;
+    left: 0;
   }
 
   & img {

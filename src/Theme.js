@@ -36,13 +36,14 @@ class Theme {
 
         return {
             textColor: centralTextColor,
+            // page styles
             page: {
                 heading: {
                     h1: {
                         margin: new Dimensions(0, 0, 13, 0),
                     }
                 },
-                padding: new Dimensions(0, 50),
+                padding: new Dimensions(0, 90),
                 item: {
                     padding: new Dimensions(0, 20),
                 },
@@ -53,14 +54,14 @@ class Theme {
                 textColor: centralTextColor,
                 textColorHighlight: '#6385a9',
                 font: '\'Roboto Slab\', sans-serif',
-                padding: new Dimensions(0, 50),
+                padding: new Dimensions(0, 90),
                 // Navbar border styles
                 border: {
                     backgroundColor: super.textColor,
                 },
             },
             mobile: {
-                cutOff: '992px', // Has to be the same as bootstrap's breakpoint
+                cutOff: '992px', // Has to be the same as bootstrap's breakpoint (for now)
                 padding: new Dimensions(20, 20),
                 navbar: {
                     padding: new Dimensions(20, 40)

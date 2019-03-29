@@ -64,9 +64,9 @@ class AboutPage extends Component {
               <Col>
 
                 <p>
-                  Hi! I'm a 22-year-old developer currently living in Auckland.
-                  I work in .NET for an Auckland software company.
-
+                  Hi! I'm a 22-year-old developer, currently working in .NET :).
+                  Check out my Github page <a href="https://github.com/Robbie-Cook">here</a> for a list of
+                  projects I am working on.
                   </p>
                   <p>
                   I studied at Otago University in Dunedin; where I got an Honours degree
