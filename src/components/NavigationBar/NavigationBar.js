@@ -46,9 +46,9 @@ Styles for NavigationBar
 const NavWrapper = styled.div`
 
   // Mobile view 
-  @media (max-width: ${theme.mobileSizeCutoff}) {
+  @media (max-width: ${theme.mobile.cutOff}) {
       height: auto!important;
-      padding: 10px;
+      padding: ${theme.mobile.navbar.padding};
       border-bottom: 2px solid ${theme.navbar.borderColor}
   }
   
@@ -64,9 +64,26 @@ const NavWrapper = styled.div`
   }
 
   & .navbar-toggler {
-    border-color ${theme.textColor}
+    border-color ${theme.textColor}!important
   }
 
+  & .nav-item {
+    @media (max-width: ${theme.mobile.cutOff}) {
+      margin-left: 5px!important;
+    }
+  }
+
+  & .nav-item:last-child {
+    @media (max-width: ${theme.mobile.cutOff}) {
+      margin-bottom: 20px
+    }
+  }
+
+  & .nav-item:first-child {
+    @media (max-width: ${theme.mobile.cutOff}) {
+      margin-left: 0px
+    }
+  }
 
 `;
 
@@ -74,7 +91,7 @@ const NavWrapper = styled.div`
 const NavItemsWrapper = styled.div`
 
     // Code for mobile styling
-    @media (max-width: ${theme.mobileSizeCutoff}) {
+    @media (max-width: ${theme.mobile.cutOff}) {
       flex-direction: column;
       margin-left: 0;
     }

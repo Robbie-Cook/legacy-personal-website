@@ -55,11 +55,14 @@ class AboutPage extends Component {
 
         <Page>
           <Container>
+          <Row>
+              <Col>
+                <Heading type="h2">About</Heading>
+              </Col>
+            </Row>
             <Row>
               <Col>
-                <Heading type="h2">
-                  About me
-                </Heading>
+
                 <p>
                   Hi! I'm a 22-year-old developer currently living in Auckland.
                   I work in .NET for an Auckland software company.

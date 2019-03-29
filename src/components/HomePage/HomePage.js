@@ -20,47 +20,87 @@ import Theme from '../../Theme.js'
 let theme = Theme.getTheme()
 
 const MainInfo = styled.div`
-  margin-left: 40px;
+  margin: 100px 0 100px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  min-width: 300px;
+
+  @media (max-width: ${theme.mobile.cutOff}) {
+    justify-content: center;
+    text-align: center;
+    margin: 50px 20px 70px 20px;
+  }
+
+  & .iconWrapper {
+    @media (max-width: ${theme.mobile.cutOff}) {
+      justify-content: center
+    }
+  }
+
 `;
+
+const MainImage = styled.div`
+
+  position: relative;
+  right: -${theme.page.padding.right}
+
+  // Code for mobile displays
+
+  @media (max-width: ${theme.mobile.cutOff}) {
+    width: 100%;
+    right: 0
+  }
+
+  & img {
+    // Mobile mode
+    @media (max-width: ${theme.mobile.cutOff}) {
+      width: 100%;
+    }
+  }
+
+  & .fadingElement {
+    // Mobile mode
+    @media (max-width: ${theme.mobile.cutOff}) {
+      opacity: 0
+    }
+  }
+`;
+
+
 
 // Main Page component
 class HomePage extends Component {
-  render() {    
+  render() {
     return (
-      <Page spacer={false}>
-        <div class="padder">
-        </div>
-        <MainInfo>
-          <Heading>Robbie Cook</Heading>
-          <p>
-            Hello! I'm a developer living in Auckland, New Zealand.
-            I love swimming, Netflix, and coding.
+      <Page spacer={false} style={{overflowX: 'hidden'}}>
+          <div class="padder" />
+          <MainInfo>
+            <Heading style={{marginLeft: 0}}>Robbie Cook</Heading>
+            <p>
+              Hello! I'm a developer living in Auckland, New Zealand.
+              I love swimming, Netflix, and coding.
           </p>
-          <p>
-            Check out my <Link to="/about">About</Link> page to find out more :)
+            <p>
+              Check out my <Link to="/about">About</Link> page to find out more :)
                   </p>
-          <div class="iconWrapper">
-            <a href="https://github.com/Robbie-Cook"><i class="icon fab fa-github-square"></i></a>
-            <a href="https://www.linkedin.com/in/robbie-cook/"><i class="icon fab fa-linkedin"></i></a>
-            <div class="iconWrapper2">
-              <a href="mailto:robbie@robbie.pw">
-                <i class="icon fas fa-envelope-square"></i>
-                <span>robbie@robbie.pw</span>
-              </a>
-            </div>
+            <div class="iconWrapper">
+              <a href="https://github.com/Robbie-Cook"><i class="icon fab fa-github-square"></i></a>
+              <a href="https://www.linkedin.com/in/robbie-cook/"><i class="icon fab fa-linkedin"></i></a>
+              <div class="iconWrapper2">
+                <a href="mailto:robbie@robbie.pw">
+                  <i class="icon fas fa-envelope-square"></i>
+                  <span>robbie@robbie.pw</span>
+                </a>
+              </div>
 
-          </div>
-        </MainInfo>
-        <div class="fader">
-          <div class="fadingElement">
-          </div>
-          <img src={me} style={{ height: '100%' }} />
-        </div>
+            </div>
+          </MainInfo>
+          <MainImage>
+            <div class="fadingElement">
+            </div>
+            <img src={me} style={{ height: '100%' }} />
+          </MainImage>
       </Page>
     );
   }

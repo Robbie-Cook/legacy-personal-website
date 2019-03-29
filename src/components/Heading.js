@@ -1,13 +1,21 @@
 /* Heading section for a page */
 import styled from "styled-components";
 import React, { Component } from 'react';
+import Theme from '../Theme.js'
 
-/* Get appropriate heading */
+const theme = Theme.getTheme()
+
+/* 
+  Get appropriate heading
+  Type: h1, h2, etc,
+  Content: The child elements
+  */
 function getHeading(type, content) {
   const H1 = styled.h1`
   font-family: 'Roboto', sans-serif;
   font-size: 50px;
   font-weight: bold
+  margin: ${theme.page.heading.h1.margin}
   `
   
   // H2 inherits and overrides styles from H1
@@ -21,7 +29,6 @@ function getHeading(type, content) {
     }
 }
 
-
 // Main Page component
 class Heading extends Component {
   render() {
@@ -32,19 +39,4 @@ class Heading extends Component {
   }
 }
 
-class H1 extends Component {
-  render() {
-    return (
-       <h1>{this.props.children}</h1> 
-    );
-  }
-}
-
-class H2 extends Component {
-  render() {
-    return (
-       <h2>{this.props.children}</h2> 
-    );
-  }
-}
 export default Heading;

@@ -6,15 +6,21 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Heading from '../Heading'
 import Page from '../Page/Page'
 import Spacer from '../Spacer'
+import Theme from '../../Theme.js'
+
+const theme = Theme.getTheme()
 
 // Main Page component
 class MusicPage extends Component {
   render() {
     return (
-      <div>
         <Page>
           <Container>
-            <Heading type="h2">Music</Heading>
+            <Row>
+              <Col>
+                <Heading type="h2">Music</Heading>
+              </Col>
+            </Row>
             <Row>
               <Col class="subpage">
                 <iframe width="100%" height="450" scrolling="yes" frameborder="no" allow="autoplay"
@@ -32,7 +38,6 @@ class MusicPage extends Component {
             </Row>
           </Container>
         </Page>
-      </div>
     );
   }
 }

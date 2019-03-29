@@ -13,15 +13,36 @@ const theme = Theme.getTheme()
 
 // Styles for component
 const StyledPage = styled.div`
+
+  //  Overwrite bootstrap for containers
+  & .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  padding: ${theme.pagePadding}
+  padding: ${theme.page.padding};
 
   // Mobile styles
-  @media (max-width: ${theme.mobileSizeCutoff}) {
+  @media (max-width: ${theme.mobile.cutOff}) {
     flex-direction: column;
+    padding: ${theme.mobile.padding}
   }
+
+  // Bootstrap overrides
+  & .row {
+    margin: 0
+    @media (max-width: ${theme.mobile.cutOff}) {
+      flex-direction: column;
+    }
+  }
+
+  & .col {
+    padding: ${theme.page.item.padding};
+  }
+
 `
 // Spaces the content if required
 function getSpacer(spacer) {
@@ -37,7 +58,7 @@ function getSpacer(spacer) {
 class Page extends Component {
   render() {
     return (
-      <div>
+      <div style={this.props.style}>
         {getSpacer(this.props.spacer)}
         <StyledPage>
             {this.props.children}
