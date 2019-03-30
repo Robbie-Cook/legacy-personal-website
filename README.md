@@ -5,11 +5,10 @@ This is a repository of my personal website [http://robbie.pw](http://robbie.pw)
 It's a very simple website with a few pages, and it should be updated regularly.
 
 Some key dependencies that this project makes use of are:
-
-      * React styled-components
+* React styled-components
             I use styled-components a lot in this website. It allows me to apply CSS directly to components, and it
             comes with a SASS-like preprocessor, which allows me to define CSS for child elements      
-      * Material-UI
+* Material-UI
             Currently implementing this for the Navbar (i.e. AppBar, a la material-ui)
             This UI is beautiful and extensible, and has many advantages over bootstrap, which is
             what is being phased out of my website.
