@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 /* Imports */
-import { Container, Row, Col } from 'react-bootstrap'
 import Page from '../Page/Page'
-import Spacer from '../Spacer'
 import Heading from '../Heading'
+import {Row, Col, Container} from '../Wrappers'
 
 /* Stylesheets etc. */
 import './index.css'

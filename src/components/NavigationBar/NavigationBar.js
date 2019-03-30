@@ -1,157 +1,110 @@
-/* 
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
 
-Navigation Bar 
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
 
-*/
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { Nav } from 'react-bootstrap'
-import Navbar from 'react-bootstrap/Navbar'
-import styled from 'styled-components'
-import Theme from '../../Theme.js'
+class NavigationBar extends React.Component {
+  state = {
+    auth: true,
+    anchorEl: null,
+  };
 
-import '../../css/bootstrap.min.css'
-import './styles.css'
+  handleChange = event => {
+    this.setState({ auth: event.target.checked });
+  };
 
-/*
-Generate navigation items jsx array from given array of pages
-*/
-function generateNavItems(pages) {
-  let pagesJSX = []
-  pages.forEach(
-    function (p) {
-      // Mark the active page as active
-      // Known issue -- works for mywebsite.com/about, but not mywebsite.com/about/
-      let url = window.location.href
-      let lastURL = url.substr(url.lastIndexOf("/"))
-      let linkDetails = (lastURL === p.path) ? "nav-item active" : "nav-item";
+  handleMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
 
-      pagesJSX.push(
-        <li class={linkDetails}>
-          <Nav.Link>
-            <Link class="nav-link" style={{ marginRight: 30 }} to={p.path}>{p.name}</Link>
-          </Nav.Link>
-        </li>
-      )
-    });
-  return pagesJSX;
-}
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 
-// Get theme
-const theme = Theme.getTheme() 
-
-/*
-Styles for NavigationBar
-*/
-const NavWrapper = styled.div`
-
-  // Mobile view 
-  @media (max-width: ${theme.mobile.cutOff}) {
-      height: auto!important;
-      padding: ${theme.mobile.navbar.padding};
-      border-bottom: 2px solid ${theme.navbar.borderColor}
-  }
-  
-  height: ${theme.navbar.height}
-  padding: ${theme.navbar.padding}
-
-  & a:hover {
-    color: ${theme.navbar.textColorHighlight}!important;
-  }
-
-  & .navbar-toggler-icon {
-      background-image:none;
-  }
-
-  & .navbar-toggler {
-    border-color ${theme.textColor}!important
-  }
-
-  & .nav-item {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-left: 5px!important;
-    }
-  }
-
-  & .nav-item:last-child {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-bottom: 20px
-    }
-  }
-
-  & .nav-item:first-child {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-left: 0px
-    }
-  }
-
-`;
-
-// Code for responsive navbar
-const NavItemsWrapper = styled.div`
-
-    // Code for mobile styling
-    @media (max-width: ${theme.mobile.cutOff}) {
-      flex-direction: column;
-      margin-left: 0;
-    }
-
-    display: flex;
-    flex-direction: row;
-
-    margin-left: ${theme.navbar.padding};
-
-    & .nav-link {
-      margin: 0;
-      padding: 0;
-      color: ${theme.navbar.textColor}!important;
-      font-family: ${theme.navbar.font};
-    }
-
-    // Space between each navbar item
-    & .nav-item {
-      margin: 20px 0px 0 20px;
-    }
-`;
-
-/* Replace the navigation bar logo with colored divs for more control */
-function replaceNavIcon() {
-  var navIconsWrapper = document.createElement("div");
-  navIconsWrapper.className += "nav-icons-wrapper"
-  for (let i = 0; i < 3; i++) {
-    var navIcon = document.createElement("div")
-    navIconsWrapper.appendChild(navIcon)
-  }
-  document.getElementsByClassName('navbar-toggler')[0].replaceChild(navIconsWrapper,
-    document.getElementsByClassName('navbar-toggler-icon')[0])
-}
-
-
-class NavigationBar extends Component {
-  componentDidMount() {
-    replaceNavIcon()
-  }
   render() {
-    /* Navigation links passed through this.props.pages */
+    const { classes } = this.props;
+    const { auth, anchorEl } = this.state;
+    const open = Boolean(anchorEl);
+
     return (
-      <NavWrapper>
-        <Navbar expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <NavItemsWrapper>
-                {
-                  /*    Generate the nav items (e.g. Home, etc.)
-                   */
-                  generateNavItems(this.props.pages)
-                }
-              </NavItemsWrapper>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </NavWrapper>
+      <div className={classes.root}>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
+            }
+            label={auth ? 'Logout' : 'Login'}
+          />
+        </FormGroup>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              Photos
+            </Typography>
+            {auth && (
+              <div>
+                <IconButton
+                  aria-owns={open ? 'menu-appbar' : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={open}
+                  onClose={this.handleClose}
+                >
+                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                </Menu>
+              </div>
+            )}
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }
 
-export default NavigationBar;
+NavigationBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(NavigationBar);
