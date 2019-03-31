@@ -28,9 +28,9 @@ having to modify the code, perhaps with Gatsby?
 
 * Polish home screen
    * Fix misalignment of home page on mobile (bug/feature)
-   * Polish home page just like on OneNote now
 
 * Add awesome videos of me playing music
+   * Some to process on my phone
 
 * 'Project' contribution page for contributed work on open source projects
 
