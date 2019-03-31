@@ -13,63 +13,36 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import {Link} from 'react-router-dom'
 
-const styles = {
-  // root: {
-  //   flexGrow: 1,
-  // },
-  // grow: {
-  //   flexGrow: 1,
-  // },
-  // menuButton: {
-  //   marginLeft: -12,
-  //   marginRight: 20,
-  // },
-};
 
 class NavigationBar extends React.Component {
-  state = {
-    auth: true,
-    anchorEl: null,
-  };
 
-  handleChange = event => {
-    this.setState({ auth: event.target.checked });
-  };
-
-  handleMenu = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleClose = () => {
-    this.setState({ anchorEl: null });
+  // Generate the links to other pages
+  // passed in via props.pages
+  generateNavItems() {
+    let array = []
+    for( let item of this.props.pages ) {
+      array.push(<Tab label={item.name} to={item.path} component={Link} />)
+    }
+    return array;
   };
 
   render() {
-    const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
             <Tabs>
-              <Tab label="Item 1"></Tab>
-              <Tab label="Item 2"></Tab>
-              <Tab label="Item 3"></Tab>
-              <Tab label="Item 4"></Tab>
+              {this.generateNavItems()}
             </Tabs>
           </Toolbar>
         </AppBar>
-      </div>
     );
   }
 }
 
-NavigationBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavigationBar);
+export default (NavigationBar);
