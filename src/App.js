@@ -21,14 +21,10 @@ function AppRouter() {
     new MyLink("About", "/about", () => <AboutPage />),
     new MyLink("Music", "/music", () => <MusicPage />),
   ]
+  
   let navigationRoutes = []
-
   for (let item of navigationLinks) {
-    let route = <Route path={item.path} component={item.component} />;
-    if (item.exact) {
-      route = <Route exact path={item.path} component={item.component} />
-    }
-    navigationRoutes.push(route)
+    navigationRoutes.push(item.getRoute())
   }
 
   return (

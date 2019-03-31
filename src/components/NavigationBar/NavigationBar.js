@@ -11,18 +11,20 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+  // root: {
+  //   flexGrow: 1,
+  // },
+  // grow: {
+  //   flexGrow: 1,
+  // },
+  // menuButton: {
+  //   marginLeft: -12,
+  //   marginRight: 20,
+  // },
 };
 
 class NavigationBar extends React.Component {
@@ -45,8 +47,6 @@ class NavigationBar extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
-    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -55,21 +55,12 @@ class NavigationBar extends React.Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            {auth && (
-              <div>
-                <IconButton
-                  aria-owns={open ? 'menu-appbar' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="inherit"
-                >
-                </IconButton>
-                <div>
-                {/* {this.state.anchorEl} */}
-              </div>
-              </div>
-
-            )}
+            <Tabs>
+              <Tab label="Item 1"></Tab>
+              <Tab label="Item 2"></Tab>
+              <Tab label="Item 3"></Tab>
+              <Tab label="Item 4"></Tab>
+            </Tabs>
           </Toolbar>
         </AppBar>
       </div>

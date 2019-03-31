@@ -16,6 +16,7 @@ body {
     font-family: var(--pFontFamily);
     color: var(--textColor);
     background-color: var(--pageBackgroundColor);
+    margin: 0;
 }
 
 a {
