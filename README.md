@@ -23,8 +23,13 @@ having to modify the code, perhaps with Gatsby?
 
 ## Features to come
 
+* Replacing bootstrap with material-ui on branch removeBootstrap (soon to be merged).
+   * Change color of navbar by customising material-ui (https://material-ui.com/customization)
+   * Hook up menu of links to navbar icon
+   * Hide navbar icon at certain width (media query)
+
 * Fix browsing directly to /about or /music via url not working 
-   - seems to be working on localhost now, not on server 
+   * Seems to be working on localhost now, not on server 
 
 * Polish home screen
    * Fix misalignment of home page on mobile (bug/feature)
