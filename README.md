@@ -18,8 +18,8 @@ In the near future, I want to make this website smoother with animations.
 Then I want to start making open source contributions to cool projects, and showcase the contributions
 on this website.
 
-Then I want to hook it up to a CMS system for GUI updates, so I can make changes without
-having to modify the code, perhaps with Gatsby?
+Then I want a GUI to make updates to, so I can make changes without
+having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
 
