@@ -29,7 +29,6 @@ class NavigationBar extends React.Component {
   };
 
   render() {
-
     return (
         <AppBar position="static">
           <Toolbar>
