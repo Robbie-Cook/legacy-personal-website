@@ -21,26 +21,18 @@ const StyledPage = styled.div`
     margin: 0;
   }
 
+  & p {
+    margin: 10px 0;
+  }
+
   display: flex;
   flex-direction: row;
   padding: ${theme.page.padding};
 
   // Mobile styles
-  @media (max-width: ${theme.mobile.cutOff}) {
+  @media (max-width: ${theme.mobile.cutOff}px) {
     flex-direction: column;
     padding: ${theme.mobile.padding}
-  }
-
-  // Bootstrap overrides
-  & .row {
-    margin: 0
-    @media (max-width: ${theme.mobile.cutOff}) {
-      flex-direction: column;
-    }
-  }
-
-  & .col {
-    padding: ${theme.page.item.padding};
   }
 
 `

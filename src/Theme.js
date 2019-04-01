@@ -36,6 +36,7 @@ class Theme {
 
         return {
             textColor: centralTextColor,
+            backgroundColor: '#0f0f0f',
             // page styles
             page: {
                 heading: {
@@ -61,7 +62,7 @@ class Theme {
                 },
             },
             mobile: {
-                cutOff: '992px', // Has to be the same as bootstrap's breakpoint (for now)
+                cutOff: '992', // Has to be the same as bootstrap's breakpoint (for now)
                 padding: new Dimensions(20, 20),
                 navbar: {
                     padding: new Dimensions(20, 40)
