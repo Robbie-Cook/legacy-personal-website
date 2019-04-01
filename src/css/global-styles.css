@@ -5,17 +5,12 @@
 /* Global variables (colour schemes, fonts, etc.) */
 @import 'global-variables.css';
 
-@media only screen and (min-width: 1000px) {
-  .mainInfo {
-    right: -170px;
-    z-index: 2;
-  }
-}
 
 body {
     font-family: var(--pFontFamily);
     color: var(--textColor);
     background-color: var(--pageBackgroundColor);
+    margin: 0;
 }
 
 a {
@@ -26,31 +21,6 @@ a:hover {
   color: #2279d6
 }
 
-.icon {
-  font-size: 33px;
-  padding: 0 4px;
-  height: 100%;
-}
-
-.iconWrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.iconWrapper2 {
-    background-color: #2a2a2a;
-    height: 100%;
-    border-radius: 5px;
-    padding: 0 5px 0 0;
-}
-
-.iconWrapper2 a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  }
-  
 
 .fadingElement {
   width: 300px;

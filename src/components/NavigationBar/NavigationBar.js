@@ -1,157 +1,151 @@
-/* 
-
-Navigation Bar 
-
-*/
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu'
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import { Link } from 'react-router-dom'
-import { Nav } from 'react-bootstrap'
-import Navbar from 'react-bootstrap/Navbar'
-import styled from 'styled-components'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Theme from '../../Theme.js'
 
-import '../../css/bootstrap.min.css'
-import './styles.css'
+const theme = Theme.getTheme()
 
-/*
-Generate navigation items jsx array from given array of pages
-*/
-function generateNavItems(pages) {
-  let pagesJSX = []
-  pages.forEach(
-    function (p) {
-      // Mark the active page as active
-      // Known issue -- works for mywebsite.com/about, but not mywebsite.com/about/
-      let url = window.location.href
-      let lastURL = url.substr(url.lastIndexOf("/"))
-      let linkDetails = (lastURL === p.path) ? "nav-item active" : "nav-item";
+class NavigationBar extends React.Component {
 
-      pagesJSX.push(
-        <li class={linkDetails}>
-          <Nav.Link>
-            <Link class="nav-link" style={{ marginRight: 30 }} to={p.path}>{p.name}</Link>
-          </Nav.Link>
-        </li>
-      )
-    });
-  return pagesJSX;
-}
-
-// Get theme
-const theme = Theme.getTheme() 
-
-/*
-Styles for NavigationBar
-*/
-const NavWrapper = styled.div`
-
-  // Mobile view 
-  @media (max-width: ${theme.mobile.cutOff}) {
-      height: auto!important;
-      padding: ${theme.mobile.navbar.padding};
-      border-bottom: 2px solid ${theme.navbar.borderColor}
-  }
   
-  height: ${theme.navbar.height}
-  padding: ${theme.navbar.padding}
+  constructor(props) {
+    super(props);
+    this.anchorEl = React.createRef();
+    this.state = { open: false }
 
-  & a:hover {
-    color: ${theme.navbar.textColorHighlight}!important;
+    // Bind 'this' to functions so functions can use 'this' keyword 
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
-  & .navbar-toggler-icon {
-      background-image:none;
-  }
 
-  & .navbar-toggler {
-    border-color ${theme.textColor}!important
-  }
-
-  & .nav-item {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-left: 5px!important;
+  // Generate the links to other pages
+  // passed in via props.pages
+  generateNavItems() {
+    let array = []
+    for (let item of this.props.pages) {
+      array.push(<Tab label={item.name} to={item.path} component={Link} />)
     }
+    return array;
+  };
+
+  generateNavMenuItems() {
+    let array = []
+    for (let item of this.props.pages) {
+      array.push(<MenuItem component={Link} to={item.path}>{item.name}</MenuItem>)
+    }
+    return array;
   }
 
-  & .nav-item:last-child {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-bottom: 20px
-    }
+  // Toggle 'open' state of navmenu
+  handleToggle() {
+    this.setState(prevState => ({
+      open: !prevState.open
+    }));
   }
 
-  & .nav-item:first-child {
-    @media (max-width: ${theme.mobile.cutOff}) {
-      margin-left: 0px
+  handleClose(event) {
+    if (this.anchorEl.current.contains(event.target)) {
+      return;
     }
+    this.setState({ open: false })
   }
 
-`;
-
-// Code for responsive navbar
-const NavItemsWrapper = styled.div`
-
-    // Code for mobile styling
-    @media (max-width: ${theme.mobile.cutOff}) {
-      flex-direction: column;
-      margin-left: 0;
-    }
-
-    display: flex;
-    flex-direction: row;
-
-    margin-left: ${theme.navbar.padding};
-
-    & .nav-link {
-      margin: 0;
-      padding: 0;
-      color: ${theme.navbar.textColor}!important;
-      font-family: ${theme.navbar.font};
-    }
-
-    // Space between each navbar item
-    & .nav-item {
-      margin: 20px 0px 0 20px;
-    }
-`;
-
-/* Replace the navigation bar logo with colored divs for more control */
-function replaceNavIcon() {
-  var navIconsWrapper = document.createElement("div");
-  navIconsWrapper.className += "nav-icons-wrapper"
-  for (let i = 0; i < 3; i++) {
-    var navIcon = document.createElement("div")
-    navIconsWrapper.appendChild(navIcon)
-  }
-  document.getElementsByClassName('navbar-toggler')[0].replaceChild(navIconsWrapper,
-    document.getElementsByClassName('navbar-toggler-icon')[0])
-}
 
 
-class NavigationBar extends Component {
-  componentDidMount() {
-    replaceNavIcon()
-  }
+
   render() {
-    /* Navigation links passed through this.props.pages */
+      // CSS Overrides for AppBar e.g. Change color
+    const StyledAppBar = withStyles({
+      root: {
+        backgroundColor: theme.backgroundColor,
+      },
+    })(AppBar);
+
+    const StyledIconButton =  withStyles({
+      root: {
+        // Not ideal, should be done with breakpoints in theme
+        // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
+        [`@media (min-width:${theme.mobile.cutOff}px)`]: { 
+          display: 'none',
+        }
+      },
+    })(IconButton);
+
+    const StyledTabs = withStyles({
+
+      root: {
+        // Not ideal, should be done with breakpoints in theme
+        // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
+        [`@media (max-width:${theme.mobile.cutOff-1}px)`]: { 
+          display: 'none',
+        }
+      },
+    })(Tabs);
+  
     return (
-      <NavWrapper>
-        <Navbar expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <NavItemsWrapper>
-                {
-                  /*    Generate the nav items (e.g. Home, etc.)
-                   */
-                  generateNavItems(this.props.pages)
-                }
-              </NavItemsWrapper>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </NavWrapper>
+        <StyledAppBar position="static" color="primary" colorPrimary>
+          <Toolbar>
+            <div>
+              <div>
+                <StyledIconButton
+                  buttonRef={this.anchorEl}
+                  aria-owns={this.state.open ? "menu-list-grow" : undefined}
+                  aria-haspopup="true"
+                  aria-label="Menu"
+                  color="inherit"
+                  onClick={this.handleToggle}
+                >
+                  <MenuIcon />
+                </StyledIconButton>
+                <Popper
+                  open={this.state.open}
+                  anchorEl={this.anchorEl.current}
+                  transition
+                  disablePortal
+                >
+                  {({ TransitionProps, placement }) => (
+                    <Grow
+                      {...TransitionProps}
+                      id="menu-list-grow"
+                      style={{
+                        transformOrigin:
+                          placement === "bottom" ? "center top" : "center bottom"
+                      }}
+                    >
+                      <Paper>
+                        <ClickAwayListener onClickAway={this.handleClose}>
+                          <MenuList>
+                            {this.generateNavMenuItems()}
+                          </MenuList>
+                        </ClickAwayListener>
+                      </Paper>
+                    </Grow>
+                  )}
+                </Popper>
+              </div>
+            </div>
+            <StyledTabs>
+              {this.generateNavItems()}
+            </StyledTabs>
+          </Toolbar>
+        </StyledAppBar>
     );
   }
 }
 
-export default NavigationBar;
+export default (NavigationBar);

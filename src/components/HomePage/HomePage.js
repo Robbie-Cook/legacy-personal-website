@@ -26,7 +26,7 @@ const MainInfo = styled.div`
   justify-content: center;
   min-width: 600px;
 
-  @media (max-width: ${theme.mobile.cutOff}) {
+  @media (max-width: ${theme.mobile.cutOff}px) {
     justify-content: center;
     text-align: center;
     margin: 50px 20px 70px 20px;
@@ -34,7 +34,7 @@ const MainInfo = styled.div`
   }
 
   & .iconWrapper {
-    @media (max-width: ${theme.mobile.cutOff}) {
+    @media (max-width: ${theme.mobile.cutOff}px) {
       justify-content: center
     }
   }
@@ -48,7 +48,7 @@ const MainImage = styled.div`
   z-index: -1;
   // Code for mobile displays
 
-  @media (max-width: ${theme.mobile.cutOff}) {
+  @media (max-width: ${theme.mobile.cutOff}px) {
     width: 100%;
     right: 0;
     left: 0;
@@ -56,19 +56,51 @@ const MainImage = styled.div`
 
   & img {
     // Mobile mode
-    @media (max-width: ${theme.mobile.cutOff}) {
+    @media (max-width: ${theme.mobile.cutOff}px) {
       width: 100%;
     }
   }
 
   & .fadingElement {
     // Mobile mode
-    @media (max-width: ${theme.mobile.cutOff}) {
+    @media (max-width: ${theme.mobile.cutOff}px) {
       opacity: 0
     }
   }
 `;
 
+const IconWrapper = styled.div`
+display: flex;
+flex-direction: row;
+margin-top: 10px;
+
+
+& .icon {
+  font-size: 33px;
+  padding: 0 4px;
+  height: 100%;
+}
+
+& .iconWrapper2 {
+    background-color: #2a2a2a;
+    height: 100%;
+    border-radius: 5px;
+    padding: 0 5px 0 0;
+}
+
+& .iconWrapper2 a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  }
+  
+
+@media (max-width: ${theme.mobile.cutOff}px) {
+  justify-content: center
+}
+
+`
 
 
 // Main Page component
@@ -85,8 +117,8 @@ class HomePage extends Component {
           </p>
             <p>
               Check out my <Link to="/about">About</Link> page to find out more :)
-                  </p>
-            <div class="iconWrapper">
+            </p>
+            <IconWrapper>
               <a href="https://github.com/Robbie-Cook"><i class="icon fab fa-github-square"></i></a>
               <a href="https://www.linkedin.com/in/robbie-cook/"><i class="icon fab fa-linkedin"></i></a>
               <div class="iconWrapper2">
@@ -95,8 +127,7 @@ class HomePage extends Component {
                   <span>robbie@robbie.pw</span>
                 </a>
               </div>
-
-            </div>
+            </IconWrapper>
           </MainInfo>
           <MainImage>
             <div class="fadingElement">
