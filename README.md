@@ -23,17 +23,10 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
 
-* Close menu automatically when link is pressed on mobile menu
-
-* Fix spacing between containers on mobile
-     * h1's too far from the top and rows not seperated enough in column view
-
-* Fix browsing directly to /about or /music via url not working 
-   * Seems to be working on localhost now, not on server 
-
-* Polish home screen
-   * Fix misalignment of home page on mobile (bug/feature)
-
+* Add Express integration
+            * Fix issue of direct links aren't working (e.g. robbie.pw/about)
+            * More advanced server side rendering
+               
 * Add awesome videos of me playing music
    * Some to process on my phone
 
