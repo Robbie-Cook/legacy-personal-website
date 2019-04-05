@@ -39,11 +39,6 @@ class Theme {
             backgroundColor: '#0f0f0f',
             // page styles
             page: {
-                heading: {
-                    h1: {
-                        margin: new Dimensions(0, 0, 13, 0),
-                    }
-                },
                 padding: new Dimensions(0, 90),
                 item: {
                     padding: new Dimensions(0, 20),
@@ -62,6 +57,7 @@ class Theme {
                 },
             },
             mobile: {
+                colMargin: new Dimensions(0, 20, 20, 20),
                 cutOff: '992', // Has to be the same as bootstrap's breakpoint (for now)
                 padding: new Dimensions(20, 20),
                 navbar: {

@@ -10,12 +10,16 @@ const theme = Theme.getTheme()
   Type: h1, h2, etc,
   Content: The child elements
   */
-function getHeading(type, content) {
+function getHeading(type, content, style) {
   const H1 = styled.h1`
   font-family: 'Roboto', sans-serif;
   font-size: 50px;
-  font-weight: bold
-  margin: ${theme.page.heading.h1.margin}
+  font-weight: bold;
+  margin: 0 0 10px 0
+
+  @media (max-width: ${theme.mobile.cutOff}px) {
+    margin: ${theme.mobile.colMargin}
+  }
   `
   
   // H2 inherits and overrides styles from H1
@@ -23,9 +27,9 @@ function getHeading(type, content) {
   font-size: 40px
   `
     if( type === 'h1' || type === undefined) {
-      return <H1>{content}</H1> 
+      return <H1 style={style}>{content}</H1> 
     } else if (type === 'h2') {
-      return <H2>{content}</H2>
+      return <H2 style={style}>{content}</H2>
     }
 }
 
@@ -33,7 +37,7 @@ function getHeading(type, content) {
 class Heading extends Component {
   render() {
     return (
-        getHeading(this.props.type, this.props.children)
+        getHeading(this.props.type, this.props.children, this.props.style)
         // this.props.children
     );
   }

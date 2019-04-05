@@ -110,7 +110,7 @@ class HomePage extends Component {
       <Page spacer={false} style={{overflowX: 'hidden'}}>
           <div class="padder" />
           <MainInfo>
-            <Heading style={{marginLeft: 0}}>Robbie Cook</Heading>
+            <Heading style={{margin: 0}}>Robbie Cook</Heading>
             <p>
               Hello! I'm a developer living in Auckland, New Zealand.
               I love swimming, Netflix, and coding.

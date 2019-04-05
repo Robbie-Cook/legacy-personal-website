@@ -43,10 +43,14 @@ class NavigationBar extends React.Component {
     return array;
   };
 
+  handleMobileNavClick() {
+    this.setState({open: false})
+  }
+
   generateNavMenuItems() {
     let array = []
     for (let item of this.props.pages) {
-      array.push(<MenuItem component={Link} to={item.path}>{item.name}</MenuItem>)
+      array.push(<MenuItem onClick={this.handleMobileNavClick} component={Link} to={item.path}>{item.name}</MenuItem>)
     }
     return array;
   }
@@ -64,9 +68,6 @@ class NavigationBar extends React.Component {
     }
     this.setState({ open: false })
   }
-
-
-
 
   render() {
       // CSS Overrides for AppBar e.g. Change color

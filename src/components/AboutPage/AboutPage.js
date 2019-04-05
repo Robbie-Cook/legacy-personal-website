@@ -3,18 +3,23 @@ import React, { Component } from 'react';
 /* Imports */
 import Page from '../Page/Page'
 import Heading from '../Heading'
-import {Row, Col, Container} from '../Wrappers'
+import { Row, Col, Container } from '../Wrappers'
 
 /* Stylesheets etc. */
 import './index.css'
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {Carousel} from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel';
 
 /* Media */
-import photo1 from '../../photos/aboutImage.jpg'
-import photo2 from '../../photos/aboutImage2.jpg'
+
+// Import all photos from carousel folder
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const images = importAll(require.context('../../photos/carousel/', false, /\.(png|jpe?g|svg)$/));
 
 /* Represents a photo */
 class Photo {
@@ -25,22 +30,15 @@ class Photo {
   }
 }
 
-// Photo array
-let photos = [
-  new Photo(photo1, "Me in Christchurch"),
-  new Photo(photo2, "My library desk in Dunedin")
-]
-
 // Generate a single carousel element for a photo
 function getCarouselPhotos() {
-    let photoJsxArray = []
-    for(let item of photos) {
-     photoJsxArray.push(<div>
-        <img src={item.image} alt={item.altText} className="carouselImage"/>
-        <p className="legend">{item.legend}</p>
+  let photoJsxArray = []
+  for (let item of images) {
+    photoJsxArray.push(<div>
+      <img src={item} className="carouselImage" />
     </div>)
-    }
-    return photoJsxArray
+  }
+  return photoJsxArray
 }
 
 let carouselStyles = {
@@ -52,47 +50,43 @@ class AboutPage extends Component {
   render() {
     return (
 
-        <Page>
-          <Container>
+      <Page>
+        <Container>
+          <Heading type="h2">About</Heading>
           <Row>
-              <Col>
-                <Heading type="h2">About</Heading>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+            <Col>
 
-                <p>
-                  Hi! I'm a 22-year-old developer, currently working in .NET :).
+              <p>
+                Hi! I'm a 22-year-old developer, currently working in .NET :).
                   Check out my Github page <a href="https://github.com/Robbie-Cook">here</a> for a list of
-                  projects I am working on.
+                projects I am working on.
                   </p>
-                  <p>
-                  I studied at Otago University in Dunedin; where I got an Honours degree
-                  in Computer Science and worked as a lab demonstrator for Python and Java students.
-                  I also did some Disabilities tutoring for the University as well in my final year.
+              <p>
+                I studied at Otago University in Dunedin; where I got an Honours degree
+                in Computer Science and worked as a lab demonstrator for Python and Java students.
+                I also did some Disabilities tutoring for the University as well in my final year.
                   </p>
-                  <p>
-                  At the moment, I am learning about SQL, web apps, and React. 
+              <p>
+                At the moment, I am learning about SQL, web apps, and React.
                   </p>
-                  <p>
-                  I have experience
-                  with Linux systems, LaTeX and Machine Learning (e.g. tensorflow).
+              <p>
+                I have experience
+                with Linux systems, LaTeX and Machine Learning (e.g. tensorflow).
                   </p>
-                  <p>
-                  In my spare time, I like to swim, gym, and play guitar and piano. 
+              <p>
+                In my spare time, I like to swim, gym, and play guitar and piano.
                   </p>
-              </Col>
-              <Col>
-                <div className="carouselColumn">
-                  <Carousel style={carouselStyles} showThumbs={false}>
-                    {getCarouselPhotos()}
-                  </Carousel>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </Page>
+            </Col>
+            <Col>
+              <div className="carouselColumn">
+                <Carousel style={carouselStyles} showThumbs={false}>
+                  {getCarouselPhotos()}
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </Page>
     );
   }
 }
