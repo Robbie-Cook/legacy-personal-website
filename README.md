@@ -23,10 +23,10 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
 
-* Replacing bootstrap with material-ui on branch removeBootstrap (soon to be merged).
-   * Change color of navbar by customising material-ui (https://material-ui.com/customization)
-   * Hook up menu of links to navbar icon
-   * Hide navbar icon at certain width (media query)
+* Close menu automatically when link is pressed on mobile menu
+
+* Fix spacing between containers on mobile
+     * h1's too far from the top and rows not seperated enough in column view
 
 * Fix browsing directly to /about or /music via url not working 
    * Seems to be working on localhost now, not on server 
