@@ -46,3 +46,5 @@ having to modify the code, perhaps with Gatsby or Wordpress?
   * Babel?
 
 * Blog integration
+
+* Review nav menu -- too generic?
