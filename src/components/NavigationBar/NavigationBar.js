@@ -30,6 +30,7 @@ class NavigationBar extends React.Component {
     // Bind 'this' to functions so functions can use 'this' keyword 
     this.handleToggle = this.handleToggle.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleMobileNavClick = this.handleMobileNavClick.bind(this);
   }
 
 
@@ -46,7 +47,10 @@ class NavigationBar extends React.Component {
   generateNavMenuItems() {
     let array = []
     for (let item of this.props.pages) {
-      array.push(<MenuItem onClick={this.handleMobileNavClick} component={Link} to={item.path}>{item.name}</MenuItem>)
+      array.push(
+        <MenuItem>
+          <Link onClick={this.handleMobileNavClick} to={item.path}>{item.name}</Link>
+        </MenuItem>)
     }
     return array;
   }
