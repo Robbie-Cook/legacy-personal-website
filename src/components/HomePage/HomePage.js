@@ -113,7 +113,7 @@ class HomePage extends Component {
             <Heading style={{margin: 0}}>Robbie Cook</Heading>
             <p>
               Hello! I'm a developer living in Auckland, New Zealand.
-              I love swimming, Netflix, and coding.
+              I love swimming, Netflix, music, and creating.
           </p>
             <p>
               Check out my <Link to="/about">About</Link> page to find out more :)

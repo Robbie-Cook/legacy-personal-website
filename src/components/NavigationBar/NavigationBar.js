@@ -43,10 +43,6 @@ class NavigationBar extends React.Component {
     return array;
   };
 
-  handleMobileNavClick() {
-    this.setState({open: false})
-  }
-
   generateNavMenuItems() {
     let array = []
     for (let item of this.props.pages) {
@@ -61,6 +57,12 @@ class NavigationBar extends React.Component {
       open: !prevState.open
     }));
   }
+
+  
+  handleMobileNavClick() {
+   this.handleToggle()
+  }
+
 
   handleClose(event) {
     if (this.anchorEl.current.contains(event.target)) {
