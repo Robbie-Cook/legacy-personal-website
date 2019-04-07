@@ -22,7 +22,7 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-
+* Remove Spacer on mobile nav -- replace Spacer with padding on page, not applied to home?
 * Add Express integration
             * Fix issue of direct links aren't working (e.g. robbie.pw/about)
             * More advanced server side rendering
