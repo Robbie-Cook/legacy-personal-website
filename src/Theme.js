@@ -14,8 +14,7 @@ class Theme {
             backgroundColor: '#0f0f0f',
             // page styles
             page: {
-                preHeadingSpace: '40px',
-                padding: new Dimensions(0, 90),
+                padding: new Dimensions(40, 90, 0, 90),
                 item: {
                     padding: new Dimensions(0, 20),
                 },

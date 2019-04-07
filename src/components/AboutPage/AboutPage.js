@@ -56,7 +56,6 @@ class AboutPage extends Component {
 
       <Page>
         <Container>
-          <Spacer width={1} height={theme.page.preHeadingSpace} />
           <Heading type="h2">About</Heading>
           <Row>
             <Col>

@@ -16,7 +16,6 @@ class MusicPage extends Component {
     return (
       <Page>
         <Container>
-          <Spacer width={1} height={theme.page.preHeadingSpace} />
           <Heading type="h2">Music</Heading>
           <Row>
             <Col class="subpage">
