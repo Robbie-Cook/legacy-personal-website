@@ -25,6 +25,7 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 * Make update and deploy script on server for website
 
 * Add Express integration
+
             * Fix issue of direct links aren't working (e.g. robbie.pw/about)
             * More advanced server side rendering
                
