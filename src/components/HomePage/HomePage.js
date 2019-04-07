@@ -107,7 +107,7 @@ margin-top: 10px;
 class HomePage extends Component {
   render() {
     return (
-      <Page spacer={false} style={{overflowX: 'hidden'}}>
+      <Page style={{overflowX: 'hidden'}}>
           <div class="padder" />
           <MainInfo>
             <Heading style={{margin: 0}}>Robbie Cook</Heading>

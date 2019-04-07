@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Page from '../Page/Page'
 import Heading from '../Heading'
 import { Row, Col, Container } from '../Wrappers'
+import Spacer from '../Spacer'
+import Theme from '../../Theme.js'
 
 /* Stylesheets etc. */
 import './index.css'
@@ -11,6 +13,8 @@ import './index.css'
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+
+const theme = Theme.getTheme()
 
 /* Media */
 
@@ -52,6 +56,7 @@ class AboutPage extends Component {
 
       <Page>
         <Container>
+          <Spacer width={1} height={theme.page.preHeadingSpace} />
           <Heading type="h2">About</Heading>
           <Row>
             <Col>

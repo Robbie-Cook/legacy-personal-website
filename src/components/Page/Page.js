@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import Theme from '../../Theme.js'
-import Spacer from '../Spacer.js'
 
 /* Imports */
 /* Stylesheets etc. */
@@ -25,6 +24,7 @@ const StyledPage = styled.div`
     margin: 10px 0;
   }
 
+
   display: flex;
   flex-direction: row;
   padding: ${theme.page.padding};
@@ -34,24 +34,13 @@ const StyledPage = styled.div`
     flex-direction: column;
     padding: ${theme.mobile.padding}
   }
-
 `
-// Spaces the content if required
-function getSpacer(spacer) {
-  // Add a spacer by default
-  if( spacer === true || spacer === undefined) {
-    return <Spacer />
-  } else {
-    return
-  }
-}
 
 // Main Page component
 class Page extends Component {
   render() {
     return (
       <div style={this.props.style}>
-        {getSpacer(this.props.spacer)}
         <StyledPage>
             {this.props.children}
         </StyledPage>

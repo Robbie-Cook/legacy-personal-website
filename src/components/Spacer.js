@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-
 function getDimensions(height, width) {
+  // Default values
   if( height === undefined ) {
     height = 40
   }
   if( width === undefined ) {
     width = 100
   }
+  
   return <div style={{height: parseInt(height), width: parseInt(width)}}/>
 }
 // Main Page component

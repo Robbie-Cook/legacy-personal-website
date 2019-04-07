@@ -6,6 +6,7 @@ import Heading from '../Heading'
 import Page from '../Page/Page'
 import { Row, Col, Container } from '../Wrappers'
 import Theme from '../../Theme.js'
+import Spacer from '../Spacer.js'
 
 const theme = Theme.getTheme()
 
@@ -15,6 +16,7 @@ class MusicPage extends Component {
     return (
       <Page>
         <Container>
+          <Spacer width={1} height={theme.page.preHeadingSpace} />
           <Heading type="h2">Music</Heading>
           <Row>
             <Col class="subpage">

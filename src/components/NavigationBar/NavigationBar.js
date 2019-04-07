@@ -48,7 +48,7 @@ class NavigationBar extends React.Component {
     let array = []
     for (let item of this.props.pages) {
       array.push(
-        <MenuItem onClick={this.handleToggle} component={Link} to={item.path}>{item.name}></MenuItem>)
+        <MenuItem onClick={this.handleToggle} component={Link} to={item.path}>{item.name}</MenuItem>)
     }
     return array;
   }
