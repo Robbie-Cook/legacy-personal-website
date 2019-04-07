@@ -30,7 +30,6 @@ class NavigationBar extends React.Component {
     // Bind 'this' to functions so functions can use 'this' keyword 
     this.handleToggle = this.handleToggle.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleMobileNavClick = this.handleMobileNavClick.bind(this);
   }
 
 
@@ -59,12 +58,6 @@ class NavigationBar extends React.Component {
       open: !prevState.open
     }));
   }
-
-  
-  handleMobileNavClick() {
-   this.handleToggle()
-  }
-
 
   handleClose(event) {
     if (this.anchorEl.current.contains(event.target)) {
@@ -101,6 +94,17 @@ class NavigationBar extends React.Component {
         }
       },
     })(Tabs);
+
+    const StyledMenuList = withStyles({
+
+      root: {
+        // Not ideal, should be done with breakpoints in theme
+        // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
+        [`@media (min-width:${theme.mobile.cutOff-1}px)`]: { 
+          display: 'none',
+        }
+      },
+    })(MenuList);
   
     return (
         <StyledAppBar position="static" color="primary" colorPrimary>
@@ -134,9 +138,9 @@ class NavigationBar extends React.Component {
                     >
                       <Paper>
                         <ClickAwayListener onClickAway={this.handleClose}>
-                          <MenuList>
+                          <StyledMenuList>
                             {this.generateNavMenuItems()}
-                          </MenuList>
+                          </StyledMenuList>
                         </ClickAwayListener>
                       </Paper>
                     </Grow>

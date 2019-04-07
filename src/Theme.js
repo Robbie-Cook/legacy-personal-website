@@ -33,7 +33,7 @@ class Theme {
             },
             mobile: {
                 colMargin: new Dimensions(0, 20, 20, 20),
-                cutOff: '992', // Has to be the same as bootstrap's breakpoint (for now)
+                cutOff: '900', // Has to be the same as bootstrap's breakpoint (for now)
                 padding: new Dimensions(20, 20),
                 navbar: {
                     padding: new Dimensions(20, 40)
