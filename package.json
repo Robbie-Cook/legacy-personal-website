@@ -37,6 +37,7 @@
     "build-storybook": "build-storybook -s public",
     "flow": "flow"
   },
+  "homepage": ".",
   "browserslist": [
     ">0.2%",
     "not dead",
