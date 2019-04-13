@@ -27,10 +27,10 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 ## Features to come
 * Make update and deploy script on server for website
 
-* Add Express integration
-
+* Migrate to Gatsby
             * Fix issue of direct links aren't working (e.g. robbie.pw/about)
             * More advanced server side rendering
+            * Potential for CMS?
                
 * Add awesome videos of me playing music
    * Some to process on my phone
