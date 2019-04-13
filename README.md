@@ -5,6 +5,9 @@ This is a repository of my personal website [http://robbie.pw](http://robbie.pw)
 It's a very simple website with a few pages, and it should be updated regularly.
 
 Some key dependencies that this project makes use of are:
+
+* Gatsby.
+            A framework for building react apps
 * React styled-components.
             I use styled-components a lot in this website. It allows me to apply CSS directly to components, and it
             comes with a SASS-like preprocessor, which allows me to define CSS for child elements      
