@@ -1,7 +1,7 @@
 // My own UI Wrappers for page components
 
 import styled from 'styled-components'
-import Theme from '../Theme'
+import Theme from './Theme'
 
 const theme = Theme.getTheme()
 

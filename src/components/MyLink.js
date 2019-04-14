@@ -1,12 +1,11 @@
 /* Defines a page link */
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "gatsby";
 import React from "react";
 
 class MyLink {
     constructor(name, path, component, exact=false) {
         this.name = name
         this.path = path
-        this.component = component // the React component to link to a page
         this.exact = exact // whether or not the path has to be exact
     }
 
@@ -17,11 +16,6 @@ class MyLink {
           route = <Route exact path={this.path} component={this.component} />
         }
         return route
-    }
-
-    // Get link to page
-    getLink() {
-        
     }
 
 }

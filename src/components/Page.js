@@ -1,9 +1,11 @@
 // Container that takes a whole page
 
-import React, { Component } from 'react';
-import styled from 'styled-components'
-import Theme from '../../Theme.js'
-
+import React, { Component } from "react"
+import styled from "styled-components"
+import Theme from "./Theme"
+import "../css/global-styles.css"
+import NavigationBar from "./NavigationBar"
+import MyLink from './MyLink'
 /* Imports */
 /* Stylesheets etc. */
 
@@ -12,7 +14,6 @@ const theme = Theme.getTheme()
 
 // Styles for component
 const StyledPage = styled.div`
-
   //  Overwrite bootstrap for containers
   & .container {
     max-width: none;
@@ -24,7 +25,6 @@ const StyledPage = styled.div`
     margin: 10px 0;
   }
 
-
   display: flex;
   flex-direction: row;
   padding: ${theme.page.padding};
@@ -32,20 +32,28 @@ const StyledPage = styled.div`
   // Mobile styles
   @media (max-width: ${theme.mobile.cutOff}px) {
     flex-direction: column;
-    padding: ${theme.mobile.padding}
+    padding: ${theme.mobile.padding};
   }
 `
+
+// Links
+let navigationLinks = [
+  new MyLink("Home", "/"),
+  new MyLink("About", "/about"),
+  new MyLink("Music", "/music"),
+]
 
 // Main Page component
 class Page extends Component {
   render() {
     return (
-      <div style={this.props.style}>
-        <StyledPage>
-            {this.props.children}
-        </StyledPage>
+      <div>
+        <NavigationBar pages={navigationLinks}></NavigationBar>
+        <div style={this.props.style}>
+          <StyledPage>{this.props.children}</StyledPage>
+        </div>
       </div>
-    );
+    )
   }
 }
 

@@ -4,18 +4,20 @@ import styled from 'styled-components'
 
 
 /* Components */
-import Heading from '../Heading.js'
-import Page from '../Page/Page'
+import Heading from '../components/Heading.js'
+import Page from '../components/Page'
 
 /* Stylesheets etc. */
-import '../../fontawesome/css/all.css'
-import { Link } from "react-router-dom"
+import '../fontawesome/css/all.css'
+
+
+import { Link } from "gatsby"
 
 /* Media */
-import me from '../../photos/me_irl3_cropped.jpg'
+import me from '../photos/me_irl3_cropped.jpg'
 
 /* Theme */
-import Theme from '../../Theme.js'
+import Theme from '../components/Theme'
 
 let theme = Theme.getTheme()
 

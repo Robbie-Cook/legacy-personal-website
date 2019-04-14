@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
 /* Imports */
-import Page from '../Page/Page'
-import Heading from '../Heading'
-import { Row, Col, Container } from '../Wrappers'
-import Spacer from '../Spacer'
-import Theme from '../../Theme.js'
-
-/* Stylesheets etc. */
-import './index.css'
+import Page from '../components/Page'
+import Heading from '../components/Heading'
+import { Row, Col, Container } from '../components/Wrappers'
+import Spacer from '../components/Spacer'
+import Theme from '../components/Theme'
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -23,7 +20,7 @@ function importAll(r) {
   return r.keys().map(r);
 }
 
-const images = importAll(require.context('../../photos/carousel/', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../photos/carousel/', false, /\.(png|jpe?g|svg)$/));
 
 /* Represents a photo */
 class Photo {
@@ -50,7 +47,7 @@ let carouselStyles = {
 }
 
 // Main Page component
-class AboutPage extends Component {
+class about extends Component {
   render() {
     return (
 
@@ -95,4 +92,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default about;

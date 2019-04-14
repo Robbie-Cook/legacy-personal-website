@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 /* Imports */
 /* Stylesheets etc. */
-import Heading from '../Heading'
-import Page from '../Page/Page'
-import { Row, Col, Container } from '../Wrappers'
-import Theme from '../../Theme.js'
-import Spacer from '../Spacer.js'
+import Heading from '../components/Heading'
+import Page from '../components/Page'
+import { Row, Col, Container } from '../components/Wrappers'
+import Theme from '../components/Theme'
+import Spacer from '../components/Spacer.js'
 
 const theme = Theme.getTheme()
 

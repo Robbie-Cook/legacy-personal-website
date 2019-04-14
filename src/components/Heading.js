@@ -1,7 +1,7 @@
 /* Heading section for a page */
 import styled from "styled-components";
 import React, { Component } from 'react';
-import Theme from '../Theme.js'
+import Theme from './Theme'
 
 const theme = Theme.getTheme()
 
