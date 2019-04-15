@@ -27,8 +27,11 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-* Set up continuous intergration (CI) -- use GitHub pages for hosting webste?
-            * Potential for CMS?
+* Set up continuous intergration (CI) -- automatic builds (top prority to speed up dev time)
+      -- Set up TeamCity
+      -- Make a gitflow setup -- master and develop branches, auto trigger build and deploy on master 
+           
+* Potential for CMS integrated into gatsby?
                
 * Add awesome videos of me playing music
    * Some to process on my phone
