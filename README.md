@@ -1,13 +1,15 @@
 # Personal Website
 
-This is a repository of my personal website [http://robbie.pw](http://robbie.pw), built with React (create-react-app), and deployed with a static server.
+This is a repository of my personal website [http://robbie.pw](http://robbie.pw), built with React (create-react-app), Gatsby, and deployed with a static server.
 
 It's a very simple website with a few pages, and it should be updated regularly.
 
 Some key dependencies that this project makes use of are:
 
 * Gatsby.
-            A framework for building react apps
+            A framework for building static react apps with simple server-side rendering, and a good starter for learning good     
+            React design pracitises.
+            
 * React styled-components.
             I use styled-components a lot in this website. It allows me to apply CSS directly to components, and it
             comes with a SASS-like preprocessor, which allows me to define CSS for child elements      
@@ -25,11 +27,7 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-* Make update and deploy script on server for website
-
-* Migrate to Gatsby
-            * Fix issue of direct links aren't working (e.g. robbie.pw/about)
-            * More advanced server side rendering
+* Set up continuous intergration (CI) -- use GitHub pages for hosting webste?
             * Potential for CMS?
                
 * Add awesome videos of me playing music
