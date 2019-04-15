@@ -44,10 +44,6 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 
 * ssh with auto certificate renewal
 
-* Migrate site to Gatsby to hook up a CMS
-  * Make a tutorial site with Gatsby to get a feel
-  * Babel?
-
 * Blog integration
 
 * Review nav menu -- too generic?
