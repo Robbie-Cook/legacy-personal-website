@@ -27,8 +27,13 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-* Set up continuous intergration (CI) -- automatic builds (top prority to speed up dev time)
-      -- Make a gitflow setup -- master and develop branches, auto trigger build and deploy on master
+* Set up continuous intergration (CI) 
+     -- Make a gitflow setup 
+            -- master and develop branches, auto trigger build and deploy on master
+     -- Automatic builds
+     -- Watch on master and auto-start server 
+
+* Work on issues 
            
 * Potential for CMS integrated into gatsby?
                
