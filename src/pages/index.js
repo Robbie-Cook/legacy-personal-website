@@ -22,6 +22,7 @@ import Theme from '../components/Theme'
 let theme = Theme.getTheme()
 
 const MainInfo = styled.div`
+  z-index: 3;
   margin: 100px 0 100px 90px;
   display: flex;
   flex-direction: column;

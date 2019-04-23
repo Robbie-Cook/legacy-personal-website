@@ -15,7 +15,17 @@ const theme = Theme.getTheme()
 // Styles for component
 const StyledPage = styled.div`
   //  Overwrite bootstrap for containers
-  background-color: ${theme.backgroundColor};
+  & .fadingElement {
+    width: 300px;
+    position: absolute;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f0f0f+0,000000+100&1+13,1+13,0.84+51,0.03+98 */
+    background: -moz-linear-gradient(left, rgba(15,15,15,1) 0%, rgba(13,13,13,1) 13%, rgba(7,7,7,0.84) 51%, rgba(0,0,0,0.03) 98%, rgba(0,0,0,0.03) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0f0f', endColorstr='#08000000',GradientType=1 ); /* IE6-9 */
+  }
+  
 
   & .container {
     max-width: none;
