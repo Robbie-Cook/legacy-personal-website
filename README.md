@@ -1,6 +1,6 @@
 # Personal Website
 
-This is a repository of my personal website [http://robbie.pw](http://robbie.pw), built with React (create-react-app), Gatsby, and deployed with a static server.
+This is a repository of my personal website [http://robbie.pw](http://robbie.pw), built with React (create-react-app), Gatsby, and deployed with a static server on Scaleway.
 
 It's a very simple website with a few pages, and it should be updated regularly.
 
