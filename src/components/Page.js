@@ -15,7 +15,7 @@ const theme = Theme.getTheme()
 // Styles for component
 const StyledPage = styled.div`
   //  Overwrite bootstrap for containers
-  background-color: ${theme.backgroundColor}
+  background-color: ${theme.backgroundColor};
 
   & .container {
     max-width: none;
