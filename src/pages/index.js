@@ -47,7 +47,6 @@ const MainImage = styled.div`
 
   position: relative;
   left: -200px;
-  z-index: -1;
   // Code for mobile displays
 
   @media (max-width: ${theme.mobile.cutOff}px) {
