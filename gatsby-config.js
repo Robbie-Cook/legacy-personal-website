@@ -5,9 +5,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `robbie.pw`,
-        short_name: `robbie.pw`,
-        start_url: `/`,
+        name: `Robbie Cook`,
+        short_name: `Robbie Cook`,
         icon: `src/photos/icon.png`
       },
     },
