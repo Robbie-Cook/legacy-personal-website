@@ -27,8 +27,7 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
- * Make a gitflow setup 
-      * master and develop branches, auto trigger build and deploy on master
+* Make sure CI runs on a per-commit level
             
 * Work on issues 
            
