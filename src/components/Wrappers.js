@@ -7,7 +7,8 @@ const theme = Theme.getTheme()
 
 export const Container = styled.div`
 display: flex;
-flex-direction: column`
+flex-direction: column;
+width: 100%`
 
 export const Row = styled.div`
 display: flex;
