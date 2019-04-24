@@ -12,10 +12,14 @@ import styled from "styled-components"
 const theme = Theme.getTheme()
 
 // Styles
-const StyledHeading = styled(Heading)`
-  font-size: 100px !important;
-  text-align: center !important;
-  margin-bottom: 30px !important;
+const StyledHeading = styled.h2`
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 100px;
+  font-family: 'Roboto', sans-serif;
+  @media (max-width: ${theme.mobile.cutOff}px) {
+    font-size: 50px;
+  }
 `
 
 const StyledContainer = styled.div`

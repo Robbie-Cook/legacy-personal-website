@@ -14,6 +14,7 @@ import Paper from "@material-ui/core/Paper"
 import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
 import Theme from "./Theme"
+import styled from 'styled-components'
 
 const theme = Theme.getTheme()
 
@@ -28,24 +29,31 @@ class NavigationBar extends React.Component {
     this.handleClose = this.handleClose.bind(this)
   }
 
-  // Generate the links to other pages
-  // passed in via props.pages
+  // Generate the links to other pages in the normal menu
   generateNavItems() {
     let array = []
-    this.props.pages.map((item) =>
-     (array.push(<Tab label={item.name} to={item.path} component={Link} />)));
+    const StyledTab = styled(Tab)`
+      font-weight: bold;
+    `
+    this.props.pages.map(item =>
+      array.push(<StyledTab label={item.name} to={item.path} component={Link} />)
+    )
     return array
   }
 
+  // Generates the mobile menu
   generateNavMenuItems() {
     let array = []
-    for (let item of this.props.pages) {
+    const StyledMenuItem = styled(MenuItem)`
+    font-weight: bold;
+    `
+    this.props.pages.map(item =>
       array.push(
-        <MenuItem onClick={this.handleToggle} component={Link} to={item.path}>
+        <StyledMenuItem onClick={this.handleToggle} component={Link} to={item.path}>
           {item.name}
-        </MenuItem>
+        </StyledMenuItem>
       )
-    }
+    )
     return array
   }
 
@@ -64,7 +72,7 @@ class NavigationBar extends React.Component {
   }
 
   render() {
-    // CSS Overrides for AppBar e.g. Change color
+    /* CSS */
     const StyledAppBar = withStyles({
       root: {
         backgroundColor: theme.backgroundColor,
