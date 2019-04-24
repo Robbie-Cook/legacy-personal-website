@@ -56,7 +56,7 @@ class MobileNav extends React.Component {
     if (this.anchorEl.current.contains(event.target)) {
       return
     }
-    this.setState({ open: false })
+    this.setState({open: false})
   }
 
   render() {
