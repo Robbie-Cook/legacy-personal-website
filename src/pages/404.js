@@ -16,7 +16,7 @@ const StyledHeading = styled.h2`
   text-align: center;
   margin-bottom: 30px;
   font-size: 100px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   @media (max-width: ${theme.mobile.cutOff}px) {
     font-size: 50px;
   }
@@ -30,18 +30,18 @@ const StyledContainer = styled.div`
 `
 
 const Quote = styled.p`
-font-weight: bold;
-font-family: Roboto, sans-serif;
-font-size: 24px;
-font-style: italic;
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-style: italic;
 `
 
 const Author = styled.p`
-font-family: Roboto, sans-serif;
-margin-left: 25px!important;
-font-weight: 300;
-font-style: italic;
-color: #828282;
+  font-family: Roboto, sans-serif;
+  margin-left: 25px !important;
+  font-weight: 300;
+  font-style: italic;
+  color: #828282;
 `
 
 // Main Page component

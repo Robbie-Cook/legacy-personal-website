@@ -22,7 +22,6 @@ import Theme from '../components/Theme'
 let theme = Theme.getTheme()
 
 const MainInfo = styled.div`
-  z-index: 3;
   margin: 100px 0 100px 90px;
   display: flex;
   flex-direction: column;
@@ -48,6 +47,7 @@ const MainImage = styled.div`
 
   position: relative;
   left: -200px;
+  z-index: -1;
   // Code for mobile displays
 
   @media (max-width: ${theme.mobile.cutOff}px) {

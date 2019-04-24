@@ -1,13 +1,14 @@
-// Container that takes a whole page
+// Root container for a page
 
+/* Imports */
+/* Stylesheets etc. */
 import React, { Component } from "react"
 import styled from "styled-components"
 import Theme from "./Theme"
 import "../css/global-styles.css"
 import NavigationBar from "./NavigationBar"
-import MyLink from './MyLink'
-/* Imports */
-/* Stylesheets etc. */
+import MyLink from "./MyLink"
+import MyHelmet from './MyHelmet'
 
 // Get theme
 const theme = Theme.getTheme()
@@ -20,12 +21,32 @@ const StyledPage = styled.div`
     position: absolute;
     height: 100%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0f0f0f+0,000000+100&1+13,1+13,0.84+51,0.03+98 */
-    background: -moz-linear-gradient(left, rgba(15,15,15,1) 0%, rgba(13,13,13,1) 13%, rgba(7,7,7,0.84) 51%, rgba(0,0,0,0.03) 98%, rgba(0,0,0,0.03) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(15,15,15,1) 0%,rgba(13,13,13,1) 13%,rgba(7,7,7,0.84) 51%,rgba(0,0,0,0.03) 98%,rgba(0,0,0,0.03) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(
+      left,
+      rgba(15, 15, 15, 1) 0%,
+      rgba(13, 13, 13, 1) 13%,
+      rgba(7, 7, 7, 0.84) 51%,
+      rgba(0, 0, 0, 0.03) 98%,
+      rgba(0, 0, 0, 0.03) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(15, 15, 15, 1) 0%,
+      rgba(13, 13, 13, 1) 13%,
+      rgba(7, 7, 7, 0.84) 51%,
+      rgba(0, 0, 0, 0.03) 98%,
+      rgba(0, 0, 0, 0.03) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      rgba(15, 15, 15, 1) 0%,
+      rgba(13, 13, 13, 1) 13%,
+      rgba(7, 7, 7, 0.84) 51%,
+      rgba(0, 0, 0, 0.03) 98%,
+      rgba(0, 0, 0, 0.03) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0f0f', endColorstr='#08000000',GradientType=1 ); /* IE6-9 */
   }
-  
 
   & .container {
     max-width: none;
@@ -60,13 +81,16 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <NavigationBar pages={navigationLinks}></NavigationBar>
-        <div style={this.props.style}>
-          <StyledPage>{this.props.children}</StyledPage>
+        <Helmet />
+        <div>
+          <NavigationBar pages={navigationLinks} />
+          <div style={this.props.style}>
+            <StyledPage>{this.props.children}</StyledPage>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default Page;
+export default Page

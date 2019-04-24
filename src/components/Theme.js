@@ -24,6 +24,7 @@ class Theme {
                 height: '56px',
                 textColor: centralTextColor,
                 textColorHighlight: '#6385a9',
+                activeLinkColor: '#1565c0',
                 font: '\'Roboto Slab\', sans-serif',
                 padding: new Dimensions(0, 90),
                 // Navbar border styles
