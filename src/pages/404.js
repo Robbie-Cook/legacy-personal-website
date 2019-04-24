@@ -45,7 +45,7 @@ color: #828282;
 `
 
 // Main Page component
-class about extends Component {
+class fourOhFour extends Component {
   render() {
     return (
       <Page>
@@ -70,4 +70,4 @@ class about extends Component {
   }
 }
 
-export default about
+export default fourOhFour
