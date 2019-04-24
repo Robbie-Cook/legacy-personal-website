@@ -30,6 +30,9 @@ class MobileNav extends React.Component {
     let array = []
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
+      &.active {
+          color: ${theme.navbar.activeLinkColor};
+      }
     `
     this.props.pages.map(item =>
       array.push(
@@ -37,6 +40,7 @@ class MobileNav extends React.Component {
           onClick={this.handleToggle}
           component={Link}
           to={item.path}
+          activeClassName={"active"}
         >
           {item.name}
         </StyledMenuItem>
@@ -56,7 +60,7 @@ class MobileNav extends React.Component {
     if (this.anchorEl.current.contains(event.target)) {
       return
     }
-    this.setState({open: false})
+    this.setState({ open: false })
   }
 
   render() {
@@ -83,45 +87,43 @@ class MobileNav extends React.Component {
     })(MenuList)
 
     return (
+      <div>
         <div>
-          <div>
-            <StyledIconButton
-              buttonRef={this.anchorEl}
-              aria-owns={this.state.open ? "menu-list-grow" : undefined}
-              aria-haspopup="true"
-              aria-label="Menu"
-              color="inherit"
-              onClick={this.handleToggle}
-            >
-              <MenuIcon />
-            </StyledIconButton>
-            <Popper
-              open={this.state.open}
-              anchorEl={this.anchorEl.current}
-              transition
-              disablePortal
-            >
-              {({ TransitionProps, placement }) => (
-                <Grow
-                  {...TransitionProps}
-                  id="menu-list-grow"
-                  style={{
-                    transformOrigin:
-                      placement === "bottom" ? "center top" : "center bottom",
-                  }}
-                >
-                  <Paper>
-                    <ClickAwayListener onClickAway={this.handleClose}>
-                      <StyledMenuList>
-                        {this.generateMobileNav()}
-                      </StyledMenuList>
-                    </ClickAwayListener>
-                  </Paper>
-                </Grow>
-              )}
-            </Popper>
-          </div>
+          <StyledIconButton
+            buttonRef={this.anchorEl}
+            aria-owns={this.state.open ? "menu-list-grow" : undefined}
+            aria-haspopup="true"
+            aria-label="Menu"
+            color="inherit"
+            onClick={this.handleToggle}
+          >
+            <MenuIcon />
+          </StyledIconButton>
+          <Popper
+            open={this.state.open}
+            anchorEl={this.anchorEl.current}
+            transition
+            disablePortal
+          >
+            {({ TransitionProps, placement }) => (
+              <Grow
+                {...TransitionProps}
+                id="menu-list-grow"
+                style={{
+                  transformOrigin:
+                    placement === "bottom" ? "center top" : "center bottom",
+                }}
+              >
+                <Paper>
+                  <ClickAwayListener onClickAway={this.handleClose}>
+                    <StyledMenuList>{this.generateMobileNav()}</StyledMenuList>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+            )}
+          </Popper>
         </div>
+      </div>
     )
   }
 }

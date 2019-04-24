@@ -6,8 +6,8 @@ import Tab from "@material-ui/core/Tab"
 import { Link } from "gatsby"
 import { withStyles } from "@material-ui/core/styles"
 import Theme from "./Theme"
-import styled from 'styled-components'
-import MobileNav from "./MobileNav";
+import styled from "styled-components"
+import MobileNav from "./MobileNav"
 
 const theme = Theme.getTheme()
 
@@ -21,10 +21,19 @@ class NavigationBar extends React.Component {
     let array = []
     const StyledTab = styled(Tab)`
       font-weight: bold;
+
+      &.active {
+        color: ${theme.navbar.activeLinkColor};
+      }
     `
-    this.props.pages.map(item =>
-      array.push(<StyledTab label={item.name} to={item.path} component={Link} />)
-    )
+
+        this.props.pages.map((item) => {
+      // If the current URL is the same as the item path, mark Tab as active
+      array.push(
+        <StyledTab label={item.name} to={item.path} component={Link}
+         activeClassName={"active"}/>
+      )
+    })
     return array
   }
 
@@ -49,7 +58,7 @@ class NavigationBar extends React.Component {
     return (
       <StyledAppBar position="static" color="primary" colorPrimary>
         <Toolbar>
-          <MobileNav pages={this.props.pages}/>
+          <MobileNav pages={this.props.pages} />
           <StyledTabs>{this.generateNav()}</StyledTabs>
         </Toolbar>
       </StyledAppBar>
