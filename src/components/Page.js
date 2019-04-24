@@ -81,7 +81,7 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <Helmet />
+        <MyHelmet />
         <div>
           <NavigationBar pages={navigationLinks} />
           <div style={this.props.style}>
