@@ -11,7 +11,7 @@ function getDimensions(height, width) {
 
   return <div style={{height: parseInt(height), width: parseInt(width)}}/>
 }
-// Main Page component
+// Component for providing space in a UI
 class Spacer extends Component {
 
   render() {

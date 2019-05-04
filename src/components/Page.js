@@ -2,10 +2,10 @@
 
 /* Imports */
 /* Stylesheets etc. */
+import "../css/global-styles.css"
 import React, { Component } from "react"
 import styled from "styled-components"
 import Theme from "./Theme"
-import "../css/global-styles.css"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from './MyHelmet'
@@ -69,11 +69,12 @@ const StyledPage = styled.div`
   }
 `
 
-// Links
+/* Navigation links, which are passed to navbar.js */
 let navigationLinks = [
   new MyLink("Home", "/"),
   new MyLink("About", "/about"),
   new MyLink("Music", "/music"),
+  new MyLink("Projects", "/projects"),
 ]
 
 // Main Page component
@@ -81,7 +82,8 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <MyHelmet />
+        
+        <MyHelmet />  {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />
           <div style={this.props.style}>

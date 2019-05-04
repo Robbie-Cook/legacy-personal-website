@@ -47,7 +47,7 @@ let carouselStyles = {
 }
 
 // Main Page component
-class about extends Component {
+class About extends Component {
   render() {
     return (
 
@@ -92,4 +92,4 @@ class about extends Component {
   }
 }
 
-export default about;
+export default About;
