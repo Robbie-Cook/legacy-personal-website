@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 import Theme from './Theme'
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 export const Container = styled.div`
 display: flex;

@@ -10,12 +10,12 @@ import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from './MyHelmet'
 
-// Get theme
-const theme = Theme.getTheme()
-
 // Styles for component
 const StyledPage = styled.div`
   //  Overwrite bootstrap for containers
+
+  background-color: ${Theme.page.backgroundColor};
+
   & .fadingElement {
     width: 300px;
     position: absolute;
@@ -60,12 +60,12 @@ const StyledPage = styled.div`
 
   display: flex;
   flex-direction: row;
-  padding: ${theme.page.padding};
+  padding: ${Theme.page.padding};
 
   // Mobile styles
-  @media (max-width: ${theme.mobile.cutOff}px) {
+  @media (max-width: ${Theme.mobile.cutOff}px) {
     flex-direction: column;
-    padding: ${theme.mobile.padding};
+    padding: ${Theme.mobile.padding};
   }
 `
 
@@ -82,7 +82,7 @@ class Page extends Component {
   render() {
     return (
       <div>
-        
+      
         <MyHelmet />  {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />

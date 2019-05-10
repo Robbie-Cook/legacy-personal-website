@@ -19,7 +19,7 @@ import me from '../photos/me_irl3_cropped.jpg'
 /* Theme */
 import Theme from '../components/Theme'
 
-let theme = Theme.getTheme()
+let theme = Theme
 
 const MainInfo = styled.div`
   margin: 100px 0 100px 90px;

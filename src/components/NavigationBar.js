@@ -9,7 +9,7 @@ import Theme from "./Theme"
 import styled from "styled-components"
 import MobileNav from "./MobileNav"
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 class NavigationBar extends React.Component {
   constructor(props) {

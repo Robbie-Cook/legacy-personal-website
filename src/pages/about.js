@@ -11,7 +11,7 @@ import Theme from '../components/Theme'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 /* Media */
 

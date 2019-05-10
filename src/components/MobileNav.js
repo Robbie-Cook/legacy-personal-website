@@ -12,7 +12,7 @@ import { withStyles } from "@material-ui/core/styles"
 import Theme from "./Theme"
 import styled from "styled-components"
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 class MobileNav extends React.Component {
   constructor(props) {

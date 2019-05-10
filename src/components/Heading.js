@@ -9,7 +9,7 @@ import Theme from "./Theme"
 
 
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 /* 
   Get appropriate heading

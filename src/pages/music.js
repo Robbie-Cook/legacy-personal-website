@@ -8,7 +8,7 @@ import { Row, Col, Container } from '../components/Wrappers'
 import Theme from '../components/Theme'
 import Spacer from '../components/Spacer.js'
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 // Main Page component
 class MusicPage extends Component {

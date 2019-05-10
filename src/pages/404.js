@@ -9,7 +9,7 @@ import styled from "styled-components"
 
 /* Carousel */
 
-const theme = Theme.getTheme()
+const theme = Theme
 
 // Styles
 const StyledHeading = styled.h2`
