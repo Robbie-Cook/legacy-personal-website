@@ -20,7 +20,10 @@ class Projects extends Component {
         // Responsive design queries
         @media (max-width: 1200px) {
             flex-direction: column;
-                    }
+            & > div {
+                margin-right: 0!important;
+            }
+        }
     `
 
     return (
@@ -31,7 +34,6 @@ class Projects extends Component {
             Here is a showcase of the different projects I have been working on
             recently.
           </p>
-          <Spacer height="30" />
           <ProjectRow>
             {/* Personal Website */}
             <ProjectBox

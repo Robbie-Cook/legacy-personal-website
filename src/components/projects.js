@@ -30,7 +30,7 @@ class ProjectBox extends Component {
       flex-direction: column;
 
       &:nth-child(odd) {
-        margin-right: 54px;
+        margin-right: 31px;
       }
 
       // Responsive design queries
