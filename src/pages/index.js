@@ -27,6 +27,7 @@ const MainInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 600px;
+  z-index: 2;
 
   @media (max-width: ${theme.mobile.cutOff}px) {
     justify-content: center;
@@ -47,7 +48,6 @@ const MainImage = styled.div`
 
   position: relative;
   left: -200px;
-  z-index: -1;
   // Code for mobile displays
 
   @media (max-width: ${theme.mobile.cutOff}px) {

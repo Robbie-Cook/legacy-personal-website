@@ -5,12 +5,7 @@ import Page from "../components/Page"
 import styled from "styled-components"
 import {
   ProjectBox,
-  ProjectLink,
-  ProjectGithubLink,
-  ProjectWebLink,
 } from "../components/projects"
-import { Link } from "gatsby"
-import { Github } from "grommet-icons"
 import Spacer from "../components/Spacer"
 import Theme from "../components/Theme"
 // Media
@@ -19,16 +14,25 @@ import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png"
 // Main Page component
 class Projects extends Component {
   render() {
+
+    const ProjectRow = styled(Row)`
+        
+        // Responsive design queries
+        @media (max-width: 1200px) {
+            flex-direction: column;
+                    }
+    `
+
     return (
       <Page>
         <Container>
-          <Heading type="h2">Work / Projects: {Theme.test}</Heading>
+          <Heading type="h2">Work / Project</Heading>
           <p>
             Here is a showcase of the different projects I have been working on
             recently.
           </p>
           <Spacer height="30" />
-          <Row>
+          <ProjectRow>
             {/* Personal Website */}
             <ProjectBox
               title="Personal Website"
@@ -54,7 +58,7 @@ class Projects extends Component {
               webLink={["http://machinelearning.robbie.pw", "machinelearning.robbie.pw"]}
             >
             </ProjectBox>
-          </Row>
+          </ProjectRow>
         </Container>
       </Page>
     )

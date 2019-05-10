@@ -9,8 +9,6 @@ import Theme from "./Theme"
 import styled from "styled-components"
 import MobileNav from "./MobileNav"
 
-const theme = Theme
-
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props)
@@ -23,7 +21,7 @@ class NavigationBar extends React.Component {
       font-weight: bold;
 
       &.active {
-        color: ${theme.navbar.activeLinkColor};
+        color: ${Theme.link.color};
       }
     `
 
@@ -41,15 +39,15 @@ class NavigationBar extends React.Component {
     /* CSS */
     const StyledAppBar = withStyles({
       root: {
-        backgroundColor: theme.backgroundColor,
+        backgroundColor: Theme.backgroundColor,
       },
     })(AppBar)
 
     const StyledTabs = withStyles({
       root: {
-        // Not ideal, should be done with breakpoints in theme
+        // Not ideal, should be done with breakpoints in Theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (max-width:${theme.mobile.cutOff - 1}px)`]: {
+        [`@media (max-width:${Theme.mobile.cutOff - 1}px)`]: {
           display: "none",
         },
       },

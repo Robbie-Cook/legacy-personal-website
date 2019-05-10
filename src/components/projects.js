@@ -25,16 +25,29 @@ class ProjectBox extends Component {
       padding: 20px;
       background-color: #3c3c3c;
       max-width: 600px;
+      margin-top: 10px;
       display: flex;
       flex-direction: column;
 
       &:nth-child(odd) {
         margin-right: 54px;
       }
+
+      // Responsive design queries
+      @media (max-width: 1200px) {
+        margin-right: 0 !important;
+      }
+
+
     `
 
-    const Wrapper = styled.div`
+    const ProjectDescriptionAndImageWrapper = styled.div`
       display: flex;
+
+      // Responsive design queries
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
     `
 
     const ProjectTitle = styled.h3`
@@ -74,12 +87,12 @@ class ProjectBox extends Component {
     return (
       <ProjectBox>
         <ProjectTitle>{this.props.title}</ProjectTitle>
-        <Wrapper>
+        <ProjectDescriptionAndImageWrapper>
           <ProjectDescription>{this.props.desc}</ProjectDescription>
           <ProjectImage>
             <img src={this.props.image} />
           </ProjectImage>
-        </Wrapper>
+        </ProjectDescriptionAndImageWrapper>
         <LinkWrapper>
           {getGithubLink(this.props.githubLink)}
           {getWebLink(this.props.webLink)}
@@ -102,7 +115,9 @@ class ProjectLink extends Component {
       display: inline-block;
       padding: 5px;
       margin-right: 10px;
+      margin-top: 5px;
       color: ${Theme.text.color};
+      transition: 0.03s;
 
       /* for svg icons */
       fill: ${Theme.text.color};
@@ -116,11 +131,10 @@ class ProjectLink extends Component {
       }
 
       &:hover {
-        color: ${Theme.link.color};
-        fill: ${Theme.link.color};
-        stroke: ${Theme.link.color};
-        background-color: ${Theme.text.color};
-        transition: .5;
+        & p {
+          border-bottom: 1px solid transparent;
+        }
+        background-color: ${Theme.link.color};
       }
     `
     const InnerWrapper = styled.div`
@@ -147,7 +161,7 @@ class ProjectGithubLink extends Component {
   render() {
     return (
       <ProjectLink to={this.props.to} text="Code on Github">
-        <Github fill="inherit" color="inherit"/>
+        <Github fill="inherit" color="inherit" />
       </ProjectLink>
     )
   }
