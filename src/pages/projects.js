@@ -10,6 +10,7 @@ import Spacer from "../components/Spacer"
 import Theme from "../components/Theme"
 // Media
 import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png"
+import machineLearningMini from "../photos/projects/machineLearningMini.png"
 
 // Main Page component
 class Projects extends Component {
@@ -55,7 +56,7 @@ class Projects extends Component {
                 "A introduction to machine learning. Built in React, with a UI framework \
                 called Grommet. "
               }
-              image={personalWebsiteMini}
+              image={machineLearningMini}
               githubLink="https://github.com/Robbie-Cook/Machine-Learning-Showcase"
               webLink={["http://machinelearning.robbie.pw", "machinelearning.robbie.pw"]}
             >
