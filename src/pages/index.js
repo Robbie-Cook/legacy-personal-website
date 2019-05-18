@@ -4,9 +4,10 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 /* Components */
-import Heading from "../components/Heading.js"
+import { Heading, Text } from "../components/Typography"
 import WebPage from "../components/Page"
 import Section from "../components/Section"
+import Spacer from "../components/Spacer"
 
 /* Stylesheets etc. */
 import "../fontawesome/css/all.css"
@@ -42,7 +43,7 @@ const IconWrapper = styled.div`
     flex-direction: row;
   }
 
-  @media (max-width: ${Theme.mobile.cutOff}px) {
+  @media (max-width: ${Theme.mobile.size}px) {
     justify-content: center;
   }
 `
@@ -54,10 +55,10 @@ class HomePage extends Component {
       margin: auto 0 auto 90px;
       display: flex;
       flex-direction: column;
-      min-width: 600px;
+      max-width: 600px;
       z-index: 2;
 
-      @media (max-width: ${Theme.mobile.cutOff}px) {
+      @media (max-width: ${Theme.mobile.size}px) {
         justify-content: center;
         text-align: center;
         margin: 50px 20px 70px 20px;
@@ -67,7 +68,7 @@ class HomePage extends Component {
       }
 
       & .iconWrapper {
-        @media (max-width: ${Theme.mobile.cutOff}px) {
+        @media (max-width: ${Theme.mobile.size}px) {
           justify-content: center;
         }
       }
@@ -85,14 +86,14 @@ class HomePage extends Component {
     const BackgroundGradientWrapper = styled.div`
       background: linear-gradient(
         to right,
-        ${Theme.page.backgroundColor} 70%,
+        ${Theme.page.backgroundColor} 80%,
         rgba(255, 244, 244, 0) 100%
       );
 
       padding-right: 80px;
       display: flex;
 
-      @media (max-width: ${Theme.mobile.cutOff}px) {
+      @media (max-width: ${Theme.mobile.size}px) {
         padding: 0;
         background: none;
       }
@@ -105,14 +106,13 @@ class HomePage extends Component {
             <BackgroundGradientWrapper>
               <MainInfo>
                 <Heading style={{ margin: 0 }}>Robbie Cook</Heading>
-                <p>
+                <Text>
                   Hello! I'm a developer living in Auckland, New Zealand. I love
                   swimming, Netflix, music, and creating.
-                </p>
-                <p>
+                  <Spacer height="10"/>
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
-                </p>
+                </Text>
                 <IconWrapper>
                   <a href="https://github.com/Robbie-Cook">
                     <i class="icon fab fa-github-square" />

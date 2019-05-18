@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 /* Imports */
 /* Stylesheets etc. */
-import Heading from '../components/Heading'
+import { Heading } from '../components/Typography'
 import WebPage from '../components/Page'
 import { Row, Col, Container } from '../components/Wrappers'
 import Theme from '../components/Theme'

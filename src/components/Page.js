@@ -21,7 +21,7 @@ const StyledPage = styled.div`
   padding: ${Theme.page.padding};
 
   // Mobile styles
-  @media (max-width: ${Theme.mobile.cutOff}px) {
+  @media (max-width: ${Theme.mobile.size}px) {
     flex-direction: column;
     padding: ${Theme.mobile.padding};
   }

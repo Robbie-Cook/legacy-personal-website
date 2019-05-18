@@ -47,7 +47,7 @@ class NavigationBar extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in Theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (max-width:${Theme.mobile.cutOff - 1}px)`]: {
+        [`@media (max-width:${Theme.mobile.size - 1}px)`]: {
           display: "none",
         },
       },
