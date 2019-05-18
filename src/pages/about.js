@@ -53,10 +53,9 @@ class About extends Component {
 
       <Page>
         <Container>
-          <Heading type="h2">About</Heading>
           <Row>
             <Col>
-
+            <Heading type="h2">About</Heading>
               <p>
                 Hi! I'm a 22-year-old developer, currently working in .NET :).
                   Check out my Github page <a href="https://github.com/Robbie-Cook">here</a> for a list of
