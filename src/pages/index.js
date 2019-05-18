@@ -79,8 +79,9 @@ class HomePage extends Component {
         width: 100%;
         background-repeat: no-repeat;
         display: flex;
-        background-position-x: 100%;
-        background-position-y: top;
+        background-position-x: 120%;
+        background-position-y: 50%;
+        background-size: contain;
     `
 
     const BackgroundGradientWrapper = styled.div`
