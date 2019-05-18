@@ -17,7 +17,6 @@ class Projects extends Component {
   render() {
 
     const ProjectRow = styled(Row)`
-        
         // Responsive design queries
         @media (max-width: 1200px) {
             flex-direction: column;
@@ -30,7 +29,7 @@ class Projects extends Component {
     return (
       <Page>
         <Container>
-          <Heading type="h2">Work / Project</Heading>
+          <Heading type="h2">Work / Projects</Heading>
           <p>
             Here is a showcase of the different projects I have been working on
             recently.

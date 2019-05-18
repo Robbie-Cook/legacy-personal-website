@@ -52,7 +52,7 @@ class Theme {
 
   // Navbar styles
   static navbar = {
-    height: "56px",
+    height: "64",
     textColor: this.centralTextColor,
     textColorHighlight: this.link.color,
     activeLinkColor: this.link.color,

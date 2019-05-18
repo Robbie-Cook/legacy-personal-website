@@ -3,23 +3,20 @@ import React, { Component } from 'react';
 /* Imports */
 /* Stylesheets etc. */
 import Heading from '../components/Heading'
-import Page from '../components/Page'
+import WebPage from '../components/Page'
 import { Row, Col, Container } from '../components/Wrappers'
 import Theme from '../components/Theme'
 import Spacer from '../components/Spacer.js'
-
-const theme = Theme
 
 // Main Page component
 class MusicPage extends Component {
   render() {
     return (
-      <Page>
+      <WebPage>
         <Container>
-          <Heading type="h2">Music</Heading>
           <Row>
             <Col class="subpage">
-
+                <Heading type="h2">Music</Heading>
               <p>Music is one of my passions.
               My favourite bands at the
               moment are Vampire Weekend, The Killers, Brandon Flowers, and the White Stripes.</p>
@@ -35,7 +32,7 @@ class MusicPage extends Component {
           </Row>
 
         </Container>
-      </Page>
+      </WebPage>
     );
   }
 }
