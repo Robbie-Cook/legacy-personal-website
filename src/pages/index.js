@@ -52,7 +52,7 @@ const IconWrapper = styled.div`
 class HomePage extends Component {
   render() {
     const MainInfo = styled.div`
-      margin: auto 0 auto 90px;
+      margin: auto 0 auto 20%;
       display: flex;
       flex-direction: column;
       max-width: 600px;
