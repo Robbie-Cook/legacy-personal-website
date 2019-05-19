@@ -57,7 +57,6 @@ class HomePage extends Component {
       flex-direction: column;
       max-width: 600px;
       z-index: 2;
-
       @media (max-width: ${Theme.mobile.size}px) {
         justify-content: center;
         text-align: center;
@@ -77,7 +76,7 @@ class HomePage extends Component {
     const BackgroundImageWrapper = styled.div`
         background-image: url('${me}');
         width: 100%;
-        background-repeat: no-repeat;
+        background-repeat: no-repetat;
         display: flex;
         background-position-x: 120%;
         background-position-y: 50%;
@@ -109,7 +108,7 @@ class HomePage extends Component {
                 <Heading style={{ margin: 0 }}>Robbie Cook</Heading>
                 <Text>
                   Hello! I'm a developer living in Auckland, New Zealand. I love
-                  swimming, Netflix, music, and creating.
+                  coding, making stuff, learning, and teaching.
                   <Spacer height="10"/>
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
