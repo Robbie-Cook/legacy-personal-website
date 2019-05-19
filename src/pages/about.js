@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
 
 /* Imports */
-import Page from '../components/Page'
-import { Heading } from '../components/Typography'
-import { Row, Col, Container } from '../components/Wrappers'
-import Spacer from '../components/Spacer'
-import Theme from '../components/Theme'
+import Page from "../components/Page"
+import { Heading, Text } from "../components/Typography"
+import { Row, Col, Container } from "../components/Wrappers"
+import Spacer from "../components/Spacer"
+import Theme from "../components/Theme"
+import styled from "styled-components"
 
 /* Carousel */
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from "react-responsive-carousel"
 
 const theme = Theme
 
@@ -17,78 +18,81 @@ const theme = Theme
 
 // Import all photos from carousel folder
 function importAll(r) {
-  return r.keys().map(r);
+  return r.keys().map(r)
 }
 
-const images = importAll(require.context('../photos/carousel/', false, /\.(png|jpe?g|svg)$/));
-
-/* Represents a photo */
-class Photo {
-  constructor(image, altText, legend = altText) {
-    this.image = image;
-    this.altText = altText;
-    this.legend = legend;
-  }
-}
+const images = importAll(
+  require.context("../photos/carousel/", false, /\.(png|jpe?g|svg)$/)
+)
 
 // Generate a single carousel element for a photo
 function getCarouselPhotos() {
+  const StyledImg = styled.img`
+    max-height: 300px;
+    width: auto !important;
+  `
+
   let photoJsxArray = []
   for (let item of images) {
-    photoJsxArray.push(<div>
-      <img src={item} className="carouselImage" />
-    </div>)
+    photoJsxArray.push(
+      <div>
+        <StyledImg src={item} />
+      </div>
+    )
   }
   return photoJsxArray
-}
-
-let carouselStyles = {
-  height: 200,
 }
 
 // Main Page component
 class About extends Component {
   render() {
+    const CarouselWrapper = styled.div`
+        display: flex;
+        height: 100%;
+        align-items: center;
+    `
     return (
-
       <Page>
         <Container>
           <Row>
             <Col>
-            <Heading type="h2">About</Heading>
-              <p>
+              <Heading type="h2">About</Heading>
+              <Text>
                 Hi! I'm a 22-year-old developer, currently working in .NET :).
-                  Check out my Github page <a href="https://github.com/Robbie-Cook">here</a> for a list of
+                Check out my Github page{" "}
+                <a href="https://github.com/Robbie-Cook">here</a> for a list of
                 projects I am working on.
-                  </p>
-              <p>
-                I studied at Otago University in Dunedin; where I got an Honours degree
-                in Computer Science and worked as a lab demonstrator for Python and Java students.
-                I also did some Disabilities tutoring for the University as well in my final year.
-                  </p>
-              <p>
+              </Text>
+              <Text>
+                I studied at Otago University in Dunedin; where I got an Honours
+                degree in Computer Science and worked as a lab demonstrator for
+                Python and Java students. I also did some Disabilities tutoring
+                for the University as well in my final year.
+              </Text>
+              <Text>
                 At the moment, I am learning about SQL, web apps, and React.
-                  </p>
-              <p>
-                I have experience
-                with Linux systems, LaTeX and Machine Learning (e.g. tensorflow).
-                  </p>
-              <p>
-                In my spare time, I like to swim, gym, and play guitar and piano.
-                  </p>
+              </Text>
+              <Text>
+                I have experience with Linux systems, LaTeX and Machine Learning
+                (e.g. tensorflow).
+              </Text>
+              <Text>
+                In my spare time, I like to swim, gym, and play guitar and
+                piano.
+              </Text>
             </Col>
             <Col>
-              <div className="carouselColumn">
-                <Carousel style={carouselStyles} showThumbs={false}>
+              <CarouselWrapper>
+                <Carousel showThumbs={false}>
                   {getCarouselPhotos()}
                 </Carousel>
-              </div>
+              </CarouselWrapper>
             </Col>
           </Row>
         </Container>
       </Page>
-    );
+    )
   }
 }
 
-export default About;
+export default About
