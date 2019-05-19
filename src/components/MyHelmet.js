@@ -17,7 +17,7 @@ class MyHelmet extends React.Component {
           />
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
 
-          <style>{'body { background-color: red; }'}</style>
+          <style>{`body { background-color: ${Theme.page.backgroundColor}; }`}</style>
         </Helmet>
       </div>
     )
