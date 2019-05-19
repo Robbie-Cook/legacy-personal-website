@@ -55,7 +55,6 @@ class WebPage extends Component {
   componentDidMount() {
     // Hide loading screeen
     // Loading screen defined in index.html
-    document.getElementsByClassName("loadingScreen")[0].classList.add("hidden")
   }
 }
 
