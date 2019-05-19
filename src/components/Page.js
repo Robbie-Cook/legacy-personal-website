@@ -9,7 +9,6 @@ import Theme from "./Theme"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"
-import LoadingScreen from "./Loading"
 
 // Styles for component
 const StyledPage = styled.div`
