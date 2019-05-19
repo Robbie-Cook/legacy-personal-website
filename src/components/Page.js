@@ -37,40 +37,6 @@ let navigationLinks = [
 
 // Main Page component
 class WebPage extends Component {
-  componentWillMount() {
-    // Loading screen
-    var div = document.createElement("div")
-    // Style for inserted element
-    div.classList.add("loadingPage")
-
-    const styles = `
-         <style type="text/css">
-            /* Styles for loading page */
-            .loadingPage {
-                width:100%; 
-                height:100%; 
-                background-color: ${Theme.page.backgroundColor}; 
-                position: fixed; 
-                z-index: 100; 
-                top:0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .hidden {
-                display: none!important
-            }
-
-            /* Styles for spinner */
-            .spinner::before {
-                font-size: 7em;
-            }
-         </style>
-    `
-    div.innerHTML = `${styles}<i class="spinner fas fa-circle-notch"></i>`
-    div.classList.add("loadingScreen")
-    document.body.appendChild(div)
-  }
   render() {
     return (
       <div>
