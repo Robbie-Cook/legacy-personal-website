@@ -1,11 +1,9 @@
 import React, { Component } from "react"
-import Heading from "../components/Heading"
+import { Heading } from "../components/Typography"
 import { Col, Row, Container } from "../components/Wrappers"
 import Page from "../components/Page"
 import styled from "styled-components"
-import {
-  ProjectBox,
-} from "../components/projects"
+import { ProjectBox } from "../components/projects"
 import Spacer from "../components/Spacer"
 import Theme from "../components/Theme"
 // Media
@@ -15,15 +13,14 @@ import machineLearningMini from "../photos/projects/machineLearningMini.png"
 // Main Page component
 class Projects extends Component {
   render() {
-
     const ProjectRow = styled(Row)`
-        // Responsive design queries
-        @media (max-width: 1200px) {
-            flex-direction: column;
-            & > div {
-                margin-right: 0!important;
-            }
+      // Responsive design queries
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        & > div {
+          margin-right: 0 !important;
         }
+      }
     `
 
     return (
@@ -46,8 +43,7 @@ class Projects extends Component {
               image={personalWebsiteMini}
               githubLink="https://github.com/Robbie-Cook/Personal-Website"
               webLink={["http://robbie.pw", "robbie.pw"]}
-            >
-            </ProjectBox>
+            />
             {/* Machine Learning Showcase */}
             <ProjectBox
               title="Machine Learning Showcase"
@@ -57,9 +53,11 @@ class Projects extends Component {
               }
               image={machineLearningMini}
               githubLink="https://github.com/Robbie-Cook/Machine-Learning-Showcase"
-              webLink={["http://machinelearning.robbie.pw", "machinelearning.robbie.pw"]}
-            >
-            </ProjectBox>
+              webLink={[
+                "http://machinelearning.robbie.pw",
+                "machinelearning.robbie.pw",
+              ]}
+            />
           </ProjectRow>
         </Container>
       </Page>

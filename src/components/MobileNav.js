@@ -69,7 +69,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.cutOff}px)`]: {
+        [`@media (min-width:${theme.mobile.size}px)`]: {
           display: "none",
         },
       },
@@ -79,7 +79,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.cutOff - 1}px)`]: {
+        [`@media (min-width:${theme.mobile.size - 1}px)`]: {
           display: "none",
         },
         marginTop: theme.navbar.height,

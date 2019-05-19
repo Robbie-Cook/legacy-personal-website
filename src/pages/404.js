@@ -2,14 +2,10 @@ import React, { Component } from "react"
 
 /* Imports */
 import Page from "../components/Page"
-import Heading from "../components/Heading"
+import { Heading } from "../components/Typography"
 import { Row, Col, Container } from "../components/Wrappers"
 import Theme from "../components/Theme"
 import styled from "styled-components"
-
-/* Carousel */
-
-const theme = Theme
 
 // Styles
 const StyledHeading = styled.h2`
@@ -17,7 +13,7 @@ const StyledHeading = styled.h2`
   margin-bottom: 30px;
   font-size: 100px;
   font-family: "Roboto", sans-serif;
-  @media (max-width: ${theme.mobile.cutOff}px) {
+  @media (max-width: ${Theme.mobile.size}px) {
     font-size: 50px;
   }
 `

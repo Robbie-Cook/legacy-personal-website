@@ -66,7 +66,7 @@ class Theme {
 
   static mobile = {
     colMargin: new Dimensions(0, 20, 20, 20),
-    cutOff: "900",
+    size: "900",
     padding: new Dimensions(20, 20),
     navbar: {
       padding: new Dimensions(20, 40),

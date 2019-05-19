@@ -14,7 +14,7 @@ export const Row = styled.div`
 display: flex;
 flex-direction: row;
 flex: 1;
-@media (max-width: ${theme.mobile.cutOff}px) {
+@media (max-width: ${theme.mobile.size}px) {
     flex-direction: column;
 }
 `
@@ -24,7 +24,7 @@ display: flex;
 flex-direction: column;
 margin: 0 40px 20px 0;
 flex: 1;
-@media (max-width: ${theme.mobile.cutOff}px) {
+@media (max-width: ${theme.mobile.size}px) {
     margin: ${theme.mobile.colMargin}
 }
 
