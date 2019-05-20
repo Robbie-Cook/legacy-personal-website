@@ -76,7 +76,7 @@ class HomePage extends Component {
     const BackgroundImageWrapper = styled.div`
         background-image: url('${me}');
         width: 100%;
-        background-repeat: no-repetat;
+        background-repeat: no-repeat;
         display: flex;
         background-position-x: 120%;
         background-position-y: 50%;
