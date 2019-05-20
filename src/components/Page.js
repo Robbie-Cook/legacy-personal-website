@@ -12,8 +12,6 @@ import MyHelmet from "./MyHelmet"
 
 // Styles for component
 const StyledPage = styled.div`
-  //  Overwrite bootstrap for containers
-
   background-color: ${Theme.page.backgroundColor};
 
   display: flex;
