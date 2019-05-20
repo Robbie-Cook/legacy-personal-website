@@ -49,7 +49,7 @@ class WebPage extends Component {
       display: flex;
       width: 100%;
     `
-    return <LoadingScreen>
+    return <LoadingScreen/>
   }
 
   render() {
