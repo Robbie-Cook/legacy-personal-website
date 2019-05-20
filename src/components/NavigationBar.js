@@ -25,11 +25,15 @@ class NavigationBar extends React.Component {
       }
     `
 
-        this.props.pages.map((item) => {
+    this.props.pages.map(item => {
       // If the current URL is the same as the item path, mark Tab as active
       array.push(
-        <StyledTab label={item.name} to={item.path} component={Link}
-         activeClassName={"active"}/>
+        <StyledTab
+          label={item.name}
+          to={item.path}
+          component={Link}
+          activeClassName={"active"}
+        />
       )
     })
     return array
@@ -53,12 +57,16 @@ class NavigationBar extends React.Component {
       },
     })(Tabs)
 
+    const StyledToolbar = styled(Toolbar)`
+        z-index: 150
+    `
+
     return (
       <StyledAppBar position="static" color="primary" colorPrimary>
-        <Toolbar>
+        <StyledToolbar>
           <MobileNav pages={this.props.pages} />
           <StyledTabs>{this.generateNav()}</StyledTabs>
-        </Toolbar>
+        </StyledToolbar>
       </StyledAppBar>
     )
   }
