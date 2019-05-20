@@ -40,16 +40,19 @@ class WebPage extends Component {
     this.state = {loading: true};
   }
 
-  getLoadingScreen() {
+  getLoadingScreen(loading) {
     const LoadingScreen = styled.div`
       background-color: red;
       position: absolute;
       top: 0;
+      z-index: 100;
       height: 100%;
       display: flex;
       width: 100%;
     `
-    return <LoadingScreen/>
+    if(loading) {
+      return <LoadingScreen/>
+    } 
   }
 
   render() {
@@ -69,8 +72,8 @@ class WebPage extends Component {
     )
   }
   componentDidMount() {
-    // Hide loading screeen
-    // Loading screen defined in index.html
+    // Hide loading screen
+    this.setState({loading: false})
   }
 }
 
