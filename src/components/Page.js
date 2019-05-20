@@ -55,7 +55,7 @@ class WebPage extends Component {
   render() {
     return (
       <React.Fragment>
-        {getLoadingScreen(this.state.loading)}
+        {this.getLoadingScreen(this.state.loading)}
         <MyHelmet /> {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />
