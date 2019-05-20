@@ -42,7 +42,7 @@ class WebPage extends Component {
 
   getLoadingScreen(loading) {
     const LoadingScreen = styled.div`
-      background-color: red;
+      background-color: ${Theme.page.backgroundColor};
       position: absolute;
       top: 0;
       z-index: 100;
