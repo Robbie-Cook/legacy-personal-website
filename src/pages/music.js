@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 /* Stylesheets etc. */
 import { Heading } from '../components/Typography'
 import WebPage from '../components/Page'
-import { Row, Col, Container } from '../components/Wrappers'
+import { Container } from '../components/Wrappers'
+import { Col, Row } from "../components/Grid"
 import Theme from '../components/Theme'
 import Spacer from '../components/Spacer.js'
 

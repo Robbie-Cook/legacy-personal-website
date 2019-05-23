@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Heading } from "../components/Typography"
-import { Col, Row, Container } from "../components/Wrappers"
+import { Container } from "../components/Wrappers"
+import { Col, Row } from "../components/Layout"
 import Page from "../components/Page"
 import styled from "styled-components"
 import { ProjectBox } from "../components/projects"
