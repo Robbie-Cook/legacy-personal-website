@@ -6,14 +6,12 @@ import { Heading, Text } from "../components/Typography"
 import { Container } from "../components/Wrappers"
 import { Col, Row } from "../components/Layout"
 import Spacer from "../components/Spacer"
-import Theme from "../components/Theme"
+import Globals from "../components/Globals"
 import styled from "styled-components"
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-
-const theme = Theme
 
 /* Media */
 

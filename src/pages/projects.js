@@ -6,7 +6,7 @@ import Page from "../components/Page"
 import styled from "styled-components"
 import { ProjectBox } from "../components/projects"
 import Spacer from "../components/Spacer"
-import Theme from "../components/Theme"
+
 // Media
 import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png"
 import machineLearningMini from "../photos/projects/machineLearningMini.png"

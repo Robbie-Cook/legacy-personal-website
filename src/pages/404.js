@@ -5,7 +5,7 @@ import Page from "../components/Page"
 import { Heading } from "../components/Typography"
 import { Container } from "../components/Wrappers"
 import { Col, Row } from "../components/Layout"
-import Theme from "../components/Theme"
+import Globals from "../components/Globals"
 import styled from "styled-components"
 
 // Styles
@@ -14,7 +14,7 @@ const StyledHeading = styled.h2`
   margin-bottom: 30px;
   font-size: 100px;
   font-family: "Roboto", sans-serif;
-  @media (max-width: ${Theme.mobile.size}px) {
+  @media (max-width: ${Globals.mobile.size}px) {
     font-size: 50px;
   }
 `

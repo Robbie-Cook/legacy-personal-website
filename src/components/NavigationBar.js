@@ -5,7 +5,7 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import { Link } from "gatsby"
 import { withStyles } from "@material-ui/core/styles"
-import Theme from "./Theme"
+import Globals from "./Globals"
 import styled from "styled-components"
 import MobileNav from "./MobileNav"
 
@@ -21,7 +21,7 @@ class NavigationBar extends React.Component {
       font-weight: bold;
 
       &.active {
-        color: ${Theme.link.color};
+        color: ${Globals.link.color};
       }
     `
 
@@ -43,7 +43,7 @@ class NavigationBar extends React.Component {
     /* CSS */
     const StyledAppBar = withStyles({
       root: {
-        backgroundColor: Theme.backgroundColor,
+        backgroundColor: Globals.backgroundColor,
       },
     })(AppBar)
 
@@ -51,7 +51,7 @@ class NavigationBar extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in Theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (max-width:${Theme.mobile.size - 1}px)`]: {
+        [`@media (max-width:${Globals.mobile.size - 1}px)`]: {
           display: "none",
         },
       },

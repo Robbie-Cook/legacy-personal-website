@@ -9,10 +9,10 @@ import Grow from "@material-ui/core/Grow"
 import Paper from "@material-ui/core/Paper"
 import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
-import Theme from "./Theme"
+import Globals from "./Globals"
 import styled from "styled-components"
 
-const theme = Theme
+const theme = Globals
 
 class MobileNav extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React, { Component } from "react"
-import Theme from "./Theme"
+import Globals from "./Globals"
 
 /**
  *  Common components relating to text. This includes

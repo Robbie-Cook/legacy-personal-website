@@ -5,23 +5,23 @@
 import "../css/global-styles.css"
 import React, { Component } from "react"
 import styled from "styled-components"
-import Theme from "./Theme"
+import Globals from "./Globals"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"
 
 // Styles for component
 const StyledPage = styled.div`
-  background-color: ${Theme.page.backgroundColor};
+  background-color: ${Globals.page.backgroundColor};
 
   display: flex;
   flex-direction: row;
-  padding: ${Theme.page.padding};
+  padding: ${Globals.page.padding};
 
   // Mobile styles
-  @media (max-width: ${Theme.mobile.size}px) {
+  @media (max-width: ${Globals.mobile.size}px) {
     flex-direction: column;
-    padding: ${Theme.mobile.padding};
+    padding: ${Globals.mobile.padding};
   }
 `
 
@@ -42,7 +42,7 @@ class WebPage extends Component {
 
   getLoadingScreen(loading) {
     const LoadingScreen = styled.div`
-      background-color: ${Theme.page.backgroundColor};
+      background-color: ${Globals.page.backgroundColor};
       position: absolute;
       top: 0;
       z-index: 100;

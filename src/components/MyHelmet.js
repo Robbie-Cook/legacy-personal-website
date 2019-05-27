@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Helmet } from "react-helmet"
-import Theme from "./Theme"
+import Globals from "./Globals"
 
 class MyHelmet extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class MyHelmet extends React.Component {
           />
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
 
-          <style>{`body { background-color: ${Theme.page.backgroundColor}; }`}</style>
+          <style>{`body { background-color: ${Globals.page.backgroundColor}; }`}</style>
         </Helmet>
       </div>
     )

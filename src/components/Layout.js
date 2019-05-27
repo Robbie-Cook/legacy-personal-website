@@ -3,13 +3,13 @@
  */
 
  import styled from 'styled-components'
- import Theme from '../components/Theme'
+ import Globals from '../components/Globals'
 
 const Row = styled.div`
 display: flex;
 flex-direction: row;
 flex: 1;
-@media (max-width: ${Theme.mobile.size}px) {
+@media (max-width: ${Globals.mobile.size}px) {
     flex-direction: column;
 }
 `
@@ -19,8 +19,8 @@ display: flex;
 flex-direction: column;
 margin: 0 40px 20px 0;
 flex: 1;
-@media (max-width: ${Theme.mobile.size}px) {
-    margin: ${Theme.mobile.colMargin}
+@media (max-width: ${Globals.mobile.size}px) {
+    margin: ${Globals.mobile.colMargin}
 }
 
 &:last-child {

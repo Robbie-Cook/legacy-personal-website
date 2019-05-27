@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 /* Theme */
-import Theme from "../components/Theme"
+import Globals from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
 
 /*
@@ -110,31 +110,31 @@ class ProjectLink extends Component {
   render() {
     //   Original color: #6a77ec
     const ProjectLinkWrapper = styled.div`
-      border: 3px solid ${Theme.link.color};
+      border: 3px solid ${Globals.link.color};
       border-radius: 6px;
       display: inline-block;
       padding: 5px;
       margin-right: 10px;
       margin-top: 5px;
-      color: ${Theme.text.color};
+      color: ${Globals.text.color};
       transition: 0.03s;
 
       /* for svg icons */
-      fill: ${Theme.text.color};
-      stroke: ${Theme.text.color};
+      fill: ${Globals.text.color};
+      stroke: ${Globals.text.color};
 
       & p {
         color: inherit;
         margin: 0 10px;
         text-decoration: none;
-        border-bottom: 1px solid ${Theme.text.color};
+        border-bottom: 1px solid ${Globals.text.color};
       }
 
       &:hover {
         & p {
           border-bottom: 1px solid transparent;
         }
-        background-color: ${Theme.link.color};
+        background-color: ${Globals.link.color};
       }
     `
     const InnerWrapper = styled.div`

@@ -16,7 +16,7 @@ import "../fontawesome/css/all.css"
 import me from "../photos/me_irl3_cropped.jpg"
 
 /* Theme */
-import Theme from "../components/Theme"
+import Globals from "../components/Globals"
 
 const IconWrapper = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ const IconWrapper = styled.div`
     flex-direction: row;
   }
 
-  @media (max-width: ${Theme.mobile.size}px) {
+  @media (max-width: ${Globals.mobile.size}px) {
     justify-content: center;
   }
 `
@@ -57,17 +57,17 @@ class HomePage extends Component {
       flex-direction: column;
       max-width: 600px;
       z-index: 2;
-      @media (max-width: ${Theme.mobile.size}px) {
+      @media (max-width: ${Globals.mobile.size}px) {
         justify-content: center;
         text-align: center;
         margin: 50px 20px 70px 20px;
         min-width: auto;
-        background-color: ${Theme.page.backgroundColor};
+        background-color: ${Globals.page.backgroundColor};
         padding: 0 15px;
       }
 
       & .iconWrapper {
-        @media (max-width: ${Theme.mobile.size}px) {
+        @media (max-width: ${Globals.mobile.size}px) {
           justify-content: center;
         }
       }
@@ -86,14 +86,14 @@ class HomePage extends Component {
     const BackgroundGradientWrapper = styled.div`
       background: linear-gradient(
         to right,
-        ${Theme.page.backgroundColor} 80%,
+        ${Globals.page.backgroundColor} 80%,
         rgba(255, 244, 244, 0) 100%
       );
 
       padding-right: 80px;
       display: flex;
 
-      @media (max-width: ${Theme.mobile.size}px) {
+      @media (max-width: ${Globals.mobile.size}px) {
         padding: 0;
         background: none;
       }
