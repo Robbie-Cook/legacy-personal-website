@@ -3,7 +3,8 @@ import React, { Component } from "react"
 /* Imports */
 import Page from "../components/Page"
 import { Heading } from "../components/Typography"
-import { Row, Col, Container } from "../components/Wrappers"
+import { Container } from "../components/Wrappers"
+import { Col, Row } from "../components/Layout"
 import Theme from "../components/Theme"
 import styled from "styled-components"
 

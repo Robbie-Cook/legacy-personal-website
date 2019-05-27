@@ -5,7 +5,7 @@
  import styled from 'styled-components'
  import Theme from '../components/Theme'
 
-export const Row = styled.div`
+const Row = styled.div`
 display: flex;
 flex-direction: row;
 flex: 1;
@@ -14,7 +14,7 @@ flex: 1;
 }
 `
 
-export const Col = styled.div`
+const Col = styled.div`
 display: flex;
 flex-direction: column;
 margin: 0 40px 20px 0;
@@ -27,3 +27,5 @@ flex: 1;
     margin-right: 0px
 }
 `
+
+export {Col, Row}
