@@ -109,7 +109,7 @@ class HomePage extends Component {
                 <Text>
                   Hello! I'm a developer living in Auckland, New Zealand. I love
                   coding, making stuff, learning, and teaching.
-                  <Spacer height="10"/>
+                  <Spacer height="10px"/>
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
                 </Text>

@@ -8,6 +8,7 @@ import { Col, Row } from "../components/Layout"
 import Spacer from "../components/Spacer"
 import Globals from "../components/Globals"
 import styled from "styled-components"
+import Section from "../components/Section"
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -46,46 +47,53 @@ function getCarouselPhotos() {
 class About extends Component {
   render() {
     const CarouselWrapper = styled.div`
-        display: flex;
-        height: 100%;
-        align-items: center;
+      display: flex;
+      height: 100%;
+      align-items: center;
     `
     return (
       <Page>
         <Container>
           <Row>
-            <Col>
+            <Col width="50%">
               <Heading type="h2">About</Heading>
               <Text>
-                Hi! I'm a 22-year-old developer, currently working in .NET :).
-                Check out my Github page{" "}
-                <a href="https://github.com/Robbie-Cook">here</a> for a list of
-                projects I am working on.
+                Hi! I'm a 22-year-old .NET developer in Auckland. Check out my
+                Github page <a href="https://github.com/Robbie-Cook">here</a>{" "}
+                for a list of projects I am working on.
               </Text>
               <Text>
-                I studied at Otago University in Dunedin; where I got an Honours
-                degree in Computer Science and worked as a lab demonstrator for
-                Python and Java students. I also did some Disabilities tutoring
-                for the University as well in my final year.
+                My work is developing a product in C# and VB .NET. At home, I
+                enjoy development in React and JavaScript libraries. I would
+                like to learn about Angular in the near future.
               </Text>
               <Text>
-                At the moment, I am learning about SQL, web apps, and React.
+                I have an Honours degree in Computer Science from Otago
+                University, where I and worked as a lab demonstrator for Python
+                and Java students. I also did some one-on-one tutoring for the
+                disabilities department University as well in my final year.
               </Text>
               <Text>
-                I have experience with Linux systems, LaTeX and Machine Learning
-                (e.g. tensorflow).
+                I also have experience with Linux systems, LaTeX and Machine
+                Learning (e.g. tensorflow).
               </Text>
               <Text>
                 In my spare time, I like to swim, gym, and play guitar and
                 piano.
               </Text>
             </Col>
-            <Col>
+            <Col width="50%">
               <CarouselWrapper>
-                <Carousel showThumbs={false}>
-                  {getCarouselPhotos()}
-                </Carousel>
+                <Carousel showThumbs={false}>{getCarouselPhotos()}</Carousel>
               </CarouselWrapper>
+            </Col>
+          </Row>
+          <Spacer height="30px" />
+          <Row>
+            <Col>
+              <Heading type="h2">Skills</Heading>
+              <Heading type="h3">General Development</Heading>
+              <Heading type="h3">Continuous Integration / Deployment</Heading>
             </Col>
           </Row>
         </Container>
