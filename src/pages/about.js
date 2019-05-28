@@ -94,11 +94,25 @@ class About extends Component {
               <Heading type="h2">Skills</Heading>
 
               <Heading type="h3">General Development</Heading>
+              <Text>
+                <ul>
+                  <li>
+                    Web development (JavaScript, React, UI frameworks, common
+                    component sharing (bit.dev))
+                  </li>
+                  <li>
+                    Microsoft development (including C# .NET, VB.NET, MSSQL
+                    (T-SQL), Hyper-V)
+                  </li>
+                  <li>Linux technologies (e.g. basic bash skills, apt, ssh)</li>
+                  <li>Virtualisation (e.g. Hyper-V, Docker, VirtualBox)</li>
+                </ul>
+              </Text>
+
               <Heading type="h3">Continuous Integration / Deployment</Heading>
               <Heading type="h3">Source Control</Heading>
               <Heading type="h3">Database</Heading>
               <Heading type="h3">Design</Heading>
-
             </Col>
           </Row>
         </LayoutWrapper>
