@@ -3,8 +3,8 @@ import React, { Component } from "react"
 /* Imports */
 import Page from "../components/Page"
 import { Heading, Text } from "../components/Typography"
-import { Container } from "../components/Wrappers"
-import { Col, Row } from "../components/Layout"
+import { Container as LayoutWrapper } from "../components/Wrappers"
+import { Col, Row, LayouWrapper } from "../components/Layout"
 import Spacer from "../components/Spacer"
 import Globals from "../components/Globals"
 import styled from "styled-components"
@@ -53,7 +53,7 @@ class About extends Component {
     `
     return (
       <Page>
-        <Container>
+        <LayoutWrapper>
           <Row>
             <Col width="50%">
               <Heading type="h2">About</Heading>
@@ -92,11 +92,16 @@ class About extends Component {
           <Row>
             <Col>
               <Heading type="h2">Skills</Heading>
+
               <Heading type="h3">General Development</Heading>
               <Heading type="h3">Continuous Integration / Deployment</Heading>
+              <Heading type="h3">Source Control</Heading>
+              <Heading type="h3">Database</Heading>
+              <Heading type="h3">Design</Heading>
+
             </Col>
           </Row>
-        </Container>
+        </LayoutWrapper>
       </Page>
     )
   }

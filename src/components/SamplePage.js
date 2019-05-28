@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Heading from '../components/Heading'
-import {Col, Row, Container} from '../components/Wrappers' 
+import {Col, Row, Container as LayoutWrapper} from '../components/Wrappers' 
 import Page from '../components/Page'
 
 // Main Page component
@@ -9,7 +9,7 @@ class Sample extends Component {
       return (
   
         <Page>
-          <Container>
+          <LayoutWrapper>
             <Heading type="h2">Sample</Heading>
             <Row>
               <Col>
@@ -19,7 +19,7 @@ class Sample extends Component {
 
               </Col>
             </Row>
-          </Container>
+          </LayoutWrapper>
         </Page>
       );
     }

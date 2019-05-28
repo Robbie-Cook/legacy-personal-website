@@ -7,6 +7,11 @@ import Globals from "../components/Globals"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
+const LayoutWrapper = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%`
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -43,4 +48,4 @@ class Col extends Component {
   }
 }
 
-export { Col, Row }
+export { Col, Row, LayoutWrapper }

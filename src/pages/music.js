@@ -5,14 +5,14 @@ import React, { Component } from "react"
 import { Heading, Text } from "../components/Typography"
 import WebPage from "../components/Page"
 import { Container } from "../components/Wrappers"
-import { Col, Row } from "../components/Layout"
+import { Col, Row, LayoutWrapper } from "../components/Layout"
 
 // Main Page component
 class MusicPage extends Component {
   render() {
     return (
       <WebPage>
-        <Container>
+        <LayoutWrapper>
           <Row>
             <Col width="50%">
               <Heading type="h2">Music</Heading>
@@ -40,7 +40,7 @@ class MusicPage extends Component {
               />
             </Col>
           </Row>
-        </Container>
+        </LayoutWrapper>
       </WebPage>
     )
   }

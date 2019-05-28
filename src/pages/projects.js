@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Heading, Text } from "../components/Typography"
 import { Container } from "../components/Wrappers"
-import { Col, Row } from "../components/Layout"
+import { Col, Row, LayoutWrapper } from "../components/Layout"
 import Page from "../components/Page"
 import styled from "styled-components"
 import { ProjectBox } from "../components/projects"
@@ -25,7 +25,7 @@ class Projects extends Component {
 
     return (
       <Page>
-        <Container>
+        <LayoutWrapper>
           <Heading type="h2">Work / Projects</Heading>
           <Text>
             Here is a showcase of the different projects I have been working on
@@ -59,7 +59,7 @@ class Projects extends Component {
               ]}
             />
           </ProjectRow>
-        </Container>
+        </LayoutWrapper>
       </Page>
     )
   }

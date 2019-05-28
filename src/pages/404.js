@@ -3,7 +3,7 @@ import React, { Component } from "react"
 /* Imports */
 import Page from "../components/Page"
 import { Heading } from "../components/Typography"
-import { Container } from "../components/Wrappers"
+import { Container as LayoutWrapper } from "../components/Wrappers"
 import { Col, Row } from "../components/Layout"
 import Globals from "../components/Globals"
 import styled from "styled-components"
@@ -46,7 +46,7 @@ class fourOhFour extends Component {
   render() {
     return (
       <Page>
-        <Container>
+        <LayoutWrapper>
           <StyledHeading type="h2">
             &#123;404: Page not found&#125;
           </StyledHeading>
@@ -61,7 +61,7 @@ class fourOhFour extends Component {
               </StyledContainer>
             </Col>
           </Row>
-        </Container>
+        </LayoutWrapper>
       </Page>
     )
   }
