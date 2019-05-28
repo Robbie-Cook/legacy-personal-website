@@ -4,6 +4,7 @@ import styled from "styled-components"
 /* Theme */
 import Globals from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
+import { Heading, Text } from "../components/Typography"
 
 /*
 Component representing a project
