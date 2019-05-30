@@ -36,7 +36,7 @@ class Col extends Component {
       width: ${this.props.width};
 
       @media (max-width: ${Globals.mobile.size}px) {
-        margin: ${Globals.mobile.colMargin};
+        width: 100%;
       }
 
       &:last-child {
