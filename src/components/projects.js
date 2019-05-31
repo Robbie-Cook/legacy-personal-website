@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 /* Theme */
 import Globals from "../components/Globals"
@@ -69,7 +68,7 @@ class ProjectBox extends Component {
       }
     `
 
-    const LinkWrapper = styled.div`
+    const ProjectButton = styled.div`
       margin-top: auto;
     `
 
@@ -94,11 +93,11 @@ class ProjectBox extends Component {
             <img src={this.props.image} />
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
-        <LinkWrapper>
+        <ProjectButton>
           {getGithubLink(this.props.githubLink)}
           {getWebLink(this.props.webLink)}
           {this.props.children}
-        </LinkWrapper>
+        </ProjectButton>
       </ProjectBox>
     )
   }
@@ -107,7 +106,7 @@ class ProjectBox extends Component {
 // Links which sit at the bottom of a project.
 // Can be used to make a custom link, or is extended below for
 // simple Github and web links
-class ProjectLink extends Component {
+class ProjectButtons extends Component {
   render() {
     //   Original color: #6a77ec
     const ProjectLinkWrapper = styled.div`
@@ -161,9 +160,9 @@ class ProjectLink extends Component {
 class ProjectGithubLink extends Component {
   render() {
     return (
-      <ProjectLink to={this.props.to} text="Code on Github">
+      <ProjectButtons to={this.props.to} text="Code on Github">
         <Github fill="inherit" color="inherit" />
-      </ProjectLink>
+      </ProjectButtons>
     )
   }
 }
@@ -172,11 +171,11 @@ class ProjectGithubLink extends Component {
 class ProjectWebLink extends Component {
   render() {
     return (
-      <ProjectLink to={this.props.to} text={this.props.text}>
+      <ProjectButtons to={this.props.to} text={this.props.text}>
         <GrommetLink stroke="inherit" color="inherit" />
-      </ProjectLink>
+      </ProjectButtons>
     )
   }
 }
 
-export { ProjectBox, ProjectLink, ProjectGithubLink, ProjectWebLink }
+export { ProjectBox, ProjectButtons as ProjectLink, ProjectGithubLink, ProjectWebLink }
