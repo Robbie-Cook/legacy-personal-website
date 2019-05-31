@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 import { Button as GrommetButton, Grommet } from "grommet"
 import Globals from "../components/Globals"
-import styled from 'styled-components'
+import styled from "styled-components"
 import Dimensions from "../components/Dimensions"
 
 /**
@@ -20,6 +20,29 @@ class Button extends Component {
     }
 
     const MyButton = styled(GrommetButton)`
+      border: 3px solid ${Globals.link.color};
+      border-radius: 6px;
+      color: ${Globals.text.color};
+      transition: 0.03s;
+
+      /* for svg icons */
+      fill: ${Globals.text.color};
+      stroke: ${Globals.text.color};
+
+      & p {
+        color: inherit;
+        margin: 0 10px;
+        text-decoration: none;
+        border-bottom: 1px solid ${Globals.text.color};
+      }
+
+      &:hover {
+        & p {
+          border-bottom: 1px solid transparent;
+        }
+        background-color: ${Globals.link.color};
+      }
+
       background-color: transparent;
       margin: ${this.props.margin ? this.props.margin : new Dimensions(10, 20)};
       color: ${Globals.textColor};
@@ -87,7 +110,7 @@ ButtonGroup.propTypes = {
   titles: PropTypes.array.isRequired,
   functions: PropTypes.array.isRequired, // Should be an array of functions
   buttonRow: PropTypes.bool, // Whether to display the buttons as a row
-  buttonStyle: PropTypes.string // Styles passed to the button
+  buttonStyle: PropTypes.string, // Styles passed to the button
 }
 
-export {Button, ButtonGroup}
+export { Button, ButtonGroup }
