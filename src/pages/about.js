@@ -11,6 +11,9 @@ import styled from "styled-components"
 import Section from "../components/Section"
 import PropTypes from "prop-types"
 import { Header } from "../components/Typography"
+import Dimensions from "../components/Dimensions"
+import { Button as GrommetButton, Grommet } from "grommet"
+import {Button, ButtonGroup} from "../components/Button"
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -95,6 +98,19 @@ class About extends Component {
           <Heading type="h2">Skills</Heading>
           <Row>
             <Col width="100%">
+              <ButtonGroup
+                titles={["Development", "General"]}
+                functions={[
+                  () => {
+                    console.log("Button1Pressed")
+                  },
+                  () => {
+                    console.log("Button2Pressed")
+                  },
+                ]}
+                buttonRow={true}
+                buttonStyle="margin: 10px 0 10px 0;"
+              />
               <SkillsBox
                 title="Web Development"
                 tags={[
@@ -128,25 +144,6 @@ class About extends Component {
                 backgroundColor="#43DE49"
                 titleColor="#0f0f0f"
               />
-              {/* <Heading type="h3">Development</Heading>
-              <Heading type="h4">
-                Web development
-              </Heading>
-                <Heading type="h5">JavaScript</Heading>
-                <Heading type="h5">React</Heading>
-                <Heading type="h5">UI Libraries (Grommet, Material-UI, bit.dev)</Heading>
-              <Heading type="h4">
-                Microsoft development (including C# .NET, VB.NET, MSSQL (T-SQL),
-                Hyper-V)
-              </Heading>
-              <Heading type="h4">
-                Bash
-              </Heading>
-
-              <Heading type="h3">Continuous Integration / Deployment</Heading>
-              <Heading type="h3">Source Control</Heading>
-              <Heading type="h3">Database</Heading>
-              <Heading type="h3">Design</Heading> */}
             </Col>
           </Row>
         </LayoutWrapper>
@@ -155,7 +152,7 @@ class About extends Component {
   }
 }
 
-/* The tags of the SkillsBox, which lives inside a SkillsBox */
+/** The tags of the SkillsBox, which lives inside a SkillsBox */
 class SkillsBoxInfo extends Component {
   render() {
     const SkillsBoxInfo = styled.div`
@@ -165,6 +162,7 @@ class SkillsBoxInfo extends Component {
       align-items: center;
       padding: 0 20px;
       font-weight: bold;
+      font: inherit;
 
       @media (max-width: ${Globals.mobile.size}px) {
         height: auto;
@@ -175,6 +173,9 @@ class SkillsBoxInfo extends Component {
       margin: 0 14px 0 0;
       display: inline;
       height: ${this.props.height};
+      font-weight: bold;
+      font: inherit;
+      line-height: ${this.props.height};
     `
 
     return (
@@ -183,6 +184,7 @@ class SkillsBoxInfo extends Component {
           return (
             <Tag>
               {item}
+              {/* Put a comma at the end, except for the last item */}
               {index !== this.props.tags.length - 1 ? "," : ""}
             </Tag>
           )
