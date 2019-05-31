@@ -68,7 +68,7 @@ class ProjectBox extends Component {
       }
     `
 
-    const ProjectButton = styled.div`
+    const LinkWrapper = styled.div`
       margin-top: auto;
     `
 
@@ -93,11 +93,11 @@ class ProjectBox extends Component {
             <img src={this.props.image} />
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
-        <ProjectButton>
+        <LinkWrapper>
           {getGithubLink(this.props.githubLink)}
           {getWebLink(this.props.webLink)}
           {this.props.children}
-        </ProjectButton>
+        </LinkWrapper>
       </ProjectBox>
     )
   }
@@ -106,7 +106,7 @@ class ProjectBox extends Component {
 // Links which sit at the bottom of a project.
 // Can be used to make a custom link, or is extended below for
 // simple Github and web links
-class ProjectButtons extends Component {
+class ProjectButton extends Component {
   render() {
     //   Original color: #6a77ec
     const ProjectLinkWrapper = styled.div`
@@ -160,9 +160,9 @@ class ProjectButtons extends Component {
 class ProjectGithubLink extends Component {
   render() {
     return (
-      <ProjectButtons to={this.props.to} text="Code on Github">
+      <ProjectButton to={this.props.to} text="Code on Github">
         <Github fill="inherit" color="inherit" />
-      </ProjectButtons>
+      </ProjectButton>
     )
   }
 }
@@ -171,11 +171,11 @@ class ProjectGithubLink extends Component {
 class ProjectWebLink extends Component {
   render() {
     return (
-      <ProjectButtons to={this.props.to} text={this.props.text}>
+      <ProjectButton to={this.props.to} text={this.props.text}>
         <GrommetLink stroke="inherit" color="inherit" />
-      </ProjectButtons>
+      </ProjectButton>
     )
   }
 }
 
-export { ProjectBox, ProjectButtons as ProjectLink, ProjectGithubLink, ProjectWebLink }
+export { ProjectBox, ProjectButton, ProjectGithubLink, ProjectWebLink }
