@@ -13,7 +13,7 @@ import PropTypes from "prop-types"
 import { Header } from "../components/Typography"
 import Dimensions from "../components/Dimensions"
 import { Button as GrommetButton, Grommet } from "grommet"
-import {Button, ButtonGroup} from "../components/Button"
+import {Button, ButtonGenerator} from "../components/Button"
 
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -98,7 +98,7 @@ class About extends Component {
           <Heading type="h2">Skills</Heading>
           <Row>
             <Col width="100%">
-              <ButtonGroup
+              <ButtonGenerator
                 titles={["Development", "General"]}
                 functions={[
                   () => {
