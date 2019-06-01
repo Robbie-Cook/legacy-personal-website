@@ -1,9 +1,11 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 /* Theme */
 import Globals from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
 import { Heading, Text } from "../components/Typography"
+import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
 
 /*
 Component representing a project
@@ -19,15 +21,17 @@ Example usage:
 */
 class ProjectBox extends Component {
   render() {
+    // Extra padding is for position: absolute buttons
     const ProjectBox = styled.div`
       border: 2px solid #dcd6ce;
       border-radius: 5px;
-      padding: 20px;
+      padding: 20px 20px 50px 20px;
       background-color: #3c3c3c;
       max-width: 600px;
       margin-top: 10px;
       display: flex;
       flex-direction: column;
+      position: relative;
 
       &:nth-child(odd) {
         margin-right: 31px;
@@ -37,8 +41,6 @@ class ProjectBox extends Component {
       @media (max-width: 1200px) {
         margin-right: 0 !important;
       }
-
-
     `
 
     const ProjectDescriptionAndImageWrapper = styled.div`
@@ -72,18 +74,10 @@ class ProjectBox extends Component {
       margin-top: auto;
     `
 
-    function getGithubLink(link) {
-      if (link !== undefined) {
-        return <ProjectGithubLink to={link} />
-      }
-    }
-
-    function getWebLink(link) {
-      if (link !== undefined) {
-        return <ProjectWebLink to={link[0]} text={link[1]} />
-      }
-    }
-
+    // Style for the project buttons
+    const buttonStyle = `
+      margin: 7px 20px 0px 0px;
+    `
     return (
       <ProjectBox>
         <ProjectTitle>{this.props.title}</ProjectTitle>
@@ -93,19 +87,43 @@ class ProjectBox extends Component {
             <img src={this.props.image} />
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
-        <LinkWrapper>
-          {getGithubLink(this.props.githubLink)}
-          {getWebLink(this.props.webLink)}
-          {this.props.children}
-        </LinkWrapper>
+        <ButtonWrapper style="position:absolute; bottom: 10px;">
+          {(() => {
+            if (this.props.githubLink !== undefined) {
+              return (
+                <ProjectGithubLink
+                  to={this.props.githubLink}
+                  style={buttonStyle}
+                />
+              )
+            }
+          })()}
+          {(() => {
+            if (this.props.webLink !== undefined) {
+              return (
+                <ProjectWebLink
+                  to={this.props.webLink[0]}
+                  label={this.props.webLink[1]}
+                  style={buttonStyle}
+                />
+              )
+            }
+          })()}
+        </ButtonWrapper>
       </ProjectBox>
     )
   }
+}
+ProjectBox.propTypes = {
+  githubLink: PropTypes.string,
+  webLink: PropTypes.string,
 }
 
 // Links which sit at the bottom of a project.
 // Can be used to make a custom link, or is extended below for
 // simple Github and web links
+
+// To be replaced by <Button />
 class ProjectButton extends Component {
   render() {
     //   Original color: #6a77ec
@@ -160,9 +178,12 @@ class ProjectButton extends Component {
 class ProjectGithubLink extends Component {
   render() {
     return (
-      <ProjectButton to={this.props.to} text="Code on Github">
-        <Github fill="inherit" color="inherit" />
-      </ProjectButton>
+      <Button
+        icon={<Github fill="inherit" color="inherit" />}
+        to={this.props.to}
+        label="Code on Github"
+        {...this.props}
+      />
     )
   }
 }
@@ -171,9 +192,12 @@ class ProjectGithubLink extends Component {
 class ProjectWebLink extends Component {
   render() {
     return (
-      <ProjectButton to={this.props.to} text={this.props.text}>
-        <GrommetLink stroke="inherit" color="inherit" />
-      </ProjectButton>
+      <Button
+        icon={<GrommetLink stroke="inherit" color="inherit" />}
+        to={this.props.to}
+        label={this.props.text}
+        {...this.props}
+      />
     )
   }
 }
