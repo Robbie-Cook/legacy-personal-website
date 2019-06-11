@@ -4,7 +4,7 @@ import Globals from "../Globals"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Button, ButtonGenerator, ButtonWrapper } from "../Button"
-import { MobileView } from "../../util/MediaQueries"
+import { MobileMediaQuery } from "../../util/MediaQueries"
 
 /** A component which defines the SkillBoxes */
 class SkillsPage extends Component {
@@ -45,6 +45,7 @@ class SkillsPage extends Component {
     const PreTransformWrapper = styled.div`
       padding-left: 22px;
       width: 56px;
+      ${new MobileMediaQuery("display: none")};
     `
 
     this.FirstSkillsPage.content = (
