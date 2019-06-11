@@ -166,7 +166,7 @@ class SkillsPage extends Component {
 class SkillsBoxInfo extends Component {
   render() {
     const SkillsBoxInfo = styled.div`
-      height: ${this.props.height};
+      min-height: ${this.props.height};
       line-height: ${this.props.height};
       justify-content: center;
       align-items: center;
@@ -182,7 +182,7 @@ class SkillsBoxInfo extends Component {
     const Tag = styled.span`
       margin: 0 14px 0 0;
       display: inline;
-      height: ${this.props.height};
+      min-height: ${this.props.height};
       font-weight: bold;
       font: inherit;
       line-height: ${this.props.height};
@@ -212,7 +212,7 @@ SkillsBoxInfo.propTypes = {
 class SkillsBoxHeader extends Component {
   render() {
     const SkillsBoxHead = styled.div`
-      height: ${this.props.height};
+      min-height: ${this.props.height};
       background-color: ${this.props.backgroundColor};
       color: ${this.props.titleColor}!important;
       display: flex;
@@ -244,7 +244,7 @@ class SkillsBox extends Component {
 
     const SkillsBox = styled.div`
       border: 1px solid #656565;
-      height: ${height};
+      min-height: ${height};
       width: 100%;
       display: flex;
       ${this.props.styles};
