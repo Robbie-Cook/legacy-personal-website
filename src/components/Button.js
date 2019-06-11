@@ -15,10 +15,26 @@ class Button extends Component {
     const customTheme = {
       button: {
         border: {
-          color: Globals.link.color,
+          color: Globals.textColor,
         },
+        color: (() => {
+          if (this.props.active) {
+            if (this.props.activeColor) {
+              return this.props.activeColor
+            }
+            return Globals.link.colorActive
+          } else if (this.props.color) {
+            return this.props.color
+          }
+          return Globals.link.color
+        })(),
       },
     }
+
+    const activeStyle = this.props.activeStyle
+      ? this.props.activeStyle
+      : `background-color: ${Globals.link.colorActive}`
+
     const MyButton = styled(GrommetButton)`
       border: 3px solid ${Globals.link.color};
       border-radius: 6px;
@@ -33,24 +49,37 @@ class Button extends Component {
         & p {
           border-bottom: 1px solid transparent;
         }
-        background-color: ${Globals.link.color};
+        background-color: ${this.props.hoverColor
+          ? this.props.hoverColor
+          : Globals.link.color};
       }
 
-      background-color: transparent;
       margin: ${this.props.margin ? this.props.margin : new Dimensions(10, 20)};
       color: ${Globals.textColor};
       line-height: 27px;
       font-size: 16px;
       padding: 5px 12px;
       font-weight: normal;
+
+      // Styles for active links
+      background-color: ${this.props.activeColor
+        ? this.props.activeColor
+        : Globals.link.color};
+
       ${this.props.style};
+      ${this.props.active && activeStyle};
     `
 
     const BorderedText = styled.p`
       color: ${Globals.textColor};
       margin: 0;
       text-decoration: none;
-      border-bottom: 1px solid ${Globals.text.color};
+      ${(() => {
+        return this.props.underline
+          ? `border-bottom: 1px solid ${Globals.text.color};`
+          : ``
+      })()}
+
       line-height: 20px;
     `
 
@@ -79,6 +108,11 @@ Button.propTypes = {
   icon: PropTypes.elementType,
   to: PropTypes.string, // Signifies the button is a link, this is the link address
   label: PropTypes.string, // Label for the button
+  active: PropTypes.bool, // whether or not this button is active
+  activeColor: PropTypes.string,
+  activeStyle: PropTypes.string,
+  hoverColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
 }
 
 /**
@@ -94,7 +128,7 @@ class ButtonGenerator extends Component {
       */
       <ButtonWrapper buttonRow={this.props.buttonRow}>
         {/* Buttons defined as props */}
-        {this.props.titles.map((item, index) => {
+        {this.props.labels.map((item, index) => {
           return (
             <Button
               function={this.props.functions[index]}
@@ -110,10 +144,11 @@ class ButtonGenerator extends Component {
   }
 }
 ButtonGenerator.propTypes = {
-  titles: PropTypes.array.isRequired,
+  labels: PropTypes.array.isRequired,
   functions: PropTypes.array, // Should be an array of functions
   buttonRow: PropTypes.bool, // Whether to display the buttons as a row
   buttonStyle: PropTypes.string, // Styles passed to the button
+  activeColor: PropTypes.string, // The color of an active button
 }
 
 /* 
