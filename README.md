@@ -7,8 +7,7 @@ It's a very simple website with a few pages, and it should be updated regularly.
 Some key dependencies that this project makes use of are:
 
 * Gatsby.
-            A framework for building static react apps with simple server-side rendering, and a good starter for learning good     
-            React design pracitises.
+            A framework for building static react apps with simple server-side rendering, and a good starter for learning good React design practises.
             
 * React styled-components.
             I use styled-components a lot in this website. It allows me to apply CSS directly to components, and it
