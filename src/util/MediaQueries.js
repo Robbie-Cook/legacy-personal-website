@@ -1,15 +1,22 @@
 import Globals from "../components/Globals"
 import React, { Component } from "react"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 
-class MobileView {
-  render() {
-    return(
+/**
+ * Media query for mobile 
+ */
+class MobileMediaQuery {
+  constructor(style) {
+    this.style = style;
+  }
+
+  toString() {
+    return (
       `@media (max-width: ${Globals.mobile.size}px) {
-        ${this.props.style}
-      }`
-    )
+          ${this.style};
+        }`
+    );
   }
 }
 
-export {MobileView};
+export { MobileMediaQuery }
