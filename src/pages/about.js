@@ -19,6 +19,7 @@ import SkillsPage from "../components/about/SkillsPage"
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
+import { MobileMediaQuery } from "../util/MediaQueries";
 
 /* Media */
 
@@ -56,6 +57,11 @@ class About extends Component {
       display: flex;
       height: 100%;
       align-items: center;
+      ${new MobileMediaQuery(`
+        & > div {
+          overflow: hidden!important
+        }
+      `)};
     `
 
     return (
