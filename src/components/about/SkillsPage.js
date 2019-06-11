@@ -5,6 +5,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Button, ButtonGenerator, ButtonWrapper } from "../Button"
 import { MobileMediaQuery } from "../../util/MediaQueries"
+import Spacer from "../Spacer"
 
 /** A component which defines the SkillBoxes */
 class SkillsPage extends Component {
@@ -65,7 +66,7 @@ class SkillsPage extends Component {
         />
 
         <SkillsBox
-          title="Development Languages"
+          title="Coding Languages"
           tags={["JavaScript", "Python", "C#", "VB.NET", "Java"]}
           backgroundColor={this.FirstSkillsPage.backgroundColor}
           titleColor="#0f0f0f"
@@ -89,7 +90,7 @@ class SkillsPage extends Component {
           titleColor="#0f0f0f"
         />
         <SkillsBox
-          title="Teamwork &amp; Communication"
+          title="Communication"
           tags={["Experience working in team environments, and managing teams"]}
           backgroundColor={this.SecondSkillsPage.backgroundColor}
           titleColor="#0f0f0f"
@@ -147,14 +148,21 @@ class SkillsPage extends Component {
 
         <ColumnWrapper>
           {(() => {
+
+            const SectionSpacing = "40px";
             if (this.state.activeSkillsPage === this.FirstSkillsPage.index) {
               // display first skills page first
               return [
                 this.FirstSkillsPage.content,
+                <Spacer height={SectionSpacing} />,
                 this.SecondSkillsPage.content,
               ]
             }
-            return [this.SecondSkillsPage.content, this.FirstSkillsPage.content]
+            return [
+              this.SecondSkillsPage.content,
+              <Spacer height={SectionSpacing} />,
+              this.FirstSkillsPage.content,
+            ]
           })()}
         </ColumnWrapper>
       </CustomWrapper>
@@ -183,8 +191,8 @@ class SkillsBoxInfo extends Component {
       margin: 0 14px 0 0;
       display: inline;
       min-height: ${this.props.height};
-      font-weight: bold;
-      font: inherit;
+      font-family: inherit;
+      font-weight: 700;
       line-height: ${this.props.height};
     `
 
@@ -213,17 +221,17 @@ class SkillsBoxHeader extends Component {
   render() {
     const SkillsBoxHead = styled.div`
       min-height: ${this.props.height};
+      width: ${this.props.width};
       background-color: ${this.props.backgroundColor};
       color: ${this.props.titleColor}!important;
       display: flex;
-      justify-content: center;
       align-items: center;
       padding: 0 20px;
       line-height: ${this.props.height};
     `
     return (
       <SkillsBoxHead>
-        <Heading type="h3" style={{ margin: "0px", fontWeight: "normal" }}>
+        <Heading type="h3" style={{ margin: "0px", fontWeight: "300" }}>
           {this.props.title}
         </Heading>
       </SkillsBoxHead>
@@ -235,11 +243,16 @@ SkillsBoxHeader.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
+  width: PropTypes.string,
 }
 
 /** Container for skills info */
 class SkillsBox extends Component {
   render() {
+    /* The width of the coloured sections of the skills boxes */
+    const titleWidth = "380px"
+
+
     let height = this.props.height === undefined ? "50px" : this.props.height
 
     const SkillsBox = styled.div`
@@ -258,7 +271,7 @@ class SkillsBox extends Component {
 
     return (
       <SkillsBox>
-        <SkillsBoxHeader {...this.props} height={height}>
+        <SkillsBoxHeader {...this.props} height={height} width={titleWidth}>
           {this.props.children}
         </SkillsBoxHeader>
         <SkillsBoxInfo {...this.props} height={height} />
