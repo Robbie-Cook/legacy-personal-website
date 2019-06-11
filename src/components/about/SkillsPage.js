@@ -101,6 +101,8 @@ class SkillsPage extends Component {
     const ColumnWrapper = styled.div`
       display: flex;
       flex-direction: column;
+      
+      ${new MobileMediaQuery("width: 100%")};
     `
 
     return (
@@ -228,6 +230,8 @@ class SkillsBoxHeader extends Component {
       align-items: center;
       padding: 0 20px;
       line-height: ${this.props.height};
+
+      ${new MobileMediaQuery("width: 100%")}
     `
     return (
       <SkillsBoxHead>
