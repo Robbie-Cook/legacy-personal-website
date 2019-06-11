@@ -26,8 +26,7 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-* Make sure CI runs on a per-commit level
-            
+           
 * Work on issues 
            
 * Potential for CMS integrated into gatsby?
@@ -35,7 +34,7 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 * Add awesome videos of me playing music
    * Some to process on my phone
 
-* 'Project' contribution page for contributed work on open source projects
+* Fill out 'Project' contribution page for contributed work on open source projects
 
 ### Polishing 
          
