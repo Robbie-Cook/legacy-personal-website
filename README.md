@@ -7,8 +7,7 @@ It's a very simple website with a few pages, and it should be updated regularly.
 Some key dependencies that this project makes use of are:
 
 * Gatsby.
-            A framework for building static react apps with simple server-side rendering, and a good starter for learning good     
-            React design pracitises.
+            A framework for building static react apps with simple server-side rendering, and a good starter for learning good React design practises.
             
 * React styled-components.
             I use styled-components a lot in this website. It allows me to apply CSS directly to components, and it
@@ -27,8 +26,7 @@ Then I want a GUI to make updates to, so I can make changes without
 having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
-* Make sure CI runs on a per-commit level
-            
+           
 * Work on issues 
            
 * Potential for CMS integrated into gatsby?
@@ -36,7 +34,7 @@ having to modify the code, perhaps with Gatsby or Wordpress?
 * Add awesome videos of me playing music
    * Some to process on my phone
 
-* 'Project' contribution page for contributed work on open source projects
+* Fill out 'Project' contribution page for contributed work on open source projects
 
 ### Polishing 
          
