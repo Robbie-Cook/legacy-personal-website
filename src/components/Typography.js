@@ -90,13 +90,11 @@ class Heading extends Component {
  * Should be used in place of <p>, because this
  * is a globally-styled version
  */
-
 class Text extends Component {
   render() {
     Text = styled.p`
       margin: 12px 0;
     `
-
     return <Text>{this.props.children}</Text>
   }
 }
