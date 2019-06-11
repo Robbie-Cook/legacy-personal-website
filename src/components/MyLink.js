@@ -1,5 +1,5 @@
 /* Defines a page link */
-import { BrowserRouter as Router, Route } from "gatsby";
+import { Route } from "gatsby";
 import React from "react";
 
 class MyLink {
