@@ -9,11 +9,14 @@ import { ProjectBox } from "../components/projects"
 // Media
 import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png"
 import machineLearningMini from "../photos/projects/machineLearningMini.png"
+import yorkPlaceMini from "../photos/projects/yorkPlaceMini.png"
 
 // Main Page component
 class Projects extends Component {
   render() {
     const ProjectRow = styled(Row)`
+      flex-wrap: wrap;
+
       // Responsive design queries
       @media (max-width: 1200px) {
         flex-direction: column;
@@ -56,6 +59,18 @@ class Projects extends Component {
               webLink={[
                 "http://machinelearning.robbie.pw",
                 "machinelearning.robbie.pw",
+              ]}
+            />
+            {/* Machine Learning Showcase */}
+            <ProjectBox
+              title="York Place"
+              desc={
+                "A website for a daycare company in Dunedin"
+              }
+              image={yorkPlaceMini}
+              webLink={[
+                "http://yorkplace.co.nz",
+                "yorkplace.co.nz",
               ]}
             />
           </ProjectRow>
