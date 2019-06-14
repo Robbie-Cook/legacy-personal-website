@@ -6,6 +6,7 @@ import Globals from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
 import { Heading, Text } from "../components/Typography"
 import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
+import { MobileMediaQuery } from "../util/MediaQueries"
 
 /*
 Component representing a project
@@ -27,8 +28,9 @@ class ProjectBox extends Component {
       border-radius: 5px;
       padding: 20px 20px 50px 20px;
       background-color: #3c3c3c;
-      max-width: 600px;
+      width: 550px;
       margin-top: 10px;
+      margin-bottom: 20px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -40,6 +42,7 @@ class ProjectBox extends Component {
       // Responsive design queries
       @media (max-width: 1200px) {
         margin-right: 0 !important;
+        width: auto;
       }
     `
 
@@ -181,7 +184,7 @@ class ProjectGithubLink extends Component {
       <Button
         icon={<Github fill="inherit" color="inherit" />}
         to={this.props.to}
-        label="Code on Github"
+        label="Code"
         {...this.props}
       />
     )
