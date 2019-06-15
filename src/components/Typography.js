@@ -24,9 +24,10 @@ class Heading extends Component {
    */
   getHeading(type, style, className) {
     const myStyles = `
-      font-family: "Roboto", sans-serif;
+      font-family: "Roboto Slab", sans-serif;
       font-weight: bold;
       margin: 0 0 20px 0;
+      text-transform: lowercase;
     `
 
     const H1 = styled.h1`
