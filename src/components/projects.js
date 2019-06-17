@@ -6,7 +6,7 @@ import Globals from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
 import { Heading, Text } from "../components/Typography"
 import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
-import { MobileMediaQuery } from "../util/MediaQueries"
+import { MobileStyles } from "./Views"
 
 /*
 Component representing a project

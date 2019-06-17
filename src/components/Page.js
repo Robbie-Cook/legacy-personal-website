@@ -29,8 +29,8 @@ const StyledPage = styled.div`
 let navigationLinks = [
   new MyLink("Home", "/"),
   new MyLink("About", "/about"),
-  new MyLink("Music", "/music"),
   new MyLink("Projects", "/projects"),
+  new MyLink("Music", "/music"),
 ]
 
 // Main Page component
