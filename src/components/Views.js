@@ -1,11 +1,11 @@
-import Globals from "../components/Globals"
+import Globals from "./Globals"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 /**
  * Media query for mobile 
  */
-class MobileMediaQuery {
+class MobileStyles {
   constructor(style) {
     this.style = style;
   }
@@ -19,4 +19,4 @@ class MobileMediaQuery {
   }
 }
 
-export { MobileMediaQuery }
+export { MobileStyles }
