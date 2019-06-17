@@ -88,18 +88,41 @@ class MusicPage extends Component {
           <Heading type="h2">Playlists</Heading>
           <Row>
             <Col width="100%">
-              <BorderBox width="100%">
-                {/* TODO: put this in a separate component - Playlist */}
-                <BorderBox style={{maxWidth: "550px"}}>
-                  <Heading type="h3" style={{ marginTop: "-10px" }}>
-                    Very important and very pretentious
-                  </Heading>
+              <BorderBox
+                width="100%"
+                height="423px"
+                horizontalScroll={true}
+                style={""}
+              >
+                <Playlist title="Very important and very pretentious"
+                jsonData={playlistOneText}>
                   <Song
                     name="Diane Young"
                     artist="Vampire Weekend"
                     spotifySongId="104pmtTQOlmW8Zt2BipGKH"
                   />
-                </BorderBox>
+                </Playlist>
+                <Playlist title="Very important and very pretentious">
+                  <Song
+                    name="Diane Young"
+                    artist="Vampire Weekend"
+                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
+                  />
+                </Playlist>
+                <Playlist title="Very important and very pretentious">
+                  <Song
+                    name="Diane Young"
+                    artist="Vampire Weekend"
+                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
+                  />
+                </Playlist>
+                <Playlist title="Very important and very pretentious">
+                  <Song
+                    name="Diane Young"
+                    artist="Vampire Weekend"
+                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
+                  />
+                </Playlist>
               </BorderBox>
             </Col>
           </Row>
