@@ -9,35 +9,15 @@ import { Col, Row, LayoutWrapper } from "../components/Layout"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Globals from "../components/Globals"
+import { BorderBox } from "../components/Boxes"
 
-import Song from "../components/Song"
+import Playlist from "../components/music/Playlist"
+import Song from "../components/music/Song"
+
+import playlistOneText from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
 
 /** Media */
 import meOnGuitar from "../photos/music/meOnGuitar.png"
-
-/**
- *  A bordered box.
- *  Should be put into its own component eventually
- */
-class BorderBox extends Component {
-  render() {
-    const Box = styled.div`
-      border: 4px solid ${Globals.textColor};
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      ${this.props.width ? `width: ${this.props.width}` : ``};
-      ${this.props.height ? `height: ${this.props.height}` : ``};
-    `
-    return <Box>{this.props.children}</Box>
-  }
-}
-BorderBox.propTypes = {
-  width: PropTypes.string, // Should be like "50px"
-  height: PropTypes.string,
-  // Whether to scroll horizontally or vertically. Defaults to horizontal.
-  horizontalScroll: PropTypes.bool,
-}
 
 // Main Page component
 class MusicPage extends Component {
