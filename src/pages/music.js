@@ -14,7 +14,7 @@ import { BorderBox } from "../components/Boxes"
 import Playlist from "../components/music/Playlist"
 import Song from "../components/music/Song"
 
-import playlistOneText from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
+import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
 
 /** Media */
 import meOnGuitar from "../photos/music/meOnGuitar.png"
@@ -94,34 +94,7 @@ class MusicPage extends Component {
                 horizontalScroll={true}
                 style={""}
               >
-                <Playlist title="Very important and very pretentious"
-                jsonData={playlistOneText}>
-                  <Song
-                    name="Diane Young"
-                    artist="Vampire Weekend"
-                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
-                  />
-                </Playlist>
-                <Playlist title="Very important and very pretentious">
-                  <Song
-                    name="Diane Young"
-                    artist="Vampire Weekend"
-                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
-                  />
-                </Playlist>
-                <Playlist title="Very important and very pretentious">
-                  <Song
-                    name="Diane Young"
-                    artist="Vampire Weekend"
-                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
-                  />
-                </Playlist>
-                <Playlist title="Very important and very pretentious">
-                  <Song
-                    name="Diane Young"
-                    artist="Vampire Weekend"
-                    spotifySongId="104pmtTQOlmW8Zt2BipGKH"
-                  />
+                <Playlist jsonData={playlistOneJson}>
                 </Playlist>
               </BorderBox>
             </Col>
