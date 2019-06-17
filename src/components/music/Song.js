@@ -2,15 +2,15 @@ import React, { Component, PureComponent } from "react"
 
 /* Imports */
 /* Stylesheets etc. */
-import { Heading, Text as span } from "../components/Typography"
-import WebPage from "../components/Page"
-import { Container } from "../components/Wrappers"
-import { Col, Row, LayoutWrapper } from "../components/Layout"
+import { Heading, Text as span } from "../Typography"
+import WebPage from "../Page"
+import { Container } from "../Wrappers"
+import { Col, Row, LayoutWrapper } from "../Layout"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
 // Music imports
-import playIcon from "../photos/icons/musicPlay.svg"
+import playIcon from "../../photos/icons/musicPlay.svg"
 
 /**
  * Used by Song to represent a spotify song
