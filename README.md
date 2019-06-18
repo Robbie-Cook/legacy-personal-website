@@ -1,10 +1,9 @@
 # Personal Website
 
-This is a repository of my personal website [http://robbie.pw](http://robbie.pw), built with React (create-react-app) and Gatsby.
+This is a repository of my personal website [http://robbie.pw](http://robbie.pw).
+It should be updated regularly.
 
-It's a very simple website with a few pages, and it should be updated regularly.
-
-In the near future, I want to make this website smoother with animations. 
+Animations coming soon!
 
 Then I want to start making open source contributions to cool projects, and showcase the contributions
 on this website.
