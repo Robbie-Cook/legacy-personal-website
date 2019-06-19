@@ -26,6 +26,7 @@ class Globals {
       padding: new Dimensions(0, 20),
     },
     backgroundColor: '#0f0f0f',
+    secondaryColor: '#EB6D6D', // reddish
   }
 
   // Navbar styles
