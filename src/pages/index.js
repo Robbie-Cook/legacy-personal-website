@@ -114,7 +114,13 @@ class HomePage extends Component {
               {/* HeaderImage only displayed on mobile (defined in definition) */}
               <HeaderImage src={avatarMe} />
               <MainInfo>
-                <Heading style={{ margin: 0 }} codify>
+                <Heading style={`
+                  & h1 {
+                    margin: 0px
+                  }; 
+                  ${new MobileView(`
+                    margin: 10px 0;
+                  `)}`} codify>
                   Robbie Cook
                 </Heading>
                 <Text>
