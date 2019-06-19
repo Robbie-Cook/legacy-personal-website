@@ -14,10 +14,11 @@ import { BorderBox } from "../components/Boxes"
 import Playlist from "../components/music/Playlist"
 import Song from "../components/music/Song"
 
-import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
 
 /** Media */
 import meOnGuitar from "../photos/music/meOnGuitar.png"
+import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
+import playlistTwoJson from "../data/spotify/playlists/opera.json"
 
 // Main Page component
 class MusicPage extends Component {
@@ -95,6 +96,8 @@ class MusicPage extends Component {
                 style={""}
               >
                 <Playlist jsonData={playlistOneJson}>
+                </Playlist>
+                <Playlist jsonData={playlistTwoJson}>
                 </Playlist>
               </BorderBox>
             </Col>
