@@ -126,15 +126,17 @@ class HomePage extends Component {
                 </Text>
                 <IconsWrapper>
                   <Icon href="https://github.com/Robbie-Cook">
-                    <i class="icon fab fa-github-square" />
+                    <i class="icon fab fa-github" />
                   </Icon>
                   <Icon href="https://www.linkedin.com/in/robbie-cook/">
                     <i class="icon fab fa-linkedin" />
                   </Icon>
+                  <Icon href="mailto:robbie@robbie.pw">
                   {/* <div class="iconWrapper2"> */}
-                      <i class="icon fas fa-envelope-square" />
-                      <span>robbie@robbie.pw</span>
+                      <i class="icon fas fa-envelope" />
+                      {/* <span>robbie@robbie.pw</span> */}
                   {/* </div> */}
+                  </Icon>
                 </IconsWrapper>
               </MainInfo>
             </BackgroundGradientWrapper>
