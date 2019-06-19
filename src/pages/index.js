@@ -15,6 +15,7 @@ import "../fontawesome/css/all.css"
 
 /* Media */
 import me from "../photos/me_irl3_cropped.jpg"
+import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
 import Globals from "../components/Globals"
@@ -110,11 +111,18 @@ class HomePage extends Component {
        `)}
     `
 
+    const HeaderImage = styled.img`
+      display: none; 
+      ${};
+    `
+
     return (
       <WebPage style={{ padding: "0" }}>
         <Section>
           <BackgroundImageWrapper>
             <BackgroundGradientWrapper>
+              {/* HeaderImage only displayed on mobile (defined in definition) */}
+              <HeaderImage src={avatarMe} /> 
               <MainInfo>
                 <Heading style={{ margin: 0 }} codify>
                   Robbie Cook
