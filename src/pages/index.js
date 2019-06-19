@@ -67,7 +67,7 @@ class HomePage extends Component {
         
         justify-content: center;
         text-align: center;
-        margin: 50px 20px 70px 20px;
+        margin: 10px 20px 70px 20px;
         min-width: auto;
         background-color: ${Globals.page.backgroundColor};
         padding: 0 15px;
