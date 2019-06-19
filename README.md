@@ -1,15 +1,11 @@
 # Personal Website
 
 This is a repository of my personal website [http://robbie.pw](http://robbie.pw).
-It should be updated regularly.
 
 Animations coming soon!
 
-Then I want to start making open source contributions to cool projects, and showcase the contributions
+Then I will start making open source contributions to cool projects, and showcase the contributions
 on this website.
-
-Then I want a GUI to make updates to, so I can make changes without
-having to modify the code, perhaps with Gatsby or Wordpress?
 
 ## Features to come
            
