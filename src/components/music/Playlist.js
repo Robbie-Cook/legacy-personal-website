@@ -3,12 +3,7 @@ import React, { Component } from "react"
 /* Imports */
 /* Stylesheets etc. */
 import { Heading, Text } from "../Typography"
-import WebPage from "../Page"
-import { Container } from "../Wrappers"
-import { Col, Row, LayoutWrapper } from "../Layout"
-import styled from "styled-components"
 import PropTypes from "prop-types"
-import Globals from "../Globals"
 import { BorderBox } from "../Boxes"
 import { MobileView } from "../Views"
 
