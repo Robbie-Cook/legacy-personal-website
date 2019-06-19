@@ -63,6 +63,7 @@ class HomePage extends Component {
         & * {
           align-self: center
         }
+        align-self: center;
         
         justify-content: center;
         text-align: center;
@@ -73,7 +74,9 @@ class HomePage extends Component {
       `)}
 
       & .iconWrapper {
-        ${new MobileView(`justify-content: center;`)}
+        ${new MobileView(`
+          justify-content: center;
+        `)}
       }
     `
 
@@ -108,17 +111,23 @@ class HomePage extends Component {
         background: none;
         width: 100%;
         justify-content: center;
+        flex-direction: column;
        `)}
     `
-
+    
+    // Only display in mobile view
     const HeaderImage = styled.img`
       display: none; 
-      ${};
+      width: 200px;
+      align-self: center;
+      ${new MobileView(`
+        display: flex;
+      `)};
     `
 
     return (
       <WebPage style={{ padding: "0" }}>
-        <Section>
+        <Section style={"width: 100%;"}>
           <BackgroundImageWrapper>
             <BackgroundGradientWrapper>
               {/* HeaderImage only displayed on mobile (defined in definition) */}
