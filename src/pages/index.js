@@ -9,6 +9,7 @@ import WebPage from "../components/Page"
 import Section from "../components/Section"
 import Spacer from "../components/Spacer"
 import { MobileView } from "../components/Views"
+import {Icon, IconsWrapper} from "../components/Icons"
 
 /* Stylesheets etc. */
 import "../fontawesome/css/all.css"
@@ -20,30 +21,10 @@ import avatarMe from "../photos/avatarMe.svg"
 /* Theme */
 import Globals from "../components/Globals"
 
-const IconWrapper = styled.div`
+const Icons = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 10px;
-
-  & .icon {
-    font-size: 33px;
-    padding: 0 4px;
-    height: 100%;
-  }
-
-  & .iconWrapper2 {
-    background-color: #2a2a2a;
-    height: 100%;
-    border-radius: 5px;
-    padding: 0 5px 0 0;
-  }
-
-  & .iconWrapper2 a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-  }
 
   @media (max-width: ${Globals.mobile.size}px) {
     justify-content: center;
@@ -114,10 +95,10 @@ class HomePage extends Component {
         flex-direction: column;
        `)}
     `
-    
+
     // Only display in mobile view
     const HeaderImage = styled.img`
-      display: none; 
+      display: none;
       width: 200px;
       align-self: center;
       ${new MobileView(`
@@ -131,32 +112,30 @@ class HomePage extends Component {
           <BackgroundImageWrapper>
             <BackgroundGradientWrapper>
               {/* HeaderImage only displayed on mobile (defined in definition) */}
-              <HeaderImage src={avatarMe} /> 
+              <HeaderImage src={avatarMe} />
               <MainInfo>
                 <Heading style={{ margin: 0 }} codify>
                   Robbie Cook
                 </Heading>
                 <Text>
-                  Hello! I'm a developer living in Auckland, New Zealand. I love
-                  coding, making stuff, learning, and teaching.
+                  Hello! I'm a developer in New Zealand. I love coding, making
+                  stuff, learning, and teaching.
                   <Spacer height="10px" />
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
                 </Text>
-                <IconWrapper>
-                  <a href="https://github.com/Robbie-Cook">
+                <IconsWrapper>
+                  <Icon href="https://github.com/Robbie-Cook">
                     <i class="icon fab fa-github-square" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/robbie-cook/">
+                  </Icon>
+                  <Icon href="https://www.linkedin.com/in/robbie-cook/">
                     <i class="icon fab fa-linkedin" />
-                  </a>
-                  <div class="iconWrapper2">
-                    <a href="mailto:robbie@robbie.pw">
+                  </Icon>
+                  {/* <div class="iconWrapper2"> */}
                       <i class="icon fas fa-envelope-square" />
                       <span>robbie@robbie.pw</span>
-                    </a>
-                  </div>
-                </IconWrapper>
+                  {/* </div> */}
+                </IconsWrapper>
               </MainInfo>
             </BackgroundGradientWrapper>
           </BackgroundImageWrapper>
