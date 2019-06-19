@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 // Sample component
 class Sample extends Component {
-  propTypes = {
-    optionalWidth: PropTypes.number,
-  }
-
   render() {
     return
   }
+}
+Sample.propTypes = {
+  optionalWidth: PropTypes.number,
 }
 
 export default Sample
