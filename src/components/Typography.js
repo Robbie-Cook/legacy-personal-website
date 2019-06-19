@@ -28,9 +28,11 @@ class Heading extends Component {
       text-transform: lowercase;
     `
 
+    const h1Height = "53px"
     const H1 = styled.h1`
       ${myStyles}
-      font-size: 53px;
+      font-size: ${h1Height};
+      line-height: ${h1Height};
     `
 
     // H2 inherits and overrides styles from H1
