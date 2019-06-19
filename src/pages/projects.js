@@ -65,13 +65,10 @@ class Projects extends Component {
             <ProjectBox
               title="York Place"
               desc={
-                "A website for a daycare company in Dunedin"
+                "A website for a daycare company in Dunedin. Helped build this with a friend."
               }
               image={yorkPlaceMini}
-              webLink={[
-                "http://yorkplace.co.nz",
-                "yorkplace.co.nz",
-              ]}
+              webLink={["http://yorkplace.co.nz", "yorkplace.co.nz"]}
             />
           </ProjectRow>
         </LayoutWrapper>
