@@ -19,7 +19,7 @@ import SkillsPage from "../components/about/SkillsPage"
 /* Carousel */
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-import { MobileStyles } from "../components/Views"
+import { MobileView } from "../components/Views"
 
 /* Media */
 
@@ -57,7 +57,7 @@ class About extends Component {
       display: flex;
       height: 100%;
       align-items: center;
-      ${new MobileStyles(`
+      ${new MobileView(`
         & > div {
           overflow: hidden!important
         }

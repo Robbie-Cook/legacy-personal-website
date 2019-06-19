@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 /**
  * Media query for mobile 
  */
-class MobileStyles {
+class MobileView {
   constructor(style) {
     this.style = style;
   }
@@ -19,4 +19,4 @@ class MobileStyles {
   }
 }
 
-export { MobileStyles }
+export { MobileView }
