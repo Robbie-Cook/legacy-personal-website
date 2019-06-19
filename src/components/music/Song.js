@@ -49,14 +49,21 @@ class Song extends Component {
   spotifyEmbed = <SpotifySong spotifySongId={this.props.spotifySongId} />
 
   render() {
+    const artistNameColor = "#ff7b7b"
+
     const SongWrapper = styled.div`
       display: flex;
       flex-direction: column;
     `
 
-    const PlayButton = styled.img`
+    const SongIcon = styled.div`
       width: 36px;
       margin-right: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: 
+      }
     `
 
     const SongName = styled.span`
@@ -69,7 +76,7 @@ class Song extends Component {
     const ArtistName = styled.span`
       display: flex;
       align-items: center;
-      color: #ff7b7b;
+      color: ${artistNameColor};
       font-size: 11pt;
     `
 
@@ -94,7 +101,7 @@ class Song extends Component {
         }}
       >
         <Line1>
-          <PlayButton src={playIcon} />
+          <SongIcon><i class="fas fa-chevron-down"></i></SongIcon>
           <SongName>{this.props.name}</SongName>
           <ArtistName>{this.props.artist}</ArtistName>
         </Line1>

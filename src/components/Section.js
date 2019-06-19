@@ -33,8 +33,8 @@ class Section extends Component {
   render() {
     const MySection = styled.div`
       min-height: ${this.state.height-Globals.navbar.height}px;
-      width: ${this.state.width}px;
       display: flex;
+      ${this.props.style};
     `
 
     return <MySection>{this.props.children}</MySection>

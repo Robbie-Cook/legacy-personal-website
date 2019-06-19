@@ -4,7 +4,7 @@ import Globals from "../Globals"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Button, ButtonGenerator, ButtonWrapper } from "../Button"
-import { MobileStyles } from "../Views"
+import { MobileView } from "../Views"
 import Spacer from "../Spacer"
 
 /** A component which defines the SkillBoxes */
@@ -46,7 +46,7 @@ class SkillsPage extends Component {
     const PreTransformWrapper = styled.div`
       padding-left: 22px;
       width: 56px;
-      ${new MobileStyles("display: none")};
+      ${new MobileView("display: none")};
     `
 
     this.FirstSkillsPage.content = (
@@ -102,7 +102,7 @@ class SkillsPage extends Component {
       display: flex;
       flex-direction: column;
       
-      ${new MobileStyles("width: 100%")};
+      ${new MobileView("width: 100%")};
     `
 
     return (
@@ -231,7 +231,7 @@ class SkillsBoxHeader extends Component {
       padding: 0 20px;
       line-height: ${this.props.height};
 
-      ${new MobileStyles("width: 100%")}
+      ${new MobileView("width: 100%")}
     `
     return (
       <SkillsBoxHead>

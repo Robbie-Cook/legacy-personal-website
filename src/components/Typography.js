@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import Globals from "./Globals"
+import Spacer from "./Spacer"
 
 /**
  *  Common components relating to text. This includes
@@ -13,10 +15,6 @@ import PropTypes from "prop-types"
  * Example usage: <Heading type="h2">My heading</Heading>
  */
 class Heading extends Component {
-  propTypes = {
-    type: PropTypes.string,
-  }
-
   /**
    *  Get appropriate heading
    *  Type: h1, h2, etc,
@@ -32,7 +30,7 @@ class Heading extends Component {
 
     const H1 = styled.h1`
       ${myStyles}
-      font-size: 50px;
+      font-size: 53px;
     `
 
     // H2 inherits and overrides styles from H1
@@ -56,7 +54,27 @@ class Heading extends Component {
       font-size: 20px;
     `
 
-    let headingElementToUse
+    const HeadingWrapper = styled.div`
+      display: flex;
+      width: fit-content;
+      & *  {
+        align-self: center;
+      }
+    `
+
+    // Currently hard-coded, but should be passed as a prop if custom icons are needed for
+    // headers
+    const MyIcon = styled.span`
+      color: ${Globals.page.secondaryColor};
+      font-size: 69px;
+      font-weight: bold;
+      font-family: "Roboto Slab", sans-serif;
+    `
+
+    const leftIcon = <MyIcon>&lt;</MyIcon>
+    const rightIcon = <><Spacer width="13px"/><MyIcon> /&gt;</MyIcon></>
+
+    let headingElementToUse = ""
 
     // Probably should use TypeScript for this
     if (type === "h1" || type === undefined) {
@@ -71,19 +89,30 @@ class Heading extends Component {
       headingElementToUse = H5
     }
 
-    return React.createElement(
-      headingElementToUse,
-      { style: style, className: className },
-      this.props.children
+    return (
+      <HeadingWrapper>
+        {this.props.codify && <TextIcon position="left" content={leftIcon} />}
+        {React.createElement(
+          headingElementToUse,
+          { style: style, className: className },
+          this.props.children
+        )}
+        {this.props.codify && <TextIcon position="right" content={rightIcon} />}
+      </HeadingWrapper>
     )
   }
   render() {
     return this.getHeading(
       this.props.type,
       this.props.style,
-      this.props.className
+      this.props.className,
+      this.props.codify // option to display the heading as < {content} />
     )
   }
+}
+Heading.propTypes = {
+  type: PropTypes.string,
+  codify: PropTypes.bool,
 }
 
 /**
@@ -101,3 +130,13 @@ class Text extends Component {
 }
 
 export { Heading, Text }
+
+/** Icons to display with text */
+class TextIcon extends Component {
+  render() {
+    return <>{this.props.content}</>
+  }
+}
+TextIcon.propTypes = {
+  position: PropTypes.string, // where the icon is to be displayed relative to the content (left, right, ...)
+}

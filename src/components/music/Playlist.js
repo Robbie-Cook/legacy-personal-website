@@ -10,7 +10,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import Globals from "../Globals"
 import { BorderBox } from "../Boxes"
-import { MobileStyles } from "../Views"
+import { MobileView } from "../Views"
 
 import Song from "../music/Song"
 
@@ -44,7 +44,7 @@ class Playlist extends Component {
         margin-right: 20px;
         flex-shrink: 0;
         
-        ${new MobileStyles(`
+        ${new MobileView(`
           width: 377px;
           `)}
       `}

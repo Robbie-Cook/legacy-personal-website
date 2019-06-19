@@ -8,12 +8,14 @@ import { Heading, Text } from "../components/Typography"
 import WebPage from "../components/Page"
 import Section from "../components/Section"
 import Spacer from "../components/Spacer"
+import { MobileView } from "../components/Views"
 
 /* Stylesheets etc. */
 import "../fontawesome/css/all.css"
 
 /* Media */
 import me from "../photos/me_irl3_cropped.jpg"
+import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
 import Globals from "../components/Globals"
@@ -57,24 +59,35 @@ class HomePage extends Component {
       flex-direction: column;
       max-width: 600px;
       z-index: 2;
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
+        & * {
+          align-self: center
+        }
+        align-self: center;
+        
         justify-content: center;
         text-align: center;
-        margin: 50px 20px 70px 20px;
+        margin: 10px 20px 70px 20px;
         min-width: auto;
         background-color: ${Globals.page.backgroundColor};
         padding: 0 15px;
-      }
+      `)}
 
       & .iconWrapper {
-        @media (max-width: ${Globals.mobile.size}px) {
+        ${new MobileView(`
           justify-content: center;
-        }
+        `)}
       }
     `
 
     const BackgroundImageWrapper = styled.div`
         background-image: url('${me}');
+        ${
+          // Don't display background image on mobile -- display mobile-specific image instead
+          new MobileView(`
+            background-image: none;
+          `)
+        }
         width: 100%;
         background-repeat: no-repeat;
         display: flex;
@@ -93,23 +106,40 @@ class HomePage extends Component {
       padding-right: 80px;
       display: flex;
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         padding: 0;
         background: none;
-      }
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+       `)}
+    `
+    
+    // Only display in mobile view
+    const HeaderImage = styled.img`
+      display: none; 
+      width: 200px;
+      align-self: center;
+      ${new MobileView(`
+        display: flex;
+      `)};
     `
 
     return (
       <WebPage style={{ padding: "0" }}>
-        <Section>
+        <Section style={"width: 100%;"}>
           <BackgroundImageWrapper>
             <BackgroundGradientWrapper>
+              {/* HeaderImage only displayed on mobile (defined in definition) */}
+              <HeaderImage src={avatarMe} /> 
               <MainInfo>
-                <Heading style={{ margin: 0 }}>Robbie Cook</Heading>
+                <Heading style={{ margin: 0 }} codify>
+                  Robbie Cook
+                </Heading>
                 <Text>
                   Hello! I'm a developer living in Auckland, New Zealand. I love
                   coding, making stuff, learning, and teaching.
-                  <Spacer height="10px"/>
+                  <Spacer height="10px" />
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
                 </Text>
