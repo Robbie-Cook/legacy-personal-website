@@ -62,6 +62,7 @@ class Heading extends Component {
       & *  {
         align-self: center;
       }
+      ${this.props.style}
     `
 
     // Currently hard-coded, but should be passed as a prop if custom icons are needed for
@@ -96,7 +97,7 @@ class Heading extends Component {
         {this.props.codify && <TextIcon position="left" content={leftIcon} />}
         {React.createElement(
           headingElementToUse,
-          { style: style, className: className },
+          { className: className },
           this.props.children
         )}
         {this.props.codify && <TextIcon position="right" content={rightIcon} />}
