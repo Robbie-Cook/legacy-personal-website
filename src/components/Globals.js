@@ -40,10 +40,6 @@ class Globals {
     activeLinkColor: this.link.color,
     font: "'Roboto Slab', sans-serif",
     padding: new Dimensions(0, 90),
-    // Navbar border styles
-    border: {
-      backgroundColor: super.textColor,
-    },
   }
 }
 
