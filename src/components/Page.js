@@ -35,15 +35,21 @@ let navigationLinks = [
   new MyLink("Music", "/music"),
 ]
 
+/**
+ * Define a React Context for all child components to use
+ * Made to make finding colors easier
+ */
+const ColorsContext = React.createContext(Colors)
+
 // Main Page component
 class WebPage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return (
-      <>
+      <ColorsContext.Provider value={Colors}>
         <MyHelmet /> {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />
@@ -53,7 +59,7 @@ class WebPage extends Component {
             </StyledPage>
           </div>
         </div>
-      </>
+      </ColorsContext.Provider>
     )
   }
 }
