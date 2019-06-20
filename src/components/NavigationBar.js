@@ -8,6 +8,7 @@ import { withStyles } from "@material-ui/core/styles"
 import Globals from "./Globals"
 import styled from "styled-components"
 import MobileNav from "./MobileNav"
+import { Sizes } from "./Views"
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -49,9 +50,9 @@ class NavigationBar extends React.Component {
 
     const StyledTabs = withStyles({
       root: {
-        // Not ideal, should be done with breakpoints in Theme
+        // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (max-width:${Globals.mobile.size - 1}px)`]: {
+        [`@media (max-width:${Sizes.mobileSize}px)`]: {
           display: "none",
         },
       },

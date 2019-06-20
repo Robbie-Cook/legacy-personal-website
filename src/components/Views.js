@@ -3,6 +3,13 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 /**
+ * Sizing of views
+ */
+class Sizes {
+  static mobileSize = "900"
+}
+
+/**
  * Styles to apply when screen is mobile-sized
  */
 class MobileView {
@@ -11,13 +18,13 @@ class MobileView {
   }
 
   toString() {
-    const mobileSize = "900"
+    const mSize = Sizes.mobileSize
     return (`
-      @media (max-width: ${mobileSize}px) {
+      @media (max-width: ${mSize}px) {
         ${this.style};
       }`
     )
   }
 }
 
-export { MobileView }
+export { MobileView, Sizes }

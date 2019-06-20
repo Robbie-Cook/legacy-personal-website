@@ -11,6 +11,7 @@ import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
 import Globals from "./Globals"
 import styled from "styled-components"
+import { Sizes } from "./Views"
 
 class MobileNav extends React.Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${Globals.mobile.size}px)`]: {
+        [`@media (min-width:${Sizes.mobileSize}px)`]: {
           display: "none",
         },
       },
@@ -77,7 +78,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${Globals.mobile.size - 1}px)`]: {
+        [`@media (min-width:${Sizes.mobileSize}px)`]: {
           display: "none",
         },
         marginTop: Globals.navbar.height,
