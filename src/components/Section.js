@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import Globals from "../components/Globals"
+import Sizes from "./Sizes"
 
 /**
  * A component designed to take up exactly the window size (minus the
@@ -32,7 +33,7 @@ class Section extends Component {
 
   render() {
     const MySection = styled.div`
-      min-height: ${this.state.height-Globals.navbar.height}px;
+      min-height: ${this.state.height-Sizes.navbar.height}px;
       display: flex;
       ${this.props.style};
     `
