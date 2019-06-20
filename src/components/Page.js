@@ -39,28 +39,11 @@ let navigationLinks = [
 class WebPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {loading: true};
-  }
-
-  getLoadingScreen(loading) {
-    const LoadingScreen = styled.div`
-      background-color: ${Colors.page.backgroundColor};
-      position: absolute;
-      top: 0;
-      z-index: 100;
-      height: 100%;
-      display: flex;
-      width: 100%;
-    `
-    if(loading) {
-      return <LoadingScreen/>
-    } 
   }
 
   render() {
     return (
-      <React.Fragment>
-        {this.getLoadingScreen(this.state.loading)}
+      <>
         <MyHelmet /> {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />
@@ -70,12 +53,8 @@ class WebPage extends Component {
             </StyledPage>
           </div>
         </div>
-      </React.Fragment>
+      </>
     )
-  }
-  componentDidMount() {
-    // Hide loading screen
-    this.setState({loading: false})
   }
 }
 
