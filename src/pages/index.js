@@ -19,7 +19,7 @@ import me from "../photos/me_irl3_cropped.jpg"
 import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
-import Colors from "../components/Globals"
+import Colors from "../components/Colors"
 
 const Icons = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import Colors from "../components/Globals"
+import Colors from "./Colors"
 import Sizes from "./Sizes"
 
 /**

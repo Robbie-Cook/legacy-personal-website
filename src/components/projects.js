@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 /* Theme */
-import Colors from "../components/Globals"
+import Colors from "../components/Colors"
 import { Github, Link as GrommetLink } from "grommet-icons"
 import { Heading, Text } from "../components/Typography"
 import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"

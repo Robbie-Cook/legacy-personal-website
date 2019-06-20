@@ -5,7 +5,7 @@
 import "../css/global-styles.css"
 import React, { Component } from "react"
 import styled from "styled-components"
-import Colors from "./Globals"
+import Colors from "./Colors"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"

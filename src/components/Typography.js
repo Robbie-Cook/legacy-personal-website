@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import Colors from "./Globals"
+import Colors from "./Colors"
 import Spacer from "./Spacer"
 
 /**
