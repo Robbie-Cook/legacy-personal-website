@@ -35,11 +35,6 @@ class Globals {
   // Navbar styles
   static navbar = {
     height: "64",
-    textColor: this.centralTextColor,
-    textColorHighlight: this.link.color,
-    activeLinkColor: this.link.color,
-    font: "'Roboto Slab', sans-serif",
-    padding: new Dimensions(0, 90),
   }
 }
 

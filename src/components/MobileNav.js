@@ -30,7 +30,7 @@ class MobileNav extends React.Component {
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
       &.active {
-          color: ${Globals.navbar.activeLinkColor};
+          color: ${Globals.link.color};
       }
     `
     this.props.pages.map(item =>
