@@ -5,11 +5,8 @@ css/global-styles.css.
 This is to be replaced with React.Context, splitting each logical piece into its own
 context e.g. ColorContext, SizeContext etc.
 */
-import Dimensions from "./Dimensions"
-
 class Globals {
-  static centralTextColor = "#dcd6ce"
-  static textColor = this.centralTextColor
+  static textColor = "#dcd6ce"
   static backgroundColor = "#0f0f0f"
   
   // Link color
@@ -24,10 +21,6 @@ class Globals {
   }
 
   static page = {
-    padding: new Dimensions(40, 90, 0, 90),
-    item: {
-      padding: new Dimensions(0, 20),
-    },
     backgroundColor: '#0f0f0f',
     secondaryColor: '#EB6D6D', // reddish
   }

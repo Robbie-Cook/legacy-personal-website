@@ -18,7 +18,7 @@ const StyledPage = styled.div`
 
   display: flex;
   flex-direction: row;
-  padding: ${Globals.page.padding};
+  padding: ${new Dimensions(40, 90, 0, 90)};
 
   // Mobile styles
   ${new MobileView(`
