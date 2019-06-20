@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 /* Theme */
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 import { Github, Link as GrommetLink } from "grommet-icons"
 import { Heading, Text } from "../components/Typography"
 import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
@@ -131,31 +131,31 @@ class ProjectButton extends Component {
   render() {
     //   Original color: #6a77ec
     const ProjectLinkWrapper = styled.div`
-      border: 3px solid ${Globals.link.color};
+      border: 3px solid ${Colors.link.color};
       border-radius: 6px;
       display: inline-block;
       padding: 5px;
       margin-right: 10px;
       margin-top: 5px;
-      color: ${Globals.text.color};
+      color: ${Colors.text.color};
       transition: 0.03s;
 
       /* for svg icons */
-      fill: ${Globals.text.color};
-      stroke: ${Globals.text.color};
+      fill: ${Colors.text.color};
+      stroke: ${Colors.text.color};
 
       & p {
         color: inherit;
         margin: 0 10px;
         text-decoration: none;
-        border-bottom: 1px solid ${Globals.text.color};
+        border-bottom: 1px solid ${Colors.text.color};
       }
 
       &:hover {
         & p {
           border-bottom: 1px solid transparent;
         }
-        background-color: ${Globals.link.color};
+        background-color: ${Colors.link.color};
       }
     `
     const InnerWrapper = styled.div`

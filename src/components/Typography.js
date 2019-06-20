@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import Globals from "./Globals"
+import Colors from "./Globals"
 import Spacer from "./Spacer"
 
 /**
@@ -68,7 +68,7 @@ class Heading extends Component {
     // Currently hard-coded, but should be passed as a prop if custom icons are needed for
     // headers
     const MyIcon = styled.span`
-      color: ${Globals.page.secondaryColor};
+      color: ${Colors.page.secondaryColor};
       font-size: 69px;
       font-weight: bold;
       font-family: "Roboto Slab", sans-serif;

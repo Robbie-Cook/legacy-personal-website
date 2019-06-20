@@ -5,7 +5,7 @@ css/global-styles.css.
 This is to be replaced with React.Context, splitting each logical piece into its own
 context e.g. ColorContext, SizeContext etc.
 */
-class Globals {
+class Colors {
   static textColor = "#dcd6ce"
   static backgroundColor = "#0f0f0f"
   
@@ -24,11 +24,6 @@ class Globals {
     backgroundColor: '#0f0f0f',
     secondaryColor: '#EB6D6D', // reddish
   }
-
-  // Navbar styles
-  static navbar = {
-    height: "64",
-  }
 }
 
-export default Globals
+export default Colors

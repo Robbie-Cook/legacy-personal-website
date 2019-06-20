@@ -5,7 +5,7 @@ import Page from "../components/Page"
 import { Heading } from "../components/Typography"
 import { Container as LayoutWrapper } from "../components/Wrappers"
 import { Col, Row } from "../components/Layout"
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 import styled from "styled-components"
 import { MobileView } from "../components/Views";
 

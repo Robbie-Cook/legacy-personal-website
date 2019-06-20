@@ -3,7 +3,7 @@
  */
 
 import styled from "styled-components"
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { MobileView } from "./Views"

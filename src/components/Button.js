@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Button as GrommetButton, Grommet } from "grommet"
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 import styled from "styled-components"
 import Dimensions from "../components/Dimensions"
 
@@ -15,35 +15,35 @@ class Button extends Component {
     const customTheme = {
       button: {
         border: {
-          color: Globals.textColor,
+          color: Colors.textColor,
         },
         color: (() => {
           if (this.props.active) {
             if (this.props.activeColor) {
               return this.props.activeColor
             }
-            return Globals.link.colorActive
+            return Colors.link.colorActive
           } else if (this.props.color) {
             return this.props.color
           }
-          return Globals.link.color
+          return Colors.link.color
         })(),
       },
     }
 
     const activeStyle = this.props.activeStyle
       ? this.props.activeStyle
-      : `background-color: ${Globals.link.colorActive}`
+      : `background-color: ${Colors.link.colorActive}`
 
     const MyButton = styled(GrommetButton)`
-      border: 3px solid ${Globals.link.color};
+      border: 3px solid ${Colors.link.color};
       border-radius: 6px;
-      color: ${Globals.text.color};
+      color: ${Colors.text.color};
       transition: 0.03s;
 
       /* for svg icons */
-      fill: ${Globals.text.color};
-      stroke: ${Globals.text.color};
+      fill: ${Colors.text.color};
+      stroke: ${Colors.text.color};
 
       &:hover {
         & p {
@@ -51,11 +51,11 @@ class Button extends Component {
         }
         background-color: ${this.props.hoverColor
           ? this.props.hoverColor
-          : Globals.link.color};
+          : Colors.link.color};
       }
 
       margin: ${this.props.margin ? this.props.margin : new Dimensions(10, 20)};
-      color: ${Globals.textColor};
+      color: ${Colors.textColor};
       line-height: 27px;
       font-size: 16px;
       padding: 5px 12px;
@@ -64,19 +64,19 @@ class Button extends Component {
       // Styles for active links
       background-color: ${this.props.activeColor
         ? this.props.activeColor
-        : Globals.link.color};
+        : Colors.link.color};
 
       ${this.props.style};
       ${this.props.active && activeStyle};
     `
 
     const BorderedText = styled.p`
-      color: ${Globals.textColor};
+      color: ${Colors.textColor};
       margin: 0;
       text-decoration: none;
       ${(() => {
         return this.props.underline
-          ? `border-bottom: 1px solid ${Globals.text.color};`
+          ? `border-bottom: 1px solid ${Colors.text.color};`
           : ``
       })()}
 

@@ -1,4 +1,4 @@
-import Globals from "./Globals"
+import Colors from "./Globals"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 

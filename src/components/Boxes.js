@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 
 /**
  *  A bordered box.
@@ -9,7 +9,7 @@ import Globals from "../components/Globals"
 class BorderBox extends Component {
   render() {
     const Box = styled.div`
-      border: 4px solid ${Globals.textColor};
+      border: 4px solid ${Colors.textColor};
       padding: 20px;
       display: flex;
       flex-direction: ${this.props.horizontalScroll ? "row" : "column"};
@@ -27,11 +27,11 @@ class BorderBox extends Component {
 
       &::-webkit-scrollbar {
         width: 10px;
-        background-color: ${Globals.page.backgroundColor};
+        background-color: ${Colors.page.backgroundColor};
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: ${Globals.textColor};
+        background-color: ${Colors.textColor};
         );
       }
     `

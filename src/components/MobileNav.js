@@ -9,7 +9,7 @@ import Grow from "@material-ui/core/Grow"
 import Paper from "@material-ui/core/Paper"
 import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
-import Globals from "./Globals"
+import Colors from "./Globals"
 import styled from "styled-components"
 import { Sizes as ViewSizes} from "./Views"
 import Sizes from "./Sizes"
@@ -31,7 +31,7 @@ class MobileNav extends React.Component {
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
       &.active {
-          color: ${Globals.link.color};
+          color: ${Colors.link.color};
       }
     `
     this.props.pages.map(item =>

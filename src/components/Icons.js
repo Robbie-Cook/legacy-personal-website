@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 
 /**
  * Wraps a set of Icons
@@ -34,20 +34,20 @@ class Icon extends Component {
       text-align: center;
       font-size: ${diameter - 15}px;
       cursor: pointer;
-      background-color: ${Globals.textColor};
+      background-color: ${Colors.textColor};
       margin-right: 18px;
-      color: ${Globals.page.backgroundColor};
+      color: ${Colors.page.backgroundColor};
       transition: 0.1s;
       transition-timing-function: ease-out;
 
       &:hover {
-        background-color: ${Globals.link.color};
-        color: ${Globals.textColor};
+        background-color: ${Colors.link.color};
+        color: ${Colors.textColor};
       }
 
       &:active {
-        background-color: ${Globals.link.color};
-        color: ${Globals.textColor};
+        background-color: ${Colors.link.color};
+        color: ${Colors.textColor};
       }
     `
     return (

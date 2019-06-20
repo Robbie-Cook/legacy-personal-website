@@ -19,7 +19,7 @@ import me from "../photos/me_irl3_cropped.jpg"
 import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
-import Globals from "../components/Globals"
+import Colors from "../components/Globals"
 
 const Icons = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ class HomePage extends Component {
         text-align: center;
         margin: 10px 20px 70px 20px;
         min-width: auto;
-        background-color: ${Globals.page.backgroundColor};
+        background-color: ${Colors.page.backgroundColor};
         padding: 0 15px;
       `)}
 
@@ -80,7 +80,7 @@ class HomePage extends Component {
     const BackgroundGradientWrapper = styled.div`
       background: linear-gradient(
         to right,
-        ${Globals.page.backgroundColor} 80%,
+        ${Colors.page.backgroundColor} 80%,
         rgba(255, 244, 244, 0) 100%
       );
 
