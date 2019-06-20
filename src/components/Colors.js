@@ -2,8 +2,8 @@
 Styling for entire website. All common variables are being migrated here from
 css/global-styles.css. 
 
-This is to be replaced with React.Context, splitting each logical piece into its own
-context e.g. ColorContext, SizeContext etc.
+This is to be replaced with React.Context, where this is an object passed 
+through a color context
 */
 class Colors {
   static textColor = "#dcd6ce"
