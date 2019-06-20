@@ -12,8 +12,6 @@ import { withStyles } from "@material-ui/core/styles"
 import Globals from "./Globals"
 import styled from "styled-components"
 
-const theme = Globals
-
 class MobileNav extends React.Component {
   constructor(props) {
     super(props)
@@ -31,7 +29,7 @@ class MobileNav extends React.Component {
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
       &.active {
-          color: ${theme.navbar.activeLinkColor};
+          color: ${Globals.navbar.activeLinkColor};
       }
     `
     this.props.pages.map(item =>
@@ -69,7 +67,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.size}px)`]: {
+        [`@media (min-width:${Globals.mobile.size}px)`]: {
           display: "none",
         },
       },
@@ -79,10 +77,10 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.size - 1}px)`]: {
+        [`@media (min-width:${Globals.mobile.size - 1}px)`]: {
           display: "none",
         },
-        marginTop: theme.navbar.height,
+        marginTop: Globals.navbar.height,
       },
     })(MenuList)
 
