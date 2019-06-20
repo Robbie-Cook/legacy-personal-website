@@ -48,7 +48,6 @@ class Globals {
 
   static mobile = {
     colMargin: new Dimensions(0, 20, 20, 20),
-    padding: new Dimensions(20, 30),
     navbar: {
       padding: new Dimensions(20, 40),
     },

@@ -9,7 +9,8 @@ import Globals from "./Globals"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"
-import { MobileView } from "./Views";
+import { MobileView } from "./Views"
+import Dimensions from "./Dimensions"
 
 // Styles for component
 const StyledPage = styled.div`
@@ -22,7 +23,7 @@ const StyledPage = styled.div`
   // Mobile styles
   ${new MobileView(`
     flex-direction: column;
-    padding: ${Globals.mobile.padding}; 
+    padding: ${new Dimensions(20, 30)}; 
   `)}
 `
 
