@@ -45,13 +45,6 @@ class Globals {
       backgroundColor: super.textColor,
     },
   }
-
-  static mobile = {
-    colMargin: new Dimensions(0, 20, 20, 20),
-    navbar: {
-      padding: new Dimensions(20, 40),
-    },
-  }
 }
 
 export default Globals
