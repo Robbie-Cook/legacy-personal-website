@@ -184,9 +184,9 @@ class SkillsBoxInfo extends Component {
       font-weight: bold;
       font: inherit;
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         height: auto;
-      }
+      `)}
     `
 
     const Tag = styled.span`
@@ -267,10 +267,10 @@ class SkillsBox extends Component {
       ${this.props.styles};
       margin-bottom: 20px;
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         height: auto;
         flex-direction: column;
-      }
+      `)}
     `
 
     return (

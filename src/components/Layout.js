@@ -6,20 +6,22 @@ import styled from "styled-components"
 import Globals from "../components/Globals"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import { MobileView } from "./Views"
 
 const LayoutWrapper = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
 
 const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
 
-  @media (max-width: ${Globals.mobile.size}px) {
+  ${new MobileView(`
     flex-direction: column;
-  }
+  `)}
 `
 
 class Col extends Component {
@@ -35,13 +37,9 @@ class Col extends Component {
       margin: 0 40px 20px 0;
       width: ${this.props.width};
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         width: 100%;
-      }
-
-      &:last-child {
-        margin-right: 0px;
-      }
+      `)}
     `
 
     return <Col>{this.props.children}</Col>

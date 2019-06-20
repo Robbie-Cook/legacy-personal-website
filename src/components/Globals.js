@@ -1,6 +1,9 @@
 /*
 Styling for entire website. All common variables are being migrated here from
-css/global-styles.css. It is a work in progress.
+css/global-styles.css. 
+
+This is to be replaced with React.Context, splitting each logical piece into its own
+context e.g. ColorContext, SizeContext etc.
 */
 import Dimensions from "./Dimensions"
 
@@ -45,7 +48,6 @@ class Globals {
 
   static mobile = {
     colMargin: new Dimensions(0, 20, 20, 20),
-    size: "900",
     padding: new Dimensions(20, 30),
     navbar: {
       padding: new Dimensions(20, 40),

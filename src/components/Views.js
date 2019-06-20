@@ -3,19 +3,20 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 /**
- * Media query for mobile 
+ * Styles to apply when screen is mobile-sized
  */
 class MobileView {
   constructor(style) {
-    this.style = style;
+    this.style = style
   }
 
   toString() {
-    return (
-      `@media (max-width: ${Globals.mobile.size}px) {
-          ${this.style};
-        }`
-    );
+    const mobileSize = "900"
+    return (`
+      @media (max-width: ${mobileSize}px) {
+        ${this.style};
+      }`
+    )
   }
 }
 

@@ -9,6 +9,7 @@ import Globals from "./Globals"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"
+import { MobileView } from "./Views";
 
 // Styles for component
 const StyledPage = styled.div`
@@ -19,10 +20,10 @@ const StyledPage = styled.div`
   padding: ${Globals.page.padding};
 
   // Mobile styles
-  @media (max-width: ${Globals.mobile.size}px) {
+  ${new MobileView(`
     flex-direction: column;
-    padding: ${Globals.mobile.padding};
-  }
+    padding: ${Globals.mobile.padding}; 
+  `)}
 `
 
 /* Navigation links, which are passed to navbar.js */

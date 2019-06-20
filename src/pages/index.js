@@ -26,9 +26,9 @@ const Icons = styled.div`
   flex-direction: row;
   margin-top: 10px;
 
-  @media (max-width: ${Globals.mobile.size}px) {
+  ${new MobileView(`
     justify-content: center;
-  }
+  `)}
 `
 
 // Main Page component
