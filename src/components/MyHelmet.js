@@ -10,7 +10,7 @@ class MyHelmet extends React.Component {
       <div className="application">
         <Helmet>
           <meta charSet="utf-8" />
-          {/* Google fonts */}
+          {/* Load Google Fonts */}
           <link
             href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,700&display=swap"
             rel="stylesheet"
@@ -23,9 +23,14 @@ class MyHelmet extends React.Component {
           />
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
 
-          <style>{`body { background-color: ${
-            Colors.page.backgroundColor
-          }; }`}</style>
+          {/* Done for initial loading */}
+          <style>
+            {`
+              body {
+                background-color: ${Colors.page.backgroundColor}; 
+              }
+            `}
+          </style>
         </Helmet>
       </div>
     )
