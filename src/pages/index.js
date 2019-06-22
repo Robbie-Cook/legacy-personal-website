@@ -9,7 +9,7 @@ import WebPage from "../components/Page"
 import Section from "../components/Section"
 import Spacer from "../components/Spacer"
 import { MobileView } from "../components/Views"
-import {Icon, IconsWrapper} from "../components/Icons"
+import { Icon, IconsWrapper } from "../components/Icons"
 
 /* Stylesheets etc. */
 import "../fontawesome/css/all.css"
@@ -20,6 +20,7 @@ import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
 import Colors from "../components/Colors"
+import Codify from "../components/Codify"
 
 const Icons = styled.div`
   display: flex;
@@ -114,13 +115,16 @@ class HomePage extends Component {
               {/* HeaderImage only displayed on mobile (defined in definition) */}
               <HeaderImage src={avatarMe} />
               <MainInfo>
-                <Heading style={`
+                <Heading
+                  style={`
                   & h1 {
                     margin: 0px
                   }; 
                   ${new MobileView(`
                     margin: 10px 0;
-                  `)}`} codify>
+                  `)}`}
+                  codify
+                >
                   Robbie Cook
                 </Heading>
                 <Text>
@@ -131,18 +135,25 @@ class HomePage extends Component {
                   more :)
                 </Text>
                 <IconsWrapper>
-                  <Icon href="https://github.com/Robbie-Cook">
-                    <i class="icon fab fa-github" />
-                  </Icon>
-                  <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                    <i class="icon fab fa-linkedin" />
-                  </Icon>
-                  <Icon href="mailto:robbie@robbie.pw">
-                  {/* <div class="iconWrapper2"> */}
+                  <Codify
+                    color={Colors.link.color}
+                    fontSize="47px"
+                    rightTagSpacing="0px"
+                    opacity=".7"
+                  >
+                    <Icon href="https://github.com/Robbie-Cook">
+                      <i class="icon fab fa-github" />
+                    </Icon>
+                    <Icon href="https://www.linkedin.com/in/robbie-cook/">
+                      <i class="icon fab fa-linkedin" />
+                    </Icon>
+                    <Icon href="mailto:robbie@robbie.pw">
+                      {/* <div class="iconWrapper2"> */}
                       <i class="icon fas fa-envelope" />
                       {/* <span>robbie@robbie.pw</span> */}
-                  {/* </div> */}
-                  </Icon>
+                      {/* </div> */}
+                    </Icon>
+                  </Codify>
                 </IconsWrapper>
               </MainInfo>
             </BackgroundGradientWrapper>
