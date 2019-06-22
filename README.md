@@ -12,9 +12,8 @@ on this website.
 * Work on issues 
            
 * Potential for CMS integration
-               
-* Add awesome videos of me playing music
-   * Some to process on my phone
+              
+* Split into personal and professional sections
 
 ### Polishing 
          
