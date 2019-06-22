@@ -14,55 +14,19 @@ import { Header } from "../components/Typography"
 import Dimensions from "../components/Dimensions"
 import { Button as GrommetButton, Grommet } from "grommet"
 import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
+import Carousel from "../components/Carousel"
 import SkillsPage from "../components/about/SkillsPage"
 
-/* Carousel */
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from "react-responsive-carousel"
 import { MobileView } from "../components/Views"
 
 /* Media */
-
-// Import all photos from carousel folder
-function importAll(r) {
-  return r.keys().map(r)
-}
-
-const images = importAll(
-  require.context("../photos/carousel/", false, /\.(png|jpe?g|svg)$/)
-)
-
-// Generate a single carousel element for a photo
-function getCarouselPhotos() {
-  const StyledImg = styled.img`
-    max-height: 300px;
-    width: auto !important;
-  `
-
-  let photoJsxArray = []
-  for (let item of images) {
-    photoJsxArray.push(
-      <div>
-        <StyledImg src={item} />
-      </div>
-    )
-  }
-  return photoJsxArray
-}
+import photo1 from "../photos/carousel/1.svg"
+import photo2 from "../photos/carousel/2.jpg"
+import photo3 from "../photos/carousel/3.jpg"
 
 // Main Page component
 class About extends Component {
   render() {
-    const CarouselWrapper = styled.div`
-      display: flex;
-      height: 100%;
-      align-items: center;
-      ${new MobileView(`
-        & > div {
-          overflow: hidden!important
-        }
-      `)};
-    `
 
     return (
       <Page>
@@ -97,9 +61,7 @@ class About extends Component {
               </Text>
             </Col>
             <Col width="50%">
-              <CarouselWrapper>
-                <Carousel showThumbs={false}>{getCarouselPhotos()}</Carousel>
-              </CarouselWrapper>
+              <Carousel photos={[photo1, photo2, photo3]} />
             </Col>
           </Row>
           <Spacer height="30px" />
@@ -114,6 +76,5 @@ class About extends Component {
     )
   }
 }
-
 
 export default About
