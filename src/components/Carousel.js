@@ -35,6 +35,8 @@ class Carousel extends Component {
   }
 
   render() {
+    const arrowSize = "20px"
+
     const CarouselWrapper = styled.div`
       display: flex;
       height: 100%;
@@ -43,6 +45,20 @@ class Carousel extends Component {
         overflow: hidden!important;
         width: 100%;
         border: 4px solid ${Colors.textColor};
+      }
+      
+      // Make arrows bigger on carousel
+
+      & .control-next:before {
+        border-top: ${arrowSize} solid transparent!important;
+        border-bottom: ${arrowSize} solid transparent!important;
+        border-left: ${arrowSize} solid #fff!important;
+      }
+
+      & .control-prev:before {
+        border-top: ${arrowSize} solid transparent!important;
+        border-bottom: ${arrowSize} solid transparent!important;
+        border-right: ${arrowSize} solid #fff!important;
       }
     `
 
