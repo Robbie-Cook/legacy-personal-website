@@ -11,6 +11,7 @@ class IconsWrapper extends Component {
     const IconsWrapperStyledComponent = styled.div`
       display: flex;
       margin-top: 17px;
+      align-items: center;
     `
     return (
       <IconsWrapperStyledComponent>
@@ -35,7 +36,7 @@ class Icon extends Component {
       font-size: ${diameter - 15}px;
       cursor: pointer;
       background-color: ${Colors.textColor};
-      margin-right: 18px;
+      margin: 0 9px;
       color: ${Colors.page.backgroundColor};
       transition: 0.1s;
       transition-timing-function: ease-out;
@@ -50,10 +51,18 @@ class Icon extends Component {
         color: ${Colors.textColor};
       }
     `
+
+    const StyledA = styled.a`
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    `
+    
     return (
-      <a href={this.props.href}>
-        <IconStyledComponent>{this.props.children}</IconStyledComponent>
-      </a>
+      <IconStyledComponent>
+        <StyledA href={this.props.href}>{this.props.children}</StyledA>
+      </IconStyledComponent>
     )
   }
 }
