@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Globals from "../components/Globals"
+import Colors from "./Colors"
 
 /**
  * Wraps a set of Icons
@@ -11,6 +11,7 @@ class IconsWrapper extends Component {
     const IconsWrapperStyledComponent = styled.div`
       display: flex;
       margin-top: 17px;
+      align-items: center;
     `
     return (
       <IconsWrapperStyledComponent>
@@ -34,26 +35,34 @@ class Icon extends Component {
       text-align: center;
       font-size: ${diameter - 15}px;
       cursor: pointer;
-      background-color: ${Globals.textColor};
-      margin-right: 18px;
-      color: ${Globals.page.backgroundColor};
+      background-color: ${Colors.textColor};
+      margin: 0 9px;
+      color: ${Colors.page.backgroundColor};
       transition: 0.1s;
       transition-timing-function: ease-out;
 
       &:hover {
-        background-color: ${Globals.link.color};
-        color: ${Globals.textColor};
+        background-color: ${Colors.link.color};
+        color: ${Colors.textColor};
       }
 
       &:active {
-        background-color: ${Globals.link.color};
-        color: ${Globals.textColor};
+        background-color: ${Colors.link.color};
+        color: ${Colors.textColor};
       }
     `
+
+    const StyledA = styled.a`
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    `
+    
     return (
-      <a href={this.props.href}>
-        <IconStyledComponent>{this.props.children}</IconStyledComponent>
-      </a>
+      <IconStyledComponent>
+        <StyledA href={this.props.href}>{this.props.children}</StyledA>
+      </IconStyledComponent>
     )
   }
 }

@@ -5,24 +5,26 @@
 import "../css/global-styles.css"
 import React, { Component } from "react"
 import styled from "styled-components"
-import Globals from "./Globals"
+import Colors from "./Colors"
 import NavigationBar from "./NavigationBar"
 import MyLink from "./MyLink"
 import MyHelmet from "./MyHelmet"
+import { MobileView } from "./Views"
+import Dimensions from "./Dimensions"
 
 // Styles for component
 const StyledPage = styled.div`
-  background-color: ${Globals.page.backgroundColor};
+  background-color: ${Colors.page.backgroundColor};
 
   display: flex;
   flex-direction: row;
-  padding: ${Globals.page.padding};
+  padding: ${new Dimensions(40, 90, 0, 90)};
 
   // Mobile styles
-  @media (max-width: ${Globals.mobile.size}px) {
+  ${new MobileView(`
     flex-direction: column;
-    padding: ${Globals.mobile.padding};
-  }
+    padding: ${new Dimensions(20, 30)}; 
+  `)}
 `
 
 /* Navigation links, which are passed to navbar.js */
@@ -33,32 +35,21 @@ let navigationLinks = [
   new MyLink("Music", "/music"),
 ]
 
+/**
+ * Define a React Context for all child components to use
+ * Made to make finding colors easier
+ */
+const ColorsContext = React.createContext(Colors)
+
 // Main Page component
 class WebPage extends Component {
   constructor(props) {
-    super(props);
-    this.state = {loading: true};
-  }
-
-  getLoadingScreen(loading) {
-    const LoadingScreen = styled.div`
-      background-color: ${Globals.page.backgroundColor};
-      position: absolute;
-      top: 0;
-      z-index: 100;
-      height: 100%;
-      display: flex;
-      width: 100%;
-    `
-    if(loading) {
-      return <LoadingScreen/>
-    } 
+    super(props)
   }
 
   render() {
     return (
-      <React.Fragment>
-        {this.getLoadingScreen(this.state.loading)}
+      <ColorsContext.Provider value={Colors}>
         <MyHelmet /> {/* SEO Stuff */}
         <div>
           <NavigationBar pages={navigationLinks} />
@@ -68,12 +59,8 @@ class WebPage extends Component {
             </StyledPage>
           </div>
         </div>
-      </React.Fragment>
+      </ColorsContext.Provider>
     )
-  }
-  componentDidMount() {
-    // Hide loading screen
-    this.setState({loading: false})
   }
 }
 

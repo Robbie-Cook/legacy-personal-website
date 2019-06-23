@@ -1,6 +1,6 @@
 import { Heading, Text } from "../Typography"
 import React, { Component } from "react"
-import Globals from "../Globals"
+import Colors from "../Colors"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Button, ButtonGenerator, ButtonWrapper } from "../Button"
@@ -127,7 +127,7 @@ class SkillsPage extends Component {
               }}
               activeStyle={`background-color: ${
                 this.SecondSkillsPage.backgroundColor
-              }; color: ${Globals.page.backgroundColor};`}
+              }; color: ${Colors.page.backgroundColor};`}
               active={
                 this.state.activeSkillsPage === this.SecondSkillsPage.index
               }
@@ -142,8 +142,8 @@ class SkillsPage extends Component {
               } // since this is the first item
               activeStyle={`background-color: ${
                 this.FirstSkillsPage.backgroundColor
-              }; color: ${Globals.page.backgroundColor};`}
-              activeColor={`${Globals.page.backgroundColor}`}
+              }; color: ${Colors.page.backgroundColor};`}
+              activeColor={`${Colors.page.backgroundColor}`}
             />
           </ButtonWrapper>
         </PreTransformWrapper>
@@ -184,9 +184,9 @@ class SkillsBoxInfo extends Component {
       font-weight: bold;
       font: inherit;
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         height: auto;
-      }
+      `)}
     `
 
     const Tag = styled.span`
@@ -267,10 +267,10 @@ class SkillsBox extends Component {
       ${this.props.styles};
       margin-bottom: 20px;
 
-      @media (max-width: ${Globals.mobile.size}px) {
+      ${new MobileView(`
         height: auto;
         flex-direction: column;
-      }
+      `)}
     `
 
     return (
@@ -300,10 +300,10 @@ class MyRadioButton extends Component {
     const MyRadioButton = styled.button`
       margin: 5px 0px 5px 0;
       border-radius: 0px;
-      border: 1px solid ${Globals.textColor};
-      background-color: ${Globals.page.backgroundColor};
+      border: 1px solid ${Colors.textColor};
+      background-color: ${Colors.page.backgroundColor};
       height: 32px;
-      color: ${Globals.textColor};
+      color: ${Colors.textColor};
       ${this.props.active ? this.props.activeStyle : null};
       cursor: pointer;
       font-size: 18px;

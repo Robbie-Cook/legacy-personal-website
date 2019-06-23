@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import Globals from "./Globals"
+import Colors from "./Colors"
 import Spacer from "./Spacer"
+import Codify from "./Codify"
 
 /**
  *  Common components relating to text. This includes
@@ -59,23 +60,11 @@ class Heading extends Component {
     const HeadingWrapper = styled.div`
       display: flex;
       width: fit-content;
-      & *  {
+      & * {
         align-self: center;
       }
       ${this.props.style}
     `
-
-    // Currently hard-coded, but should be passed as a prop if custom icons are needed for
-    // headers
-    const MyIcon = styled.span`
-      color: ${Globals.page.secondaryColor};
-      font-size: 69px;
-      font-weight: bold;
-      font-family: "Roboto Slab", sans-serif;
-    `
-
-    const leftIcon = <MyIcon>&lt;</MyIcon>
-    const rightIcon = <><Spacer width="13px"/><MyIcon> /&gt;</MyIcon></>
 
     let headingElementToUse = ""
 
@@ -92,15 +81,15 @@ class Heading extends Component {
       headingElementToUse = H5
     }
 
+    const headingElement = React.createElement(
+      headingElementToUse,
+      { className: className },
+      this.props.children
+    )
+
     return (
       <HeadingWrapper>
-        {this.props.codify && <TextIcon position="left" content={leftIcon} />}
-        {React.createElement(
-          headingElementToUse,
-          { className: className },
-          this.props.children
-        )}
-        {this.props.codify && <TextIcon position="right" content={rightIcon} />}
+        {this.props.codify ? <Codify>{headingElement}</Codify> : headingElement}
       </HeadingWrapper>
     )
   }
@@ -133,13 +122,3 @@ class Text extends Component {
 }
 
 export { Heading, Text }
-
-/** Icons to display with text */
-class TextIcon extends Component {
-  render() {
-    return <>{this.props.content}</>
-  }
-}
-TextIcon.propTypes = {
-  position: PropTypes.string, // where the icon is to be displayed relative to the content (left, right, ...)
-}

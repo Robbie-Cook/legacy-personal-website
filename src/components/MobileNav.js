@@ -9,10 +9,10 @@ import Grow from "@material-ui/core/Grow"
 import Paper from "@material-ui/core/Paper"
 import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
-import Globals from "./Globals"
+import Colors from "./Colors"
 import styled from "styled-components"
-
-const theme = Globals
+import { Sizes as ViewSizes} from "./Views"
+import Sizes from "./Sizes"
 
 class MobileNav extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class MobileNav extends React.Component {
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
       &.active {
-          color: ${theme.navbar.activeLinkColor};
+          color: ${Colors.link.color};
       }
     `
     this.props.pages.map(item =>
@@ -69,7 +69,7 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.size}px)`]: {
+        [`@media (min-width:${ViewSizes.mobileSize}px)`]: {
           display: "none",
         },
       },
@@ -79,10 +79,10 @@ class MobileNav extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (min-width:${theme.mobile.size - 1}px)`]: {
+        [`@media (min-width:${ViewSizes.mobileSize}px)`]: {
           display: "none",
         },
-        marginTop: theme.navbar.height,
+        marginTop: Sizes.navbar.height,
       },
     })(MenuList)
 

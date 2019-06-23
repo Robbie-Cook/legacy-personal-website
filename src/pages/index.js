@@ -9,7 +9,7 @@ import WebPage from "../components/Page"
 import Section from "../components/Section"
 import Spacer from "../components/Spacer"
 import { MobileView } from "../components/Views"
-import {Icon, IconsWrapper} from "../components/Icons"
+import { Icon, IconsWrapper } from "../components/Icons"
 
 /* Stylesheets etc. */
 import "../fontawesome/css/all.css"
@@ -19,16 +19,17 @@ import me from "../photos/me_irl3_cropped.jpg"
 import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
-import Globals from "../components/Globals"
+import Colors from "../components/Colors"
+import Codify from "../components/Codify"
 
 const Icons = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 10px;
 
-  @media (max-width: ${Globals.mobile.size}px) {
+  ${new MobileView(`
     justify-content: center;
-  }
+  `)}
 `
 
 // Main Page component
@@ -50,7 +51,7 @@ class HomePage extends Component {
         text-align: center;
         margin: 10px 20px 70px 20px;
         min-width: auto;
-        background-color: ${Globals.page.backgroundColor};
+        background-color: ${Colors.page.backgroundColor};
         padding: 0 15px;
       `)}
 
@@ -80,7 +81,7 @@ class HomePage extends Component {
     const BackgroundGradientWrapper = styled.div`
       background: linear-gradient(
         to right,
-        ${Globals.page.backgroundColor} 80%,
+        ${Colors.page.backgroundColor} 80%,
         rgba(255, 244, 244, 0) 100%
       );
 
@@ -114,13 +115,16 @@ class HomePage extends Component {
               {/* HeaderImage only displayed on mobile (defined in definition) */}
               <HeaderImage src={avatarMe} />
               <MainInfo>
-                <Heading style={`
+                <Heading
+                  style={`
                   & h1 {
                     margin: 0px
                   }; 
                   ${new MobileView(`
                     margin: 10px 0;
-                  `)}`} codify>
+                  `)}`}
+                  codify
+                >
                   Robbie Cook
                 </Heading>
                 <Text>
@@ -131,18 +135,25 @@ class HomePage extends Component {
                   more :)
                 </Text>
                 <IconsWrapper>
-                  <Icon href="https://github.com/Robbie-Cook">
-                    <i class="icon fab fa-github" />
-                  </Icon>
-                  <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                    <i class="icon fab fa-linkedin" />
-                  </Icon>
-                  <Icon href="mailto:robbie@robbie.pw">
-                  {/* <div class="iconWrapper2"> */}
+                  <Codify
+                    color={Colors.link.color}
+                    fontSize="47px"
+                    rightTagSpacing="0px"
+                    opacity=".7"
+                  >
+                    <Icon href="https://github.com/Robbie-Cook">
+                      <i class="icon fab fa-github" />
+                    </Icon>
+                    <Icon href="https://www.linkedin.com/in/robbie-cook/">
+                      <i class="icon fab fa-linkedin" />
+                    </Icon>
+                    <Icon href="mailto:robbie@robbie.pw">
+                      {/* <div class="iconWrapper2"> */}
                       <i class="icon fas fa-envelope" />
                       {/* <span>robbie@robbie.pw</span> */}
-                  {/* </div> */}
-                  </Icon>
+                      {/* </div> */}
+                    </Icon>
+                  </Codify>
                 </IconsWrapper>
               </MainInfo>
             </BackgroundGradientWrapper>

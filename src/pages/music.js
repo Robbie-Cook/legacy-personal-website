@@ -8,7 +8,7 @@ import { Container } from "../components/Wrappers"
 import { Col, Row, LayoutWrapper } from "../components/Layout"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import Globals from "../components/Globals"
+import Colors from "../components/Colors"
 import { BorderBox } from "../components/Boxes"
 
 import Playlist from "../components/music/Playlist"
