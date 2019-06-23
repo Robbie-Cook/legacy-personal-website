@@ -235,7 +235,7 @@ class SkillsBoxHeader extends Component {
     `
     return (
       <SkillsBoxHead>
-        <Heading type="h3" style={{ margin: "0px", fontWeight: "300" }}>
+        <Heading type="h3" margin="0" style={"fontWeight: 300;"}>
           {this.props.title}
         </Heading>
       </SkillsBoxHead>

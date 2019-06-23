@@ -25,8 +25,9 @@ class Heading extends Component {
     const myStyles = `
       font-family: "Roboto Slab", sans-serif;
       font-weight: bold;
-      margin: 0 0 20px 0;
+      margin: ${this.props.margin};
       text-transform: lowercase;
+
     `
 
     const h1Height = "53px"
@@ -63,7 +64,7 @@ class Heading extends Component {
       & * {
         align-self: center;
       }
-      ${this.props.style}
+      ${this.props.style};
     `
 
     let headingElementToUse = ""
@@ -98,13 +99,18 @@ class Heading extends Component {
       this.props.type,
       this.props.style,
       this.props.className,
-      this.props.codify // option to display the heading as < {content} />
+      this.props.codify, // option to display the heading as < {content} />
+      this.props.margin, 
     )
   }
 }
 Heading.propTypes = {
   type: PropTypes.string,
   codify: PropTypes.bool,
+  style: PropTypes.string
+}
+Heading.defaultProps = {
+  margin: "0 0 20px 0;",
 }
 
 /**

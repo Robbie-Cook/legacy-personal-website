@@ -20,14 +20,14 @@ import SkillsPage from "../components/about/SkillsPage"
 import { MobileView } from "../components/Views"
 
 /* Media */
-import photo1 from "../photos/carousel/1.svg"
-import photo2 from "../photos/carousel/2.jpg"
-import photo3 from "../photos/carousel/3.jpg"
+import photo1 from "../photos/carousels/1.svg"
+import photo2 from "../photos/carousels/2.jpg"
+import photo3 from "../photos/carousels/3.jpg"
+import { graphql } from "gatsby"
 
 // Main Page component
 class About extends Component {
   render() {
-
     return (
       <Page>
         <LayoutWrapper>
