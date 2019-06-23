@@ -33,7 +33,7 @@ class About extends Component {
         <LayoutWrapper>
           <Row>
             <Col width="50%">
-              <Heading type="h2">About</Heading>
+              <Heading>About</Heading>
               <Text>
                 Hi! I'm a 22-year-old developer in Auckland. Check out my Github
                 page <a href="https://github.com/Robbie-Cook">here</a> for a
