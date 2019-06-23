@@ -13,7 +13,7 @@ import { BorderBox } from "../components/Boxes"
 
 import Playlist from "../components/music/Playlist"
 import Song from "../components/music/Song"
-
+import MusicPlayer from "../components/music/Player"
 
 /** Media */
 import meOnGuitar from "../photos/music/meOnGuitar.png"
@@ -22,6 +22,15 @@ import playlistTwoJson from "../data/spotify/playlists/opera.json"
 
 // Main Page component
 class MusicPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentSong: {
+        type: "spotify",
+        id: "6h4lC9aNr6NuQzZkbw5Lqm",
+      },
+    }
+  }
   render() {
     return (
       <WebPage>
@@ -95,10 +104,8 @@ class MusicPage extends Component {
                 horizontalScroll={true}
                 style={""}
               >
-                <Playlist jsonData={playlistOneJson}>
-                </Playlist>
-                <Playlist jsonData={playlistTwoJson}>
-                </Playlist>
+                <Playlist jsonData={playlistOneJson} />
+                <Playlist jsonData={playlistTwoJson} />
               </BorderBox>
             </Col>
           </Row>
@@ -116,7 +123,7 @@ class MusicPage extends Component {
               />
             </Col>
             <Col width="50%">
-              {/* Photo of me */}
+              {/* Photo of me. Needs to be converted to carousel*/}
               <img
                 src={meOnGuitar}
                 style={{ width: "100%", alignItems: "flex-start" }}
@@ -125,6 +132,8 @@ class MusicPage extends Component {
             </Col>
           </Row>
         </LayoutWrapper>
+        {/* Music player at the bottom of the screen */}
+        <MusicPlayer currentSong={this.state.currentSong} />
       </WebPage>
     )
   }
