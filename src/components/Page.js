@@ -17,7 +17,7 @@ const StyledPage = styled.div`
   background-color: ${Colors.page.backgroundColor};
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: ${new Dimensions(40, 90, 0, 90)};
 
   // Mobile styles
