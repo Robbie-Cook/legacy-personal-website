@@ -1,5 +1,13 @@
 module.exports = {
+
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `carousel`,
+        path: `${__dirname}/src/photos/carousels`,
+      },
+    },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
