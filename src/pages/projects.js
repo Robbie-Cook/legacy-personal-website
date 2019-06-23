@@ -29,7 +29,7 @@ class Projects extends Component {
     return (
       <Page>
         <LayoutWrapper>
-          <Heading type="h2">Work / Projects</Heading>
+          <Heading>Work / Projects</Heading>
           <Text>
             Here is a showcase of the different projects I have been working on
             recently.
