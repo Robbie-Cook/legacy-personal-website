@@ -8,34 +8,10 @@ import { Container } from "../Wrappers"
 import { Col, Row, LayoutWrapper } from "../Layout"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import Colors from "../Colors"
 
 // Music imports
 import playIcon from "../../photos/icons/musicPlay.svg"
-
-/**
- * Used by Song to represent a spotify song
- */
-class SpotifySong extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
-  
-  render() {
-    return (
-      <iframe
-        src={`https://open.spotify.com/embed/track/${this.props.spotifySongId}`}
-        width="300"
-        height="80"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
-      />
-    )
-  }
-}
-SpotifySong.propTypes = {
-  spotifySongId: PropTypes.string,
-}
 
 /**
  * Represents a track UI on the page
@@ -46,10 +22,9 @@ class Song extends Component {
     this.state = { spotifyActive: false }
   }
 
-  spotifyEmbed = <SpotifySong spotifySongId={this.props.spotifySongId} />
 
   render() {
-    const artistNameColor = "#ff7b7b"
+    const artistNameColor = Colors.page.secondaryColor;
 
     const SongWrapper = styled.div`
       display: flex;
@@ -105,7 +80,6 @@ class Song extends Component {
           <SongName>{this.props.name}</SongName>
           <ArtistName>{this.props.artist}</ArtistName>
         </Line1>
-        <SpotifyWrapper>{this.spotifyEmbed}</SpotifyWrapper>
       </SongWrapper>
     )
   }
