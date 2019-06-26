@@ -9,7 +9,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Globals = _interopRequireDefault(require("../components/Globals"));
+var _Colors = _interopRequireDefault(require("./Colors"));
+
+var _Sizes = _interopRequireDefault(require("./Sizes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -18,7 +20,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n      min-height: ", "px;\n      width: ", "px;\n      display: flex;\n    "]);
+  var data = _taggedTemplateLiteral(["\n      min-height: ", "px;\n      display: flex;\n      ", ";\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -101,7 +103,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var MySection = _styledComponents["default"].div(_templateObject(), this.state.height - _Globals["default"].navbar.height, this.state.width);
+      var MySection = _styledComponents["default"].div(_templateObject(), this.state.height - _Sizes["default"].navbar.height, this.props.style);
 
       return _react["default"].createElement(MySection, null, this.props.children);
     }

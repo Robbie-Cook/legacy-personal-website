@@ -8,7 +8,7 @@ import { Container } from "../Wrappers"
 import { Col, Row, LayoutWrapper } from "../Layout"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import Colors from "../Colors"
+import Colors from "../../data/Colors"
 
 // Music imports
 import playIcon from "../../photos/icons/musicPlay.svg"

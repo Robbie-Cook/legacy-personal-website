@@ -1,6 +1,6 @@
 import { Heading, Text } from "../Typography"
 import React, { Component } from "react"
-import Colors from "../Colors"
+import Colors from "../../data/Colors"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Button, ButtonGenerator, ButtonWrapper } from "../Button"

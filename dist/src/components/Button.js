@@ -11,7 +11,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _grommet = require("grommet");
 
-var _Globals = _interopRequireDefault(require("../components/Globals"));
+var _Colors = _interopRequireDefault(require("./Colors"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -34,7 +34,7 @@ function _templateObject3() {
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      color: ", ";\n      margin: 0;\n      text-decoration: none;\n      border-bottom: 1px solid ", ";\n      line-height: 20px;\n    "]);
+  var data = _taggedTemplateLiteral(["\n      color: ", ";\n      margin: 0;\n      text-decoration: none;\n      ", "\n\n      line-height: 20px;\n    "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -44,7 +44,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n      border: 3px solid ", ";\n      border-radius: 6px;\n      color: ", ";\n      transition: 0.03s;\n\n      /* for svg icons */\n      fill: ", ";\n      stroke: ", ";\n\n      &:hover {\n        & p {\n          border-bottom: 1px solid transparent;\n        }\n        background-color: ", ";\n      }\n\n      background-color: transparent;\n      margin: ", ";\n      color: ", ";\n      line-height: 27px;\n      font-size: 16px;\n      padding: 5px 12px;\n      font-weight: normal;\n      ", ";\n    "]);
+  var data = _taggedTemplateLiteral(["\n      border: 3px solid ", ";\n      border-radius: 6px;\n      color: ", ";\n      transition: 0.03s;\n\n      /* for svg icons */\n      fill: ", ";\n      stroke: ", ";\n\n      &:hover {\n        & p {\n          border-bottom: 1px solid transparent;\n        }\n        background-color: ", ";\n      }\n\n      margin: ", ";\n      color: ", ";\n      line-height: 27px;\n      font-size: 16px;\n      padding: 5px 12px;\n      font-weight: normal;\n\n      // Styles for active links\n      background-color: ", ";\n\n      ", ";\n      ", ";\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -92,17 +92,35 @@ function (_Component) {
   _createClass(Button, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       /* Styling */
       var customTheme = {
         button: {
           border: {
-            color: _Globals["default"].link.color
-          }
+            color: _Colors["default"].textColor
+          },
+          color: function () {
+            if (_this.props.active) {
+              if (_this.props.activeColor) {
+                return _this.props.activeColor;
+              }
+
+              return _Colors["default"].link.colorActive;
+            } else if (_this.props.color) {
+              return _this.props.color;
+            }
+
+            return _Colors["default"].link.color;
+          }()
         }
       };
-      var MyButton = (0, _styledComponents["default"])(_grommet.Button)(_templateObject(), _Globals["default"].link.color, _Globals["default"].text.color, _Globals["default"].text.color, _Globals["default"].text.color, _Globals["default"].link.color, this.props.margin ? this.props.margin : new _Dimensions["default"](10, 20), _Globals["default"].textColor, this.props.style);
+      var activeStyle = this.props.activeStyle ? this.props.activeStyle : "background-color: ".concat(_Colors["default"].link.colorActive);
+      var MyButton = (0, _styledComponents["default"])(_grommet.Button)(_templateObject(), _Colors["default"].link.color, _Colors["default"].text.color, _Colors["default"].text.color, _Colors["default"].text.color, this.props.hoverColor ? this.props.hoverColor : _Colors["default"].link.color, this.props.margin ? this.props.margin : new _Dimensions["default"](10, 20), _Colors["default"].textColor, this.props.activeColor ? this.props.activeColor : _Colors["default"].link.color, this.props.style, this.props.active && activeStyle);
 
-      var BorderedText = _styledComponents["default"].p(_templateObject2(), _Globals["default"].textColor, _Globals["default"].text.color);
+      var BorderedText = _styledComponents["default"].p(_templateObject2(), _Colors["default"].textColor, function () {
+        return _this.props.underline ? "border-bottom: 1px solid ".concat(_Colors["default"].text.color, ";") : "";
+      }());
 
       var innerDom = _react["default"].createElement(MyButton, {
         icon: this.props.icon,
@@ -129,8 +147,14 @@ Button.propTypes = {
   icon: _propTypes["default"].elementType,
   to: _propTypes["default"].string,
   // Signifies the button is a link, this is the link address
-  label: _propTypes["default"].string // Label for the button
-
+  label: _propTypes["default"].string,
+  // Label for the button
+  active: _propTypes["default"].bool,
+  // whether or not this button is active
+  activeColor: _propTypes["default"].string,
+  activeStyle: _propTypes["default"].string,
+  hoverColor: _propTypes["default"].string,
+  activeTextColor: _propTypes["default"].string
   /**
 
    * A group of Buttons, given an array of button titles, and an array of
@@ -155,7 +179,7 @@ function (_Component2) {
   _createClass(ButtonGenerator, [{
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       return (
         /* 
@@ -167,11 +191,11 @@ function (_Component2) {
         */
         _react["default"].createElement(ButtonWrapper, {
           buttonRow: this.props.buttonRow
-        }, this.props.titles.map(function (item, index) {
+        }, this.props.labels.map(function (item, index) {
           return _react["default"].createElement(Button, {
-            "function": _this.props.functions[index],
-            margin: _this.props.buttonMargin,
-            style: _this.props.buttonStyle,
+            "function": _this2.props.functions[index],
+            margin: _this2.props.buttonMargin,
+            style: _this2.props.buttonStyle,
             label: item
           });
         }))
@@ -184,12 +208,14 @@ function (_Component2) {
 
 exports.ButtonGenerator = ButtonGenerator;
 ButtonGenerator.propTypes = {
-  titles: _propTypes["default"].array.isRequired,
+  labels: _propTypes["default"].array.isRequired,
   functions: _propTypes["default"].array,
   // Should be an array of functions
   buttonRow: _propTypes["default"].bool,
   // Whether to display the buttons as a row
-  buttonStyle: _propTypes["default"].string // Styles passed to the button
+  buttonStyle: _propTypes["default"].string,
+  // Styles passed to the button
+  activeColor: _propTypes["default"].string // The color of an active button
 
   /* 
 
@@ -217,7 +243,7 @@ function (_Component3) {
   _createClass(ButtonWrapper, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var ButtonContainer = _styledComponents["default"].div(_templateObject3(), function () {
         /*
@@ -235,7 +261,7 @@ function (_Component3) {
            * is true
 
            */
-          "flex-direction: " + (_this2.props.buttonRow !== false ? "row" : "column") + ";"
+          "flex-direction: " + (_this3.props.buttonRow !== false ? "row" : "column") + ";"
         );
       }(), this.props.style);
 

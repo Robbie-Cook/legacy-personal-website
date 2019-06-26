@@ -7,11 +7,13 @@ exports.LayoutWrapper = exports.Row = exports.Col = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Globals = _interopRequireDefault(require("../components/Globals"));
+var _Colors = _interopRequireDefault(require("./Colors"));
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _Views = require("./Views");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
@@ -20,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n      display: flex;\n      flex-direction: column;\n      margin: 0 40px 20px 0;\n      width: ", ";\n\n      @media (max-width: ", "px) {\n        width: 100%;\n      }\n\n      &:last-child {\n        margin-right: 0px;\n      }\n    "]);
+  var data = _taggedTemplateLiteral(["\n      display: flex;\n      flex-direction: column;\n      margin: 0 40px 20px 0;\n      width: ", ";\n\n      ", "\n    "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -48,7 +50,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n\n  @media (max-width: ", "px) {\n    flex-direction: column;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n\n  ", "\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -58,7 +60,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73,7 +75,7 @@ var LayoutWrapper = _styledComponents["default"].div(_templateObject());
 
 exports.LayoutWrapper = LayoutWrapper;
 
-var Row = _styledComponents["default"].div(_templateObject2(), _Globals["default"].mobile.size);
+var Row = _styledComponents["default"].div(_templateObject2(), new _Views.MobileView("\n    flex-direction: column;\n  "));
 
 exports.Row = Row;
 
@@ -107,7 +109,7 @@ function (_Component) {
   _createClass(Col, [{
     key: "render",
     value: function render() {
-      Col = _styledComponents["default"].div(_templateObject3(), this.props.width, _Globals["default"].mobile.size);
+      Col = _styledComponents["default"].div(_templateObject3(), this.props.width, new _Views.MobileView("\n        width: 100%;\n      "));
       return _react["default"].createElement(Col, null, this.props.children);
     }
   }]);

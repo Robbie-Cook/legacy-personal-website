@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import Colors from "./Colors"
+import Colors from "../data/Colors"
 import Spacer from "./Spacer"
 import Codify from "./Codify"
 

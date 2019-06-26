@@ -19,7 +19,7 @@ import me from "../photos/me_irl3_cropped.jpg"
 import avatarMe from "../photos/avatarMe.svg"
 
 /* Theme */
-import Colors from "../components/Colors"
+import Colors from "../data/Colors"
 import Codify from "../components/Codify"
 import Animate from "../components/animation/Animate"
 

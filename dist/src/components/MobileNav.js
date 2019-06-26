@@ -27,9 +27,15 @@ var _Popper = _interopRequireDefault(require("@material-ui/core/Popper"));
 
 var _styles = require("@material-ui/core/styles");
 
-var _Globals = _interopRequireDefault(require("./Globals"));
+var _Colors = _interopRequireDefault(require("./Colors"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _Views = require("./Views");
+
+var _Sizes = _interopRequireDefault(require("./Sizes"));
+
+var _MyAnilink = _interopRequireDefault(require("./MyAnilink"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -40,7 +46,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n      font-weight: bold;\n      &.active {\n          color: ", ";\n      }\n    "]);
+  var data = _taggedTemplateLiteral(["\n      font-weight: bold;\n      &.active {\n        color: ", ";\n      }\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -67,8 +73,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var theme = _Globals["default"];
+/**
 
+ * A class representing a mobile nav.
+
+ *
+
+ * This class is used by NavigationBar, and should be refactored and added to this class
+
+ * in the future.
+
+ */
 var MobileNav =
 /*#__PURE__*/
 function (_React$Component) {
@@ -94,17 +109,16 @@ function (_React$Component) {
   _createClass(MobileNav, [{
     key: "generateMobileNav",
     value: function generateMobileNav() {
-      var _this2 = this;
-
       var array = [];
-      var StyledMenuItem = (0, _styledComponents["default"])(_MenuItem["default"])(_templateObject(), theme.navbar.activeLinkColor);
+      var StyledMenuItem = (0, _styledComponents["default"])(_MenuItem["default"])(_templateObject(), _Colors["default"].link.color);
       this.props.pages.map(function (item) {
         return array.push(_react["default"].createElement(StyledMenuItem, {
-          onClick: _this2.handleToggle,
           component: _gatsby.Link,
-          to: item.path,
           activeClassName: "active"
-        }, item.name));
+        }, _react["default"].createElement(_MyAnilink["default"], {
+          style: "color: ".concat(_Colors["default"].link.color),
+          path: item.path
+        }, item.name)));
       });
       return array;
     } // Toggle 'open' state of navmenu
@@ -132,19 +146,20 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _root2,
-          _this3 = this;
+      var _root,
+          _root2,
+          _this2 = this;
 
       /* CSS */
       var StyledIconButton = (0, _styles.withStyles)({
-        root: _defineProperty({}, "@media (min-width:".concat(theme.mobile.size, "px)"), {
+        root: (_root = {}, _defineProperty(_root, "@media (min-width:".concat(_Views.Sizes.mobileSize, "px)"), {
           display: "none"
-        })
+        }), _defineProperty(_root, "marginTop", "10px"), _root)
       })(_IconButton["default"]);
       var StyledMenuList = (0, _styles.withStyles)({
-        root: (_root2 = {}, _defineProperty(_root2, "@media (min-width:".concat(theme.mobile.size - 1, "px)"), {
+        root: (_root2 = {}, _defineProperty(_root2, "@media (min-width:".concat(_Views.Sizes.mobileSize, "px)"), {
           display: "none"
-        }), _defineProperty(_root2, "marginTop", theme.navbar.height), _root2)
+        }), _defineProperty(_root2, "marginTop", _Sizes["default"].navbar.height), _root2)
       })(_MenuList["default"]);
       return _react["default"].createElement("div", null, _react["default"].createElement("div", null, _react["default"].createElement(StyledIconButton, {
         buttonRef: this.anchorEl,
@@ -167,8 +182,8 @@ function (_React$Component) {
             transformOrigin: placement === "bottom" ? "center top" : "center bottom"
           }
         }), _react["default"].createElement(_Paper["default"], null, _react["default"].createElement(_ClickAwayListener["default"], {
-          onClickAway: _this3.handleClose
-        }, _react["default"].createElement(StyledMenuList, null, _this3.generateMobileNav()))));
+          onClickAway: _this2.handleClose
+        }, _react["default"].createElement(StyledMenuList, null, _this2.generateMobileNav()))));
       })));
     }
   }]);
