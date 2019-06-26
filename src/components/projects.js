@@ -26,7 +26,7 @@ class ProjectBox extends Component {
     const ProjectBox = styled.div`
       border: 2px solid #dcd6ce;
       border-radius: 5px;
-      padding: 20px 20px 50px 20px;
+      padding: 20px 20px 20px 20px;
       background-color: #3c3c3c;
       width: 550px;
       margin-top: 10px;
@@ -93,7 +93,7 @@ class ProjectBox extends Component {
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
         <ButtonWrapper style={`
-          position: absolute; 
+          margin-top: auto;
           bottom: 10px;
           ${new MobileView(`
             position: relative;
