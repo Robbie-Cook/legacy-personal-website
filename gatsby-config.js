@@ -8,6 +8,7 @@ module.exports = {
         path: `${__dirname}/src/photos/carousels`,
       },
     },
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
