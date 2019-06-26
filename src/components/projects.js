@@ -98,6 +98,8 @@ class ProjectBox extends Component {
           ${new MobileView(`
             position: relative;
             margin-top: 23px;
+            display: flex;
+            flex-wrap: wrap;
           `)}
         `}>
           {(() => {
