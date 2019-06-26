@@ -17,6 +17,5 @@ class MyLink {
         }
         return route
     }
-
 }
 export default MyLink;

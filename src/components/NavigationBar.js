@@ -8,36 +8,15 @@ import { withStyles } from "@material-ui/core/styles"
 import Colors from "./Colors"
 import styled from "styled-components"
 import MobileNav from "./MobileNav"
-import { Sizes } from "./Views"
+import { Sizes as ViewSizes } from "./Views"
+import Sizes from "./Sizes"
+import PropTypes from "prop-types"
+import { MobileView } from "./Views"
+import MyAnilink from "./MyAnilink";
 
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  // Generate the links to other pages in the normal menu
-  generateNav() {
-    let array = []
-    const StyledTab = styled(Tab)`
-      font-weight: bold;
-
-      &.active {
-        color: ${Colors.link.color};
-      }
-    `
-
-    this.props.pages.map(item => {
-      // If the current URL is the same as the item path, mark Tab as active
-      array.push(
-        <StyledTab
-          label={item.name}
-          to={item.path}
-          component={Link}
-          activeClassName={"active"}
-        />
-      )
-    })
-    return array
   }
 
   render() {
@@ -52,25 +31,62 @@ class NavigationBar extends React.Component {
       root: {
         // Not ideal, should be done with breakpoints in theme
         // re: https://stackoverflow.com/questions/45847090/media-queries-in-material-ui-components
-        [`@media (max-width:${Sizes.mobileSize}px)`]: {
+        [`@media (max-width:${ViewSizes.mobileSize}px)`]: {
           display: "none",
         },
       },
     })(Tabs)
 
     const StyledToolbar = styled(Toolbar)`
-        z-index: 150
+      z-index: 150;
+      margin-left: ${Sizes.page.sideMargin};
+      padding: 0;
+      ${new MobileView(`
+        margin-left: 20px;
+      `)};
     `
 
     return (
       <StyledAppBar position="static" color="primary" colorPrimary>
         <StyledToolbar>
           <MobileNav pages={this.props.pages} />
-          <StyledTabs>{this.generateNav()}</StyledTabs>
+          <StyledTabs>
+            {(() => {
+              const StyledTab = styled.p`
+                font-weight: bold;
+
+                color: ${Colors.textColor};
+
+                &.active {
+                  color: ${Colors.link.color};
+                }
+
+                &:hover {
+                  color: ${Colors.link.color};
+                }
+
+                height: ${Sizes.navbar.height};
+                text-decoration: none;
+                margin-right: 97px;
+                transition: 0.1s;
+              `
+
+              let array = []
+
+              this.props.pages.map(item => {
+                // If the current URL is the same as the item path, mark Tab as active
+                array.push(
+                  <MyAnilink path={item.path}>
+                    <StyledTab>{item.name}</StyledTab>
+                  </MyAnilink>
+                )
+              })
+              return array
+            })()}
+          </StyledTabs>
         </StyledToolbar>
       </StyledAppBar>
     )
   }
 }
-
 export default NavigationBar
