@@ -81,7 +81,7 @@ class ProjectBox extends Component {
 
     // Style for the project buttons
     const buttonStyle = `
-      margin: 7px 20px 0px 0px;
+      margin: 20px 20px 0px 0px;
     `
     return (
       <ProjectBox>

@@ -54,7 +54,7 @@ class Button extends Component {
           : Colors.link.color};
       }
 
-      margin: ${this.props.margin ? this.props.margin : new Dimensions(10, 20)};
+      margin: ${this.props.margin ? this.props.margin : new Dimensions(20, 20)};
       color: ${Colors.textColor};
       line-height: 27px;
       font-size: 16px;
