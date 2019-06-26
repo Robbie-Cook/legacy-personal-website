@@ -35,15 +35,17 @@ class ProjectBox extends Component {
       flex-direction: column;
       position: relative;
 
-      &:nth-child(odd) {
-        margin-right: 31px;
-      }
+      margin-right: 31px;
 
       // Responsive design queries
       @media (max-width: 1200px) {
         margin-right: 0 !important;
         width: auto;
       }
+
+      ${new MobileView(`
+        padding-bottom: 20px;
+      `)}
     `
 
     const ProjectDescriptionAndImageWrapper = styled.div`
@@ -90,7 +92,14 @@ class ProjectBox extends Component {
             <img src={this.props.image} />
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
-        <ButtonWrapper style="position:absolute; bottom: 10px;">
+        <ButtonWrapper style={`
+          position: absolute; 
+          bottom: 10px;
+          ${new MobileView(`
+            position: relative;
+            margin-top: 23px;
+          `)}
+        `}>
           {(() => {
             if (this.props.githubLink !== undefined) {
               return (
