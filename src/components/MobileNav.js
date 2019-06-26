@@ -11,9 +11,16 @@ import Popper from "@material-ui/core/Popper"
 import { withStyles } from "@material-ui/core/styles"
 import Colors from "./Colors"
 import styled from "styled-components"
-import { Sizes as ViewSizes} from "./Views"
+import { Sizes as ViewSizes } from "./Views"
 import Sizes from "./Sizes"
+import MyAnilink from "./MyAnilink"
 
+/**
+ * A class representing a mobile nav.
+ *
+ * This class is used by NavigationBar, and should be refactored and added to this class
+ * in the future.
+ */
 class MobileNav extends React.Component {
   constructor(props) {
     super(props)
@@ -31,18 +38,14 @@ class MobileNav extends React.Component {
     const StyledMenuItem = styled(MenuItem)`
       font-weight: bold;
       &.active {
-          color: ${Colors.link.color};
+        color: ${Colors.link.color};
       }
     `
+
     this.props.pages.map(item =>
       array.push(
-        <StyledMenuItem
-          onClick={this.handleToggle}
-          component={Link}
-          to={item.path}
-          activeClassName={"active"}
-        >
-          {item.name}
+        <StyledMenuItem component={Link} activeClassName={"active"}>
+          <MyAnilink style={`color: ${Colors.link.color}`} path={item.path}>{item.name}</MyAnilink>
         </StyledMenuItem>
       )
     )
@@ -72,6 +75,7 @@ class MobileNav extends React.Component {
         [`@media (min-width:${ViewSizes.mobileSize}px)`]: {
           display: "none",
         },
+        marginTop: "10px",
       },
     })(IconButton)
 

@@ -10,6 +10,9 @@ class Sizes {
   static navbar = {
     height: "64",
   }
+  static page = {
+    sideMargin: "90px",
+  }
 }
 
 export default Sizes

@@ -21,6 +21,7 @@ import avatarMe from "../photos/avatarMe.svg"
 /* Theme */
 import Colors from "../components/Colors"
 import Codify from "../components/Codify"
+import Animate from "../components/animation/Animate"
 
 const Icons = styled.div`
   display: flex;
@@ -134,27 +135,29 @@ class HomePage extends Component {
                   Check out my <Link to="/about">About</Link> page to find out
                   more :)
                 </Text>
-                <IconsWrapper>
-                  <Codify
-                    color={Colors.link.color}
-                    fontSize="47px"
-                    rightTagSpacing="0px"
-                    opacity=".7"
-                  >
-                    <Icon href="https://github.com/Robbie-Cook">
-                      <i class="icon fab fa-github" />
-                    </Icon>
-                    <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                      <i class="icon fab fa-linkedin" />
-                    </Icon>
-                    <Icon href="mailto:robbie@robbie.pw">
-                      {/* <div class="iconWrapper2"> */}
-                      <i class="icon fas fa-envelope" />
-                      {/* <span>robbie@robbie.pw</span> */}
-                      {/* </div> */}
-                    </Icon>
-                  </Codify>
-                </IconsWrapper>
+                <Animate>
+                  <IconsWrapper>
+                    <Codify
+                      color={Colors.link.color}
+                      fontSize="47px"
+                      rightTagSpacing="0px"
+                      opacity=".7"
+                    >
+                      <Icon href="https://github.com/Robbie-Cook">
+                        <i class="icon fab fa-github" />
+                      </Icon>
+                      <Icon href="https://www.linkedin.com/in/robbie-cook/">
+                        <i class="icon fab fa-linkedin" />
+                      </Icon>
+                      <Icon href="mailto:robbie@robbie.pw">
+                        {/* <div class="iconWrapper2"> */}
+                        <i class="icon fas fa-envelope" />
+                        {/* <span>robbie@robbie.pw</span> */}
+                        {/* </div> */}
+                      </Icon>
+                    </Codify>
+                  </IconsWrapper>
+                </Animate>
               </MainInfo>
             </BackgroundGradientWrapper>
           </BackgroundImageWrapper>
