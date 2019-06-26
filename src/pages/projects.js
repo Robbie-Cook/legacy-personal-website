@@ -47,6 +47,15 @@ class Projects extends Component {
               githubLink="https://github.com/Robbie-Cook/Personal-Website"
               webLink={["http://robbie.pw", "robbie.pw"]}
             />
+            {/* York Place Website */}
+            <ProjectBox
+              title="York Place"
+              desc={
+                "A website for a daycare company in Dunedin. Helped build this with a friend."
+              }
+              image={yorkPlaceMini}
+              webLink={["http://yorkplace.co.nz", "yorkplace.co.nz"]}
+            />
             {/* Machine Learning Showcase */}
             <ProjectBox
               title="Machine Learning Showcase"
@@ -60,15 +69,6 @@ class Projects extends Component {
                 "http://machinelearning.robbie.pw",
                 "machinelearning.robbie.pw",
               ]}
-            />
-            {/* Machine Learning Showcase */}
-            <ProjectBox
-              title="York Place"
-              desc={
-                "A website for a daycare company in Dunedin. Helped build this with a friend."
-              }
-              image={yorkPlaceMini}
-              webLink={["http://yorkplace.co.nz", "yorkplace.co.nz"]}
             />
           </ProjectRow>
         </LayoutWrapper>
