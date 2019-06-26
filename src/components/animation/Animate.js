@@ -4,8 +4,8 @@ import ReactDOM from "react-dom"
 import styled from "styled-components"
 import TransitionLink from "gatsby-plugin-transition-link"
 import { TransitionState } from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import posed from "react-pose"
-import "./styles.css"
 
 // A class that transitions
 class Animate extends Component {
