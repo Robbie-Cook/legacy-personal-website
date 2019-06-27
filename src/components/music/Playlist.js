@@ -1,13 +1,11 @@
-import React, { Component } from "react"
-
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { BorderBox } from "../Boxes";
+import Song from "../music/Song";
 /* Imports */
 /* Stylesheets etc. */
-import { Heading, Text } from "../Typography"
-import PropTypes from "prop-types"
-import { BorderBox } from "../Boxes"
-import { MobileView } from "../Views"
-
-import Song from "../music/Song"
+import { Heading } from "../Typography";
+import { MobileView } from "../Views";
 
 class Playlist extends Component {
   render() {

@@ -1,29 +1,15 @@
-import React, { Component } from "react"
-
+import React, { Component } from "react";
+import SkillsPage from "../components/about/SkillsPage";
+import Carousel from "../components/Carousel";
+import { Col, LayoutWrapper, Row } from "../components/Layout";
 /* Imports */
-import Page from "../components/Page"
-import { Heading, Text } from "../components/Typography"
-import { Container } from "../components/Wrappers"
-import { Col, Row, LayoutWrapper } from "../components/Layout"
-import Spacer from "../components/Spacer"
-import Colors from "../data/Colors"
-import styled from "styled-components"
-import Section from "../components/Section"
-import PropTypes from "prop-types"
-import { Header } from "../components/Typography"
-import Dimensions from "../components/Dimensions"
-import { Button as GrommetButton, Grommet } from "grommet"
-import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
-import Carousel from "../components/Carousel"
-import SkillsPage from "../components/about/SkillsPage"
-
-import { MobileView } from "../components/Views"
-
+import Page from "../components/Page";
+import Spacer from "../components/Spacer";
+import { Heading, Text } from "../components/Typography";
 /* Media */
-import photo1 from "../photos/carousels/1.svg"
-import photo2 from "../photos/carousels/2.jpg"
-import photo3 from "../photos/carousels/3.jpg"
-import { graphql } from "gatsby"
+import photo1 from "../photos/carousels/1.svg";
+import photo2 from "../photos/carousels/2.jpg";
+import photo3 from "../photos/carousels/3.jpg";
 
 // Main Page component
 class About extends Component {

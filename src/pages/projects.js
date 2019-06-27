@@ -1,15 +1,13 @@
-import React, { Component } from "react"
-import { Heading, Text } from "../components/Typography"
-import { Container } from "../components/Wrappers"
-import { Col, Row, LayoutWrapper } from "../components/Layout"
-import Page from "../components/Page"
-import styled from "styled-components"
-import { ProjectBox } from "../components/projects"
-
+import React, { Component } from "react";
+import styled from "styled-components";
+import { LayoutWrapper, Row } from "../components/Layout";
+import Page from "../components/Page";
+import { ProjectBox } from "../components/projects";
+import { Heading, Text } from "../components/Typography";
+import machineLearningMini from "../photos/projects/machineLearningMini.png";
 // Media
-import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png"
-import machineLearningMini from "../photos/projects/machineLearningMini.png"
-import yorkPlaceMini from "../photos/projects/yorkPlaceMini.png"
+import personalWebsiteMini from "../photos/projects/personalWebsiteMini.png";
+import yorkPlaceMini from "../photos/projects/yorkPlaceMini.png";
 
 // Main Page component
 class Projects extends Component {

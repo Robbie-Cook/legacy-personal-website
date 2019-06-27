@@ -1,17 +1,7 @@
-import React, { Component, PureComponent } from "react"
-
-/* Imports */
-/* Stylesheets etc. */
-import { Heading, Text as span } from "../Typography"
-import WebPage from "../Page"
-import { Container } from "../Wrappers"
-import { Col, Row, LayoutWrapper } from "../Layout"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import Colors from "../../data/Colors"
-
-// Music imports
-import playIcon from "../../photos/icons/musicPlay.svg"
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import styled from "styled-components";
+import Colors from "../../data/Colors";
 
 /**
  * Represents a track UI on the page

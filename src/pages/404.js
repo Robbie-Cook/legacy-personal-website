@@ -1,12 +1,11 @@
-import React, { Component } from "react"
-
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Col, Row } from "../components/Layout";
 /* Imports */
-import Page from "../components/Page"
-import { Heading } from "../components/Typography"
-import { Container as LayoutWrapper } from "../components/Wrappers"
-import { Col, Row } from "../components/Layout"
-import styled from "styled-components"
+import Page from "../components/Page";
 import { MobileView } from "../components/Views";
+import { Container as LayoutWrapper } from "../components/Wrappers";
+
 
 // Styles
 const StyledHeading = styled.h2`
