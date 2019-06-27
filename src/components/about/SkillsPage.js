@@ -1,11 +1,11 @@
-import { Heading, Text } from "../Typography"
-import React, { Component } from "react"
-import Colors from "../Colors"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import { Button, ButtonGenerator, ButtonWrapper } from "../Button"
-import { MobileView } from "../Views"
-import Spacer from "../Spacer"
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import styled from "styled-components";
+import Colors from "../../data/Colors";
+import { ButtonWrapper } from "../Button";
+import Spacer from "../Spacer";
+import { Heading } from "../Typography";
+import { MobileView } from "../Views";
 
 /** A component which defines the SkillBoxes */
 class SkillsPage extends Component {
@@ -235,7 +235,7 @@ class SkillsBoxHeader extends Component {
     `
     return (
       <SkillsBoxHead>
-        <Heading type="h3" style={{ margin: "0px", fontWeight: "300" }}>
+        <Heading type="h3" margin="0" style={"fontWeight: 300;"}>
           {this.props.title}
         </Heading>
       </SkillsBoxHead>

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Button as GrommetButton, Grommet } from "grommet"
-import Colors from "./Colors"
+import Colors from "../data/Colors"
 import styled from "styled-components"
 import Dimensions from "../components/Dimensions"
 
@@ -54,7 +54,7 @@ class Button extends Component {
           : Colors.link.color};
       }
 
-      margin: ${this.props.margin ? this.props.margin : new Dimensions(20, 20)};
+      margin: ${this.props.margin ? this.props.margin : new Dimensions(10, 20)};
       color: ${Colors.textColor};
       line-height: 27px;
       font-size: 16px;

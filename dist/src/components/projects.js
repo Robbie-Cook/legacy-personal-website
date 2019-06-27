@@ -3,23 +3,29 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ProjectWebLink = exports.ProjectGithubLink = exports.ProjectLink = exports.ProjectBox = void 0;
+exports.ProjectWebLink = exports.ProjectGithubLink = exports.ProjectButton = exports.ProjectBox = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _gatsby = require("gatsby");
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Globals = _interopRequireDefault(require("../components/Globals"));
+var _Colors = _interopRequireDefault(require("../components/Colors"));
 
 var _grommetIcons = require("grommet-icons");
 
 var _Typography = require("../components/Typography");
 
+var _Button = require("../components/Button");
+
+var _Views = require("./Views");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 27px;\n    "]);
@@ -94,7 +100,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n      border: 2px solid #dcd6ce;\n      border-radius: 5px;\n      padding: 20px;\n      background-color: #3c3c3c;\n      max-width: 600px;\n      margin-top: 10px;\n      display: flex;\n      flex-direction: column;\n\n      &:nth-child(odd) {\n        margin-right: 31px;\n      }\n\n      // Responsive design queries\n      @media (max-width: 1200px) {\n        margin-right: 0 !important;\n      }\n\n\n    "]);
+  var data = _taggedTemplateLiteral(["\n      border: 2px solid #dcd6ce;\n      border-radius: 5px;\n      padding: 20px 20px 20px 20px;\n      background-color: #3c3c3c;\n      width: 550px;\n      margin-top: 10px;\n      margin-bottom: 20px;\n      display: flex;\n      flex-direction: column;\n      position: relative;\n\n      margin-right: 31px;\n\n      // Responsive design queries\n      @media (max-width: 1200px) {\n        margin-right: 0 !important;\n        width: auto;\n      }\n\n      ", "\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -158,7 +164,10 @@ function (_Component) {
   _createClass(ProjectBox, [{
     key: "render",
     value: function render() {
-      var ProjectBox = _styledComponents["default"].div(_templateObject());
+      var _this = this;
+
+      // Extra padding is for position: absolute buttons
+      var ProjectBox = _styledComponents["default"].div(_templateObject(), new _Views.MobileView("\n        padding-bottom: 20px;\n      "));
 
       var ProjectDescriptionAndImageWrapper = _styledComponents["default"].div(_templateObject2());
 
@@ -168,55 +177,62 @@ function (_Component) {
 
       var ProjectImage = _styledComponents["default"].div(_templateObject5());
 
-      var LinkWrapper = _styledComponents["default"].div(_templateObject6());
+      var LinkWrapper = _styledComponents["default"].div(_templateObject6()); // Style for the project buttons
 
-      function getGithubLink(link) {
-        if (link !== undefined) {
-          return _react["default"].createElement(ProjectGithubLink, {
-            to: link
-          });
-        }
-      }
 
-      function getWebLink(link) {
-        if (link !== undefined) {
-          return _react["default"].createElement(ProjectWebLink, {
-            to: link[0],
-            text: link[1]
-          });
-        }
-      }
-
+      var buttonStyle = "\n      margin: 20px 20px 0px 0px;\n    ";
       return _react["default"].createElement(ProjectBox, null, _react["default"].createElement(ProjectTitle, null, this.props.title), _react["default"].createElement(ProjectDescriptionAndImageWrapper, null, _react["default"].createElement(ProjectDescription, null, this.props.desc), _react["default"].createElement(ProjectImage, null, _react["default"].createElement("img", {
         src: this.props.image
-      }))), _react["default"].createElement(LinkWrapper, null, getGithubLink(this.props.githubLink), getWebLink(this.props.webLink), this.props.children));
+      }))), _react["default"].createElement(_Button.ButtonWrapper, {
+        style: "\n          margin-top: auto;\n          bottom: 10px;\n          ".concat(new _Views.MobileView("\n            position: relative;\n            margin-top: 23px;\n            display: flex;\n            flex-wrap: wrap;\n          "), "\n        ")
+      }, function () {
+        if (_this.props.githubLink !== undefined) {
+          return _react["default"].createElement(ProjectGithubLink, {
+            to: _this.props.githubLink,
+            style: buttonStyle
+          });
+        }
+      }(), function () {
+        if (_this.props.webLink !== undefined) {
+          return _react["default"].createElement(ProjectWebLink, {
+            to: _this.props.webLink[0],
+            label: _this.props.webLink[1],
+            style: buttonStyle
+          });
+        }
+      }()));
     }
   }]);
 
   return ProjectBox;
-}(_react.Component); // Links which sit at the bottom of a project.
-// Can be used to make a custom link, or is extended below for
-// simple Github and web links
-
+}(_react.Component);
 
 exports.ProjectBox = ProjectBox;
+ProjectBox.propTypes = {
+  githubLink: _propTypes["default"].string,
+  webLink: _propTypes["default"].string // Links which sit at the bottom of a project.
+  // Can be used to make a custom link, or is extended below for
+  // simple Github and web links
+  // To be replaced by <Button />
 
-var ProjectLink =
+};
+
+var ProjectButton =
 /*#__PURE__*/
 function (_Component2) {
-  _inherits(ProjectLink, _Component2);
+  _inherits(ProjectButton, _Component2);
 
-  function ProjectLink() {
-    _classCallCheck(this, ProjectLink);
+  function ProjectButton() {
+    _classCallCheck(this, ProjectButton);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ProjectLink).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(ProjectButton).apply(this, arguments));
   }
 
-  _createClass(ProjectLink, [{
+  _createClass(ProjectButton, [{
     key: "render",
     value: function render() {
       //   Original color: #6a77ec
-      var ProjectLinkWrapper = _styledComponents["default"].div(_templateObject7(), _Globals["default"].link.color, _Globals["default"].text.color, _Globals["default"].text.color, _Globals["default"].text.color, _Globals["default"].text.color, _Globals["default"].link.color);
+      var ProjectLinkWrapper = _styledComponents["default"].div(_templateObject7(), _Colors["default"].link.color, _Colors["default"].text.color, _Colors["default"].text.color, _Colors["default"].text.color, _Colors["default"].text.color, _Colors["default"].link.color);
 
       var InnerWrapper = _styledComponents["default"].div(_templateObject8());
 
@@ -226,11 +242,11 @@ function (_Component2) {
     }
   }]);
 
-  return ProjectLink;
+  return ProjectButton;
 }(_react.Component); // Github link which extends ProjectLink
 
 
-exports.ProjectLink = ProjectLink;
+exports.ProjectButton = ProjectButton;
 
 var ProjectGithubLink =
 /*#__PURE__*/
@@ -246,13 +262,14 @@ function (_Component3) {
   _createClass(ProjectGithubLink, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement(ProjectLink, {
+      return _react["default"].createElement(_Button.Button, _extends({
+        icon: _react["default"].createElement(_grommetIcons.Github, {
+          fill: "inherit",
+          color: "inherit"
+        }),
         to: this.props.to,
-        text: "Code on Github"
-      }, _react["default"].createElement(_grommetIcons.Github, {
-        fill: "inherit",
-        color: "inherit"
-      }));
+        label: "Code"
+      }, this.props));
     }
   }]);
 
@@ -276,13 +293,14 @@ function (_Component4) {
   _createClass(ProjectWebLink, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement(ProjectLink, {
+      return _react["default"].createElement(_Button.Button, _extends({
+        icon: _react["default"].createElement(_grommetIcons.Link, {
+          stroke: "inherit",
+          color: "inherit"
+        }),
         to: this.props.to,
-        text: this.props.text
-      }, _react["default"].createElement(_grommetIcons.Link, {
-        stroke: "inherit",
-        color: "inherit"
-      }));
+        label: this.props.text
+      }, this.props));
     }
   }]);
 

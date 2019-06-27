@@ -1,12 +1,11 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import { Github, Link as GrommetLink } from "grommet-icons";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Button, ButtonWrapper } from "../components/Button";
 /* Theme */
-import Colors from "../components/Colors"
-import { Github, Link as GrommetLink } from "grommet-icons"
-import { Heading, Text } from "../components/Typography"
-import { Button, ButtonGenerator, ButtonWrapper } from "../components/Button"
-import { MobileView } from "./Views"
+import Colors from "../data/Colors";
+import { MobileView } from "./Views";
 
 /*
 Component representing a project
@@ -216,4 +215,5 @@ class ProjectWebLink extends Component {
   }
 }
 
-export { ProjectBox, ProjectButton, ProjectGithubLink, ProjectWebLink }
+export { ProjectBox, ProjectButton, ProjectGithubLink, ProjectWebLink };
+

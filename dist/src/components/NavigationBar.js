@@ -19,11 +19,19 @@ var _gatsby = require("gatsby");
 
 var _styles = require("@material-ui/core/styles");
 
-var _Globals = _interopRequireDefault(require("./Globals"));
+var _Colors = _interopRequireDefault(require("./Colors"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _MobileNav = _interopRequireDefault(require("./MobileNav"));
+
+var _Views = require("./Views");
+
+var _Sizes = _interopRequireDefault(require("./Sizes"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _MyAnilink = _interopRequireDefault(require("./MyAnilink"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,7 +40,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n        z-index: 150\n    "]);
+  var data = _taggedTemplateLiteral(["\n                font-weight: bold;\n\n                color: ", ";\n\n                &.active {\n                  color: ", ";\n                }\n\n                &:hover {\n                  color: ", ";\n                }\n\n                height: ", ";\n                text-decoration: none;\n                margin-right: 97px;\n                transition: 0.1s;\n              "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -41,10 +49,8 @@ function _templateObject2() {
   return data;
 }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n      font-weight: bold;\n\n      &.active {\n        color: ", ";\n      }\n    "]);
+  var data = _taggedTemplateLiteral(["\n      z-index: 150;\n      margin-left: ", ";\n      padding: 0;\n      ", ";\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -54,6 +60,8 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -80,47 +88,45 @@ function (_React$Component) {
     _classCallCheck(this, NavigationBar);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(NavigationBar).call(this, props));
-  } // Generate the links to other pages in the normal menu
-
+  }
 
   _createClass(NavigationBar, [{
-    key: "generateNav",
-    value: function generateNav() {
-      var array = [];
-      var StyledTab = (0, _styledComponents["default"])(_Tab["default"])(_templateObject(), _Globals["default"].link.color);
-      this.props.pages.map(function (item) {
-        // If the current URL is the same as the item path, mark Tab as active
-        array.push(_react["default"].createElement(StyledTab, {
-          label: item.name,
-          to: item.path,
-          component: _gatsby.Link,
-          activeClassName: "active"
-        }));
-      });
-      return array;
-    }
-  }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       /* CSS */
       var StyledAppBar = (0, _styles.withStyles)({
         root: {
-          backgroundColor: _Globals["default"].backgroundColor
+          backgroundColor: _Colors["default"].backgroundColor
         }
       })(_AppBar["default"]);
       var StyledTabs = (0, _styles.withStyles)({
-        root: _defineProperty({}, "@media (max-width:".concat(_Globals["default"].mobile.size - 1, "px)"), {
+        root: _defineProperty({}, "@media (max-width:".concat(_Views.Sizes.mobileSize, "px)"), {
           display: "none"
         })
       })(_Tabs["default"]);
-      var StyledToolbar = (0, _styledComponents["default"])(_Toolbar["default"])(_templateObject2());
+      var StyledToolbar = (0, _styledComponents["default"])(_Toolbar["default"])(_templateObject(), _Sizes["default"].page.sideMargin, new _Views.MobileView("\n        margin-left: 20px;\n      "));
       return _react["default"].createElement(StyledAppBar, {
         position: "static",
         color: "primary",
         colorPrimary: true
       }, _react["default"].createElement(StyledToolbar, null, _react["default"].createElement(_MobileNav["default"], {
         pages: this.props.pages
-      }), _react["default"].createElement(StyledTabs, null, this.generateNav())));
+      }), _react["default"].createElement(StyledTabs, null, function () {
+        var StyledTab = _styledComponents["default"].p(_templateObject2(), _Colors["default"].textColor, _Colors["default"].link.color, _Colors["default"].link.color, _Sizes["default"].navbar.height);
+
+        var array = [];
+
+        _this.props.pages.map(function (item) {
+          // If the current URL is the same as the item path, mark Tab as active
+          array.push(_react["default"].createElement(_MyAnilink["default"], {
+            path: item.path
+          }, _react["default"].createElement(StyledTab, null, item.name)));
+        });
+
+        return array;
+      }())));
     }
   }]);
 

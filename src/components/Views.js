@@ -1,4 +1,4 @@
-import Colors from "./Colors"
+import Colors from "../data/Colors"
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 

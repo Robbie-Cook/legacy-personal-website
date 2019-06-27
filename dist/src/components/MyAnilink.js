@@ -5,15 +5,31 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-var _reactHelmet = require("react-helmet");
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _Colors = _interopRequireDefault(require("./Colors"));
+var _AniLink = _interopRequireDefault(require("gatsby-plugin-transition-link/AniLink"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n        ", ";\n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31,38 +47,40 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var MyHelmet =
+// Sample component
+var MyAnilink =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(MyHelmet, _React$Component);
+function (_Component) {
+  _inherits(MyAnilink, _Component);
 
-  function MyHelmet() {
-    _classCallCheck(this, MyHelmet);
+  function MyAnilink() {
+    _classCallCheck(this, MyAnilink);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(MyHelmet).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(MyAnilink).apply(this, arguments));
   }
 
-  _createClass(MyHelmet, [{
+  _createClass(MyAnilink, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement("div", {
-        className: "application"
-      }, _react["default"].createElement(_reactHelmet.Helmet, null, _react["default"].createElement("meta", {
-        charSet: "utf-8"
-      }), _react["default"].createElement("link", {
-        href: "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,700&display=swap",
-        rel: "stylesheet"
-      }), _react["default"].createElement("title", null, "Robbie Cook"), _react["default"].createElement("meta", {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1.0"
-      }), _react["default"].createElement("style", null, "\n              body {\n                background-color: ".concat(_Colors["default"].page.backgroundColor, "; \n              }\n            "))));
+      var StyledAnilink = (0, _styledComponents["default"])(_AniLink["default"])(_templateObject(), this.props.style);
+      return _react["default"].createElement(StyledAnilink, {
+        style: {
+          textDecoration: "none"
+        },
+        fade: true,
+        to: this.props.path,
+        duration: 1
+      }, this.props.children);
     }
   }]);
 
-  return MyHelmet;
-}(_react["default"].Component);
+  return MyAnilink;
+}(_react.Component);
 
-var _default = MyHelmet;
+MyAnilink.defaultProps = {
+  path: "/"
+};
+var _default = MyAnilink;
 exports["default"] = _default;
 
-//# sourceMappingURL=MyHelmet.js.map
+//# sourceMappingURL=MyAnilink.js.map
