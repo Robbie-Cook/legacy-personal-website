@@ -14,6 +14,7 @@ import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPrete
 import meOnGuitar from "../photos/music/meOnGuitar.png"
 import musicIcon from "../photos/icons/musicIcon.svg"
 import styled from "styled-components"
+import Carousel from "../components/Carousel";
 
 // Main Page component
 class MusicPage extends Component {
@@ -128,16 +129,15 @@ class MusicPage extends Component {
             </Col>
             <Col width="50%">
               {/* Photo of me. Needs to be converted to carousel*/}
-              <img
-                src={meOnGuitar}
+              <Carousel
+                photos={[meOnGuitar]}
                 style={{ width: "100%", alignItems: "flex-start" }}
-                alt="Photo of me playing guitar"
               />
             </Col>
           </Row>
         </LayoutWrapper>
         {/* Music player at the bottom of the screen */}
-        <MusicPlayer currentSong={this.state.spotifySongId} />
+        <MusicPlayer currentSong={this.state.spotifySongId} visible={false}/>
       </WebPage>
     )
   }
