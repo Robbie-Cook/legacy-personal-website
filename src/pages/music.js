@@ -1,34 +1,42 @@
-import React, { Component } from "react";
-import { BorderBox } from "../components/Boxes";
-import { Col, LayoutWrapper, Row } from "../components/Layout";
-import MusicPlayer from "../components/music/Player";
-import Playlist from "../components/music/Playlist";
-import Song from "../components/music/Song";
-import WebPage from "../components/Page";
+import React, { Component } from "react"
+import { BorderBox } from "../components/Boxes"
+import { Col, LayoutWrapper, Row } from "../components/Layout"
+import MusicPlayer from "../components/music/Player"
+import Playlist from "../components/music/Playlist"
+import Song from "../components/music/Song"
+import WebPage from "../components/Page"
 /* Imports */
 /* Stylesheets etc. */
-import { Heading, Text } from "../components/Typography";
-import playlistTwoJson from "../data/spotify/playlists/opera.json";
-import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json";
+import { Heading, Text } from "../components/Typography"
+import playlistTwoJson from "../data/spotify/playlists/opera.json"
+import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
 /** Media */
-import meOnGuitar from "../photos/music/meOnGuitar.png";
+import meOnGuitar from "../photos/music/meOnGuitar.png"
+import musicIcon from "../photos/icons/musicIcon.svg"
+import styled from "styled-components"
+import Carousel from "../components/Carousel";
 
 // Main Page component
 class MusicPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentSong: {
-        type: "spotify",
-        id: "6h4lC9aNr6NuQzZkbw5Lqm",
-      },
+      spotifySongId: "6h4lC9aNr6NuQzZkbw5Lqm",
     }
   }
+
+  changeSong = this.setState
+
   render() {
+    const StyledImg = styled.img`
+      margin-left: 10px;
+    `
     return (
       <WebPage>
         <LayoutWrapper>
-          <Heading>Music</Heading>
+          <Heading>
+            Music <StyledImg src={musicIcon} />
+          </Heading>
           <Row>
             <Col width="100%">
               <Text>
@@ -47,24 +55,28 @@ class MusicPage extends Component {
                 name="Diplomat's Son"
                 artist="Vampire Weekend"
                 spotifySongId="6h4lC9aNr6NuQzZkbw5Lqm"
+                callback={this.changeSong}
               />
 
               <Song
                 name="Was It Something I Said?"
                 artist="The Killers"
                 spotifySongId="30QDlhm7KPJIgQIvptJcsg"
+                callback={this.changeSong}
               />
 
               <Song
                 name="You Shook Me All Night Long"
                 artist="AC/DC"
                 spotifySongId="30QDlhm7KPJIgQIvptJcsg"
+                callback={this.changeSong}
               />
 
               <Song
                 name="Just Another Girl"
                 artist="The Killers"
                 spotifySongId="3aVyHFxRkf8lSjhWdJ68AW"
+                callback={this.changeSong}
               />
             </Col>
             <Col width="50%">
@@ -117,16 +129,15 @@ class MusicPage extends Component {
             </Col>
             <Col width="50%">
               {/* Photo of me. Needs to be converted to carousel*/}
-              <img
-                src={meOnGuitar}
+              <Carousel
+                photos={[meOnGuitar]}
                 style={{ width: "100%", alignItems: "flex-start" }}
-                alt="Photo of me playing guitar"
               />
             </Col>
           </Row>
         </LayoutWrapper>
         {/* Music player at the bottom of the screen */}
-        <MusicPlayer currentSong={this.state.currentSong} />
+        <MusicPlayer currentSong={this.state.spotifySongId} visible={false}/>
       </WebPage>
     )
   }

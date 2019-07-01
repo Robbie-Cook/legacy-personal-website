@@ -37,9 +37,8 @@ class Projects extends Component {
             <ProjectBox
               title="Personal Website"
               desc={
-                "This is this website! It is a React application which features \
-                Gatsby for Server-side rendering, Material-UI, and \
-                styled-components for styling."
+                "This is this website! It is a React application with \
+                gatsbyjs"
               }
               image={personalWebsiteMini}
               githubLink="https://github.com/Robbie-Cook/Personal-Website"
@@ -49,7 +48,7 @@ class Projects extends Component {
             <ProjectBox
               title="York Place"
               desc={
-                "A website for a daycare company in Dunedin. Helped build this with a friend."
+                "A website for a daycare company in Dunedin. Built this with a friend."
               }
               image={yorkPlaceMini}
               webLink={["http://yorkplace.co.nz", "yorkplace.co.nz"]}
