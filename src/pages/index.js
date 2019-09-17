@@ -1,23 +1,23 @@
 /* Imports */
-import { Link } from "gatsby";
-import React, { Component } from "react";
-import styled from "styled-components";
-import Animate from "../components/animation/Animate";
-import Codify from "../components/Codify";
-import { Icon, IconsWrapper } from "../components/Icons";
-import WebPage from "../components/Page";
-import Section from "../components/Section";
-import Spacer from "../components/Spacer";
+import { Link } from "gatsby"
+import React, { Component } from "react"
+import styled from "styled-components"
+import Animate from "../components/animation/Animate"
+import Codify from "../components/Codify"
+import { Icon, IconsWrapper } from "../components/Icons"
+import WebPage from "../components/Page"
+import Section from "../components/Section"
+import Spacer from "../components/Spacer"
 /* Components */
-import { Heading, Text } from "../components/Typography";
-import { MobileView } from "../components/Views";
+import { Heading, Text } from "../components/Typography"
+import { MobileView } from "../components/Views"
 /* Theme */
-import Colors from "../data/Colors";
+import Colors from "../data/Colors"
 /* Stylesheets etc. */
-import "../fontawesome/css/all.css";
-import avatarMe from "../photos/avatarMe.svg";
+import "../fontawesome/css/all.css"
+import avatarMe from "../photos/avatarMe.svg"
 /* Media */
-import me from "../photos/me_irl3_cropped.jpg";
+import me from "../photos/me_irl3_cropped.jpg"
 
 const Icons = styled.div`
   display: flex;
@@ -29,7 +29,9 @@ const Icons = styled.div`
   `)}
 `
 
-// Main Page component
+/**
+ * Index page component
+ */
 class HomePage extends Component {
   render() {
     const MainInfo = styled.div`
