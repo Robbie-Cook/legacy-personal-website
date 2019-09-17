@@ -2,7 +2,8 @@
 
 /* Imports */
 import { Link } from "gatsby"
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Animate from "../components/animation/Animate"
 import Codify from "../components/Codify"
@@ -112,61 +113,69 @@ export default function HomePage(props) {
   }, [])
 
   return (
-    !loading && (
-      <WebPage style={{ padding: "0" }}>
-        <Section style={"width: 100%;"}>
-          <BackgroundImageWrapper>
-            <BackgroundGradientWrapper>
-              {/* HeaderImage only displayed on mobile (defined in definition) */}
-              <HeaderImage src={avatarMe} />
-              <MainInfo>
-                <Heading
-                  style={`
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Robbie Cook</title>
+        <link rel="canonical" href="https://robbie.pw" />
+        <style>{"body { background-color: #0f0f0f; }"}</style>
+      </Helmet>
+      {!loading && (
+        <WebPage style={{ padding: "0" }}>
+          <Section style={"width: 100%;"}>
+            <BackgroundImageWrapper>
+              <BackgroundGradientWrapper>
+                {/* HeaderImage only displayed on mobile (defined in definition) */}
+                <HeaderImage src={avatarMe} />
+                <MainInfo>
+                  <Heading
+                    style={`
                   & h1 {
                     margin: 0px
                   }; 
                   ${new MobileView(`
                     margin: 10px 0;
                   `)}`}
-                  codify
-                >
-                  Robbie Cook
-                </Heading>
-                <Text>
-                  Hello! I'm a developer in New Zealand. I love coding, making
-                  stuff, learning, and teaching.
-                  <Spacer height="10px" />
-                  Check out my <Link to="/about">About</Link> page to find out
-                  more :)
-                </Text>
-                <Animate>
-                  <IconsWrapper>
-                    <Codify
-                      color={Colors.link.color}
-                      fontSize="47px"
-                      rightTagSpacing="0px"
-                      opacity=".7"
-                    >
-                      <Icon href="https://github.com/Robbie-Cook">
-                        <i className="icon fab fa-github" />
-                      </Icon>
-                      <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                        <i className="icon fab fa-linkedin" />
-                      </Icon>
-                      <Icon href="mailto:robbie@robbie.pw">
-                        {/* <div class="iconWrapper2"> */}
-                        <i className="icon fas fa-envelope" />
-                        {/* <span>robbie@robbie.pw</span> */}
-                        {/* </div> */}
-                      </Icon>
-                    </Codify>
-                  </IconsWrapper>
-                </Animate>
-              </MainInfo>
-            </BackgroundGradientWrapper>
-          </BackgroundImageWrapper>
-        </Section>
-      </WebPage>
-    )
+                    codify
+                  >
+                    Robbie Cook
+                  </Heading>
+                  <Text>
+                    Hello! I'm a developer in New Zealand. I love coding, making
+                    stuff, learning, and teaching.
+                    <Spacer height="10px" />
+                    Check out my <Link to="/about">About</Link> page to find out
+                    more :)
+                  </Text>
+                  <Animate>
+                    <IconsWrapper>
+                      <Codify
+                        color={Colors.link.color}
+                        fontSize="47px"
+                        rightTagSpacing="0px"
+                        opacity=".7"
+                      >
+                        <Icon href="https://github.com/Robbie-Cook">
+                          <i className="icon fab fa-github" />
+                        </Icon>
+                        <Icon href="https://www.linkedin.com/in/robbie-cook/">
+                          <i className="icon fab fa-linkedin" />
+                        </Icon>
+                        <Icon href="mailto:robbie@robbie.pw">
+                          {/* <div class="iconWrapper2"> */}
+                          <i className="icon fas fa-envelope" />
+                          {/* <span>robbie@robbie.pw</span> */}
+                          {/* </div> */}
+                        </Icon>
+                      </Codify>
+                    </IconsWrapper>
+                  </Animate>
+                </MainInfo>
+              </BackgroundGradientWrapper>
+            </BackgroundImageWrapper>
+          </Section>
+        </WebPage>
+      )}
+    </>
   )
 }
