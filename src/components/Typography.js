@@ -119,10 +119,10 @@ Heading.defaultProps = {
  * is a globally-styled version
  */
 class Text extends Component {
+  MyText = styled.p`
+    margin: 12px 0;
+  `
   render() {
-    MyText = styled.p`
-      margin: 12px 0;
-    `
     return <this.MyText>{this.props.children}</this.MyText>
   }
 }
