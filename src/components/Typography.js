@@ -100,14 +100,14 @@ class Heading extends Component {
       this.props.style,
       this.props.className,
       this.props.codify, // option to display the heading as < {content} />
-      this.props.margin, 
+      this.props.margin
     )
   }
 }
 Heading.propTypes = {
   type: PropTypes.string,
   codify: PropTypes.bool,
-  style: PropTypes.string
+  style: PropTypes.string,
 }
 Heading.defaultProps = {
   margin: "0 0 20px 0;",
@@ -120,10 +120,10 @@ Heading.defaultProps = {
  */
 class Text extends Component {
   render() {
-    Text = styled.p`
+    MyText = styled.p`
       margin: 12px 0;
     `
-    return <Text>{this.props.children}</Text>
+    return <this.MyText>{this.props.children}</this.MyText>
   }
 }
 

@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+/* eslint-disable react/jsx-filename-extension */
+
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { Col, Row } from "../components/Layout";
 /* Imports */
@@ -41,7 +43,7 @@ const Author = styled.p`
 `
 
 // Main Page component
-class fourOhFour extends Component {
+class fourOhFour extends PureComponent {
   render() {
     return (
       <Page>

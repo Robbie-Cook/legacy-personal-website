@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
+
 /* Imports */
 import { Link } from "gatsby"
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
 import styled from "styled-components"
 import Animate from "../components/animation/Animate"
 import Codify from "../components/Codify"
@@ -28,19 +30,13 @@ const Icons = styled.div`
     justify-content: center;
   `)}
 `
-
-/**
- * Index page component
- */
-class HomePage extends Component {
-  render() {
-    const MainInfo = styled.div`
-      margin: auto 0 auto 20%;
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      z-index: 2;
-      ${new MobileView(`
+const MainInfo = styled.div`
+  margin: auto 0 auto 20%;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  z-index: 2;
+  ${new MobileView(`
         & * {
           align-self: center
         }
@@ -54,14 +50,14 @@ class HomePage extends Component {
         padding: 0 15px;
       `)}
 
-      & .iconWrapper {
-        ${new MobileView(`
+  & .iconWrapper {
+    ${new MobileView(`
           justify-content: center;
         `)}
-      }
-    `
+  }
+`
 
-    const BackgroundImageWrapper = styled.div`
+const BackgroundImageWrapper = styled.div`
         background-image: url('${me}');
         ${
           // Don't display background image on mobile -- display mobile-specific image instead
@@ -77,35 +73,40 @@ class HomePage extends Component {
         background-size: contain;
     `
 
-    const BackgroundGradientWrapper = styled.div`
-      background: linear-gradient(
-        to right,
-        ${Colors.page.backgroundColor} 80%,
-        rgba(255, 244, 244, 0) 100%
-      );
+const BackgroundGradientWrapper = styled.div`
+  background: linear-gradient(
+    to right,
+    ${Colors.page.backgroundColor} 80%,
+    rgba(255, 244, 244, 0) 100%
+  );
 
-      padding-right: 80px;
-      display: flex;
+  padding-right: 80px;
+  display: flex;
 
-      ${new MobileView(`
+  ${new MobileView(`
         padding: 0;
         background: none;
         width: 100%;
         justify-content: center;
         flex-direction: column;
        `)}
-    `
+`
 
-    // Only display in mobile view
-    const HeaderImage = styled.img`
-      display: none;
-      width: 200px;
-      align-self: center;
-      ${new MobileView(`
+// Only display in mobile view
+const HeaderImage = styled.img`
+  display: none;
+  width: 200px;
+  align-self: center;
+  ${new MobileView(`
         display: flex;
       `)};
-    `
+`
 
+/**
+ * Index page component
+ */
+class HomePage extends PureComponent {
+  render() {
     return (
       <WebPage style={{ padding: "0" }}>
         <Section style={"width: 100%;"}>
@@ -142,14 +143,14 @@ class HomePage extends Component {
                       opacity=".7"
                     >
                       <Icon href="https://github.com/Robbie-Cook">
-                        <i class="icon fab fa-github" />
+                        <i className="icon fab fa-github" />
                       </Icon>
                       <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                        <i class="icon fab fa-linkedin" />
+                        <i className="icon fab fa-linkedin" />
                       </Icon>
                       <Icon href="mailto:robbie@robbie.pw">
                         {/* <div class="iconWrapper2"> */}
-                        <i class="icon fas fa-envelope" />
+                        <i className="icon fas fa-envelope" />
                         {/* <span>robbie@robbie.pw</span> */}
                         {/* </div> */}
                       </Icon>
