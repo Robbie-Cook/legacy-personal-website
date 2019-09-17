@@ -2,7 +2,7 @@
 
 /* Imports */
 import { Link } from "gatsby"
-import React, { PureComponent } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Animate from "../components/animation/Animate"
 import Codify from "../components/Codify"
@@ -105,9 +105,14 @@ const HeaderImage = styled.img`
 /**
  * Index page component
  */
-class HomePage extends PureComponent {
-  render() {
-    return (
+export default function HomePage(props) {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
+  return (
+    !loading && (
       <WebPage style={{ padding: "0" }}>
         <Section style={"width: 100%;"}>
           <BackgroundImageWrapper>
@@ -163,7 +168,5 @@ class HomePage extends PureComponent {
         </Section>
       </WebPage>
     )
-  }
+  )
 }
-
-export default HomePage
