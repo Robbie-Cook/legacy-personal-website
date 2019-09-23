@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
-        resolve: `gatsby-plugin-nprogress`
+      resolve: `gatsby-plugin-nprogress`
     },
     {
       resolve: `gatsby-plugin-manifest`,
