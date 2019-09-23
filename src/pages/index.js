@@ -1,23 +1,24 @@
 /* Imports */
-import { Link } from "gatsby";
-import React, { Component } from "react";
-import styled from "styled-components";
-import Animate from "../components/animation/Animate";
-import Codify from "../components/Codify";
-import { Icon, IconsWrapper } from "../components/Icons";
-import WebPage from "../components/Page";
-import Section from "../components/Section";
-import Spacer from "../components/Spacer";
 /* Components */
-import { Heading, Text } from "../components/Typography";
-import { MobileView } from "../components/Views";
+import { Heading, Text } from '@robbie-cook/react-components';
+import { Link } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
+import Animate from '../components/animation/Animate';
+import Codify from '../components/Codify';
+import { Icon, IconsWrapper } from '../components/Icons';
+import Section from '../components/Section';
+import Spacer from '../components/Spacer';
+import { MobileView } from '../components/Views';
 /* Theme */
-import Colors from "../data/Colors";
+import Colors from '../data/Colors';
 /* Stylesheets etc. */
-import "../fontawesome/css/all.css";
-import avatarMe from "../photos/avatarMe.svg";
+import '../fontawesome/css/all.css';
+import avatarMe from '../photos/avatarMe.svg';
 /* Media */
-import me from "../photos/me_irl3_cropped.jpg";
+import me from '../photos/meAtComputer.jpg';
+import '../css/main.scss';
+
 
 const Icons = styled.div`
   display: flex;
@@ -27,18 +28,14 @@ const Icons = styled.div`
   ${new MobileView(`
     justify-content: center;
   `)}
-`
-
-// Main Page component
-class HomePage extends Component {
-  render() {
-    const MainInfo = styled.div`
-      margin: auto 0 auto 20%;
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      z-index: 2;
-      ${new MobileView(`
+`;
+const MainInfo = styled.div`
+  margin: auto 0 auto 20%;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  z-index: 2;
+  ${new MobileView(`
         & * {
           align-self: center
         }
@@ -56,8 +53,8 @@ class HomePage extends Component {
         ${new MobileView(`
           justify-content: center;
         `)}
-      }
-    `
+  }
+`;
 
     const BackgroundImageWrapper = styled.div`
         background-image: url('${me}');
@@ -73,7 +70,7 @@ class HomePage extends Component {
         background-position-x: 120%;
         background-position-y: 50%;
         background-size: contain;
-    `
+    `;
 
     const BackgroundGradientWrapper = styled.div`
       background: linear-gradient(
@@ -92,7 +89,7 @@ class HomePage extends Component {
         justify-content: center;
         flex-direction: column;
        `)}
-    `
+`;
 
     // Only display in mobile view
     const HeaderImage = styled.img`
@@ -102,65 +99,66 @@ class HomePage extends Component {
       ${new MobileView(`
         display: flex;
       `)};
-    `
+`;
 
-    return (
-      <WebPage style={{ padding: "0" }}>
-        <Section style={"width: 100%;"}>
-          <BackgroundImageWrapper>
-            <BackgroundGradientWrapper>
-              {/* HeaderImage only displayed on mobile (defined in definition) */}
-              <HeaderImage src={avatarMe} />
-              <MainInfo>
-                <Heading
-                  style={`
-                  & h1 {
-                    margin: 0px
-                  }; 
-                  ${new MobileView(`
-                    margin: 10px 0;
-                  `)}`}
-                  codify
+/**
+ * Index page component
+ */
+export default function HomePage(props) {
+  return (
+    <Section style="width: 100%;">
+      <BackgroundImageWrapper>
+        <BackgroundGradientWrapper>
+          {/* HeaderImage only displayed on mobile */}
+          <HeaderImage src={avatarMe} />
+          <MainInfo>
+            <Heading
+              style={`
+                    & h1 {
+                      margin: 0px
+                    }; 
+                    ${new MobileView(`
+                      margin: 10px 0;
+                    `)}`}
+              codify
+            >
+              Robbie Cook
+            </Heading>
+            <Text>
+              Hello! I'm a developer in New Zealand. I love coding, making
+              stuff, learning, and teaching.
+              <Spacer height="10px" />
+              Check out my <Link to="/about">About</Link> page to find out more
+              :)
+            </Text>
+            <Animate>
+              <IconsWrapper>
+                <Codify
+                  color={Colors.link.color}
+                  fontSize="47px"
+                  rightTagSpacing="0px"
+                  opacity=".7"
                 >
-                  Robbie Cook
-                </Heading>
-                <Text>
-                  Hello! I'm a developer in New Zealand. I love coding, making
-                  stuff, learning, and teaching.
-                  <Spacer height="10px" />
-                  Check out my <Link to="/about">About</Link> page to find out
-                  more :)
-                </Text>
-                <Animate>
-                  <IconsWrapper>
-                    <Codify
-                      color={Colors.link.color}
-                      fontSize="47px"
-                      rightTagSpacing="0px"
-                      opacity=".7"
-                    >
-                      <Icon href="https://github.com/Robbie-Cook">
-                        <i class="icon fab fa-github" />
-                      </Icon>
-                      <Icon href="https://www.linkedin.com/in/robbie-cook/">
-                        <i class="icon fab fa-linkedin" />
-                      </Icon>
-                      <Icon href="mailto:robbie@robbie.pw">
-                        {/* <div class="iconWrapper2"> */}
-                        <i class="icon fas fa-envelope" />
-                        {/* <span>robbie@robbie.pw</span> */}
-                        {/* </div> */}
-                      </Icon>
-                    </Codify>
-                  </IconsWrapper>
-                </Animate>
-              </MainInfo>
-            </BackgroundGradientWrapper>
-          </BackgroundImageWrapper>
-        </Section>
-      </WebPage>
-    )
-  }
+                  <Icon href="https://github.com/Robbie-Cook">
+                    <i className="icon fab fa-github" />
+                  </Icon>
+                  <Icon href="https://www.linkedin.com/in/robbie-cook/">
+                    <i className="icon fab fa-linkedin" />
+                  </Icon>
+                  <Icon href="mailto:robbie@robbie.pw">
+                    {/* <div class="iconWrapper2"> */}
+                    <i className="icon fas fa-envelope" />
+                    {/* <span>robbie@robbie.pw</span> */}
+                    {/* </div> */}
+                  </Icon>
+                </Codify>
+              </IconsWrapper>
+            </Animate>
+          </MainInfo>
+        </BackgroundGradientWrapper>
+      </BackgroundImageWrapper>
+    </Section>
+  );
 }
 
 export default HomePage

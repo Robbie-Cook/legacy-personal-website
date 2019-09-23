@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-nprogress`
     },
