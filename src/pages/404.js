@@ -40,7 +40,7 @@ const Author = styled.p`
 `;
 
 // Main Page component
-class fourOhFour extends Component {
+class fourOhFour extends PureComponent {
   render() {
     return (
       <LayoutWrapper>
