@@ -160,5 +160,3 @@ export default function HomePage(props) {
     </Section>
   );
 }
-
-export default HomePage

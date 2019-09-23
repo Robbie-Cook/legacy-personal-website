@@ -9,7 +9,6 @@ import {
   Page,
 } from '@robbie-cook/react-components';
 import React from 'react';
-import './src/css/main.scss';
 
 export const wrapRootElement = ({ element }) => {
   return (
@@ -19,7 +18,6 @@ export const wrapRootElement = ({ element }) => {
         links: [
           new MyLink('Home', '/'),
           new MyLink('About', '/about'),
-          new MyLink('Music', '/music'),
           new MyLink('Projects', '/projects'),
         ],
       }}

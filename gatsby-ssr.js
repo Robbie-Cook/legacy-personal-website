@@ -12,7 +12,6 @@ export const wrapRootElement = ({ element }) => {
         links: [
           new MyLink('Home', '/'),
           new MyLink('About', '/about'),
-          new MyLink('Music', '/music'),
           new MyLink('Projects', '/projects'),
         ],
       }}
