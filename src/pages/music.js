@@ -1,38 +1,39 @@
-import React, { Component } from "react"
-import { BorderBox } from "../components/Boxes"
-import { Col, LayoutWrapper, Row } from "../components/Layout"
-import MusicPlayer from "../components/music/Player"
-import Playlist from "../components/music/Playlist"
-import Song from "../components/music/Song"
-import WebPage from "../components/Page"
+/* eslint-disable react/jsx-filename-extension */
+
 /* Imports */
 /* Stylesheets etc. */
-import { Heading, Text } from "../components/Typography"
-import playlistTwoJson from "../data/spotify/playlists/opera.json"
-import playlistOneJson from "../data/spotify/playlists/veryImportantAndVeryPretentious.json"
+import { Heading, Text } from '@robbie-cook/react-components';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { BorderBox } from '../components/Boxes';
+import Carousel from '../components/Carousel';
+import { Col, LayoutWrapper, Row } from '../components/Layout';
+import MusicPlayer from '../components/music/Player';
+import Playlist from '../components/music/Playlist';
+import Song from '../components/music/Song';
+import playlistTwoJson from '../data/spotify/playlists/opera.json';
+import playlistOneJson from '../data/spotify/playlists/veryImportantAndVeryPretentious.json';
+import musicIcon from '../photos/icons/musicIcon.svg';
 /** Media */
-import meOnGuitar from "../photos/music/meOnGuitar.png"
-import musicIcon from "../photos/icons/musicIcon.svg"
-import styled from "styled-components"
-import Carousel from "../components/Carousel";
+import meOnGuitar from '../photos/music/meOnGuitar.png';
 
 // Main Page component
 class MusicPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      spotifySongId: "6h4lC9aNr6NuQzZkbw5Lqm",
-    }
+      spotifySongId: '6h4lC9aNr6NuQzZkbw5Lqm',
+    };
   }
 
-  changeSong = this.setState
+  changeSong = this.setState;
 
   render() {
     const StyledImg = styled.img`
       margin-left: 10px;
-    `
+    `;
     return (
-      <WebPage>
+      <>
         <LayoutWrapper>
           <Heading>
             Music <StyledImg src={musicIcon} />
@@ -107,7 +108,7 @@ class MusicPage extends Component {
                 width="100%"
                 height="423px"
                 horizontalScroll={true}
-                style={""}
+                style={''}
               >
                 <Playlist jsonData={playlistOneJson} />
                 <Playlist jsonData={playlistTwoJson} />
@@ -131,16 +132,15 @@ class MusicPage extends Component {
               {/* Photo of me. Needs to be converted to carousel*/}
               <Carousel
                 photos={[meOnGuitar]}
-                style={{ width: "100%", alignItems: "flex-start" }}
+                style={{ width: '100%', alignItems: 'flex-start' }}
               />
             </Col>
           </Row>
         </LayoutWrapper>
-        {/* Music player at the bottom of the screen */}
-        <MusicPlayer currentSong={this.state.spotifySongId} visible={false}/>
-      </WebPage>
-    )
+        <MusicPlayer currentSong={this.state.spotifySongId} visible={false} />
+      </>
+    );
   }
 }
 
-export default MusicPage
+export default MusicPage;
