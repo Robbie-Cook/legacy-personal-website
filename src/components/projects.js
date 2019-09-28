@@ -1,11 +1,11 @@
-import { Github, Link as GrommetLink } from "grommet-icons";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Button, ButtonWrapper } from "../components/Button";
+import { Github, Link as GrommetLink } from 'grommet-icons';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Button, ButtonWrapper } from '@robbie-cook/react-components';
 /* Theme */
-import Colors from "../data/Colors";
-import { MobileView } from "./Views";
+import Colors from '../data/Colors';
+import { MobileView } from './Views';
 
 /*
 Component representing a project
@@ -45,7 +45,7 @@ class ProjectBox extends Component {
       ${new MobileView(`
         padding-bottom: 20px;
       `)}
-    `
+    `;
 
     const ProjectDescriptionAndImageWrapper = styled.div`
       display: flex;
@@ -54,16 +54,16 @@ class ProjectBox extends Component {
       @media (max-width: 600px) {
         flex-direction: column;
       }
-    `
+    `;
 
     const ProjectTitle = styled.h3`
       margin-top: 0;
       margin-bottom: 0;
-    `
+    `;
     const ProjectDescription = styled.p`
       max-width: 360px;
       margin-right: 20px !important;
-    `
+    `;
 
     const ProjectImage = styled.div`
       width: auto;
@@ -72,16 +72,16 @@ class ProjectBox extends Component {
       & img {
         max-height: 113px;
       }
-    `
+    `;
 
     const LinkWrapper = styled.div`
       margin-top: auto;
-    `
+    `;
 
     // Style for the project buttons
     const buttonStyle = `
       margin: 20px 20px 0px 0px;
-    `
+    `;
     return (
       <ProjectBox>
         <ProjectTitle>{this.props.title}</ProjectTitle>
@@ -91,7 +91,8 @@ class ProjectBox extends Component {
             <img src={this.props.image} />
           </ProjectImage>
         </ProjectDescriptionAndImageWrapper>
-        <ButtonWrapper style={`
+        <ButtonWrapper
+          style={`
           margin-top: auto;
           bottom: 10px;
           ${new MobileView(`
@@ -100,7 +101,8 @@ class ProjectBox extends Component {
             display: flex;
             flex-wrap: wrap;
           `)}
-        `}>
+        `}
+        >
           {(() => {
             if (this.props.githubLink !== undefined) {
               return (
@@ -108,7 +110,7 @@ class ProjectBox extends Component {
                   to={this.props.githubLink}
                   style={buttonStyle}
                 />
-              )
+              );
             }
           })()}
           {(() => {
@@ -119,18 +121,18 @@ class ProjectBox extends Component {
                   label={this.props.webLink[1]}
                   style={buttonStyle}
                 />
-              )
+              );
             }
           })()}
         </ButtonWrapper>
       </ProjectBox>
-    )
+    );
   }
 }
 ProjectBox.propTypes = {
   githubLink: PropTypes.string,
   webLink: PropTypes.string,
-}
+};
 
 // Links which sit at the bottom of a project.
 // Can be used to make a custom link, or is extended below for
@@ -167,13 +169,13 @@ class ProjectButton extends Component {
         }
         background-color: ${Colors.link.color};
       }
-    `
+    `;
     const InnerWrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 27px;
-    `
+    `;
     return (
       <a href={this.props.to}>
         <ProjectLinkWrapper>
@@ -183,7 +185,7 @@ class ProjectButton extends Component {
           </InnerWrapper>
         </ProjectLinkWrapper>
       </a>
-    )
+    );
   }
 }
 
@@ -197,7 +199,7 @@ class ProjectGithubLink extends Component {
         label="Code"
         {...this.props}
       />
-    )
+    );
   }
 }
 
@@ -211,9 +213,8 @@ class ProjectWebLink extends Component {
         label={this.props.text}
         {...this.props}
       />
-    )
+    );
   }
 }
 
 export { ProjectBox, ProjectButton, ProjectGithubLink, ProjectWebLink };
-

@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 
-import { Heading, Text } from '@robbie-cook/react-components';
+import { Heading, Text, Carousel } from '@robbie-cook/react-components';
 import React, { PureComponent } from 'react';
 import SkillsPage from '../components/about/SkillsPage';
-import Carousel from '../components/Carousel';
 import { Col, LayoutWrapper, Row } from '../components/Layout';
 /* Imports */
 import Spacer from '../components/Spacer';
@@ -12,7 +11,9 @@ import photo1 from '../photos/carousels/1.svg';
 import photo2 from '../photos/carousels/2.jpg';
 import photo3 from '../photos/carousels/3.jpg';
 
-// Main Page component
+/**
+ *  Main Page component
+ */
 class About extends PureComponent {
   render() {
     return (
