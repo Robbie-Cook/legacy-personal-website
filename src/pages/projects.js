@@ -10,7 +10,9 @@ import machineLearningMini from '../photos/projects/machineLearningMini.png';
 import personalWebsiteMini from '../photos/projects/personalWebsiteMini.png';
 import yorkPlaceMini from '../photos/projects/yorkPlaceMini.png';
 
-// Projects page
+/**
+ * Projects page
+ */
 class Projects extends PureComponent {
   render() {
     const ProjectRow = styled(Row)`

@@ -6,7 +6,6 @@ import { Heading, Text } from '@robbie-cook/react-components';
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import Animate from '../components/animation/Animate';
 import Codify from '../components/Codify';
 import { Icon, IconsWrapper } from '../components/Icons';
 import Section from '../components/Section';
@@ -133,7 +132,6 @@ export default function HomePage(props) {
               Check out my <Link to="/about">About</Link> page to find out more
               :)
             </Text>
-            <Animate>
               <IconsWrapper>
                 <Codify
                   color={Colors.link.color}
@@ -155,7 +153,6 @@ export default function HomePage(props) {
                   </Icon>
                 </Codify>
               </IconsWrapper>
-            </Animate>
           </MainInfo>
         </BackgroundGradientWrapper>
       </BackgroundImageWrapper>
