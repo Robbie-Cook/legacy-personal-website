@@ -27,7 +27,6 @@
     "gatsby-plugin-sass": "^2.1.15",
     "gatsby-plugin-sharp": "^2.2.27",
     "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-plugin-transition-link": "^1.12.4",
     "gatsby-plugin-typescript": "^2.0.15",
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-sharp": "^2.2.19",
