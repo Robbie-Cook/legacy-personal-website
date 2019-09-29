@@ -35,10 +35,9 @@ class Section extends Component {
     const MySection = styled.div`
       min-height: ${this.state.height-Sizes.navbar.height}px;
       display: flex;
-      ${this.props.style};
     `
 
-    return <MySection>{this.props.children}</MySection>
+    return <MySection style={this.props.style}>{this.props.children}</MySection>
   }
 }
 

@@ -1,8 +1,8 @@
+import { ButtonWrapper } from "@robbie-cook/react-components";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
 import Colors from "../../data/Colors";
-import { ButtonWrapper } from "../Button";
 import Spacer from "../Spacer";
 import { Heading } from "../Typography";
 import { MobileView } from "../Views";
