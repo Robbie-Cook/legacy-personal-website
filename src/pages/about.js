@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 
-import { Heading, Text, Carousel } from '@robbie-cook/react-components';
+import { Heading, Text, Link } from '@robbie-cook/react-components';
+import Carousel from "../components/Carousel"
 import React, { PureComponent } from 'react';
 import SkillsPage from '../components/about/SkillsPage';
 import { Col, LayoutWrapper, Row } from '../components/Layout';
@@ -23,7 +24,7 @@ class About extends PureComponent {
             <Heading>About</Heading>
             <Text>
               Hi! I'm a 22-year-old developer in Auckland. Check out my Github
-              page <a href="https://github.com/Robbie-Cook">here</a> for a list
+              page <Link href="https://github.com/Robbie-Cook">here</Link> for a list
               of projects I am working on.
             </Text>
             <Text>

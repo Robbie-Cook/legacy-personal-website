@@ -1,8 +1,8 @@
+import { Button, ButtonWrapper } from '@robbie-cook/react-components';
 import { Github, Link as GrommetLink } from 'grommet-icons';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Button, ButtonWrapper } from '@robbie-cook/react-components';
 /* Theme */
 import Colors from '../data/Colors';
 import { MobileView } from './Views';
@@ -194,9 +194,9 @@ class ProjectGithubLink extends Component {
   render() {
     return (
       <Button
-        icon={<Github fill="inherit" color="inherit" />}
+        icon={<Github fill='inherit' color='inherit' />}
         to={this.props.to}
-        label="Code"
+        label='Code'
         {...this.props}
       />
     );
@@ -208,7 +208,7 @@ class ProjectWebLink extends Component {
   render() {
     return (
       <Button
-        icon={<GrommetLink stroke="inherit" color="inherit" />}
+        icon={<GrommetLink stroke='inherit' color='inherit' />}
         to={this.props.to}
         label={this.props.text}
         {...this.props}
@@ -218,3 +218,4 @@ class ProjectWebLink extends Component {
 }
 
 export { ProjectBox, ProjectButton, ProjectGithubLink, ProjectWebLink };
+

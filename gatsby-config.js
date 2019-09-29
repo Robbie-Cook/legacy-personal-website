@@ -4,15 +4,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `carousel`,
-        path: `${__dirname}/src/photos/carousels`,
-      },
+        name: `photos`,
+        path: `${__dirname}/src/photos/`
+      }
     },
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-nprogress`
     },
