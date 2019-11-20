@@ -19,6 +19,7 @@ import Spacer from '../components/Spacer';
 import { MobileView } from '../components/Views';
 import ImgWrapper from '../components/indexPage/ImgWrapper';
 import MainInfo from '../components/indexPage/MainInfo';
+import { Transition } from 'react-transition-group';
 import '../css/main.scss';
 /* Theme */
 import Colors from '../data/Colors';
@@ -40,53 +41,18 @@ const Icons = styled.div`
  */
 export default function HomePage(props) {
   return (
-    <Section style={{ width: '100%' }}>
-      <MainInfo>
-        <Heading
-          style={`
-                    & h1 {
-                      margin: 0px
-                    }; 
-                    ${new MobileView(`
-                      margin: 10px 0;
-                    `)}`}
-          codify
-        >
-          Robbie Cook
-        </Heading>
-        <Text>
-          Hello! I'm a developer in New Zealand. I love coding, making stuff,
-          learning, and teaching.
-          <Spacer height='10px' />
-          Check out my <Link to='/about'>About</Link> page to find out more :)
-        </Text>
-        <IconsWrapper>
-          <Codify
-            color={Colors.link.color}
-            fontSize='47px'
-            rightTagSpacing='0px'
-            opacity='.7'
-          >
-            <Icon href='https://github.com/Robbie-Cook'>
-              <i className='icon fab fa-github' />
-            </Icon>
-            <Icon href='https://www.linkedin.com/in/robbie-cook/'>
-              <i className='icon fab fa-linkedin' />
-            </Icon>
-            <Icon href='mailto:robbie@robbie.pw'>
-              {/* <div class="iconWrapper2"> */}
-              <i className='icon fas fa-envelope' />
-              {/* <span>robbie@robbie.pw</span> */}
-              {/* </div> */}
-            </Icon>
-          </Codify>
-        </IconsWrapper>
-      </MainInfo>
+    <>
+      <Text>
+        Hello! I'm a developer in New Zealand. I love coding, making stuff,
+        learning, and teaching.
+        <Spacer height="10px" />
+        Check out my <Link to="/about">About</Link> page to find out more :)
+      </Text>
 
       <ImgWrapper>
         <Img fluid={props.data.file.childImageSharp.fluid} />
       </ImgWrapper>
-    </Section>
+    </>
   );
 }
 
