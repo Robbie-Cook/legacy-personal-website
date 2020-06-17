@@ -5,7 +5,6 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { LayoutWrapper, Row } from '../components/Layout';
 import { ProjectBox } from '../components/projects';
-import machineLearningMini from '../photos/projects/machineLearningMini.png';
 // Media
 import personalWebsiteMini from '../photos/projects/personalWebsiteMini.png';
 import yorkPlaceMini from '../photos/projects/yorkPlaceMini.png';
@@ -55,18 +54,15 @@ class Projects extends PureComponent {
             image={yorkPlaceMini}
             webLink={['http://yorkplace.co.nz', 'yorkplace.co.nz']}
           />
-          {/* Machine Learning Showcase */}
           <ProjectBox
-            title="Machine Learning Showcase"
+            title="html-to-markdown.com"
             desc={
-              'A introduction to machine learning. Built in React, with a UI framework \
-                called Grommet. '
+              'A website to convert HTML into Markdown'
             }
-            image={machineLearningMini}
-            githubLink="https://github.com/Robbie-Cook/Machine-Learning-Showcase"
+            githubLink="https://github.com/Robbie-Cook/markdown-converter"
             webLink={[
-              'http://machinelearning.robbie.pw',
-              'machinelearning.robbie.pw',
+              'http://html-to-markdown.com',
+              'html-to-markdown.com',
             ]}
           />
         </ProjectRow>
