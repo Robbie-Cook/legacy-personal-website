@@ -1,6 +1,6 @@
 # Personal Website
 
-This is a repository of my old personal website
+This is a legacy repository of my old personal website.
 
 ~~Animations coming soon!
 
